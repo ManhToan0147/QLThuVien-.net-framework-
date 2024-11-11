@@ -255,6 +255,7 @@
             this.btnCaiDat.Text = "Cài đặt";
             this.btnCaiDat.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnCaiDat.TextOffset = new System.Drawing.Point(80, 0);
+            this.btnCaiDat.Click += new System.EventHandler(this.btnCaiDat_Click);
             // 
             // btnHDSD
             // 
