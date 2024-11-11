@@ -85,6 +85,12 @@
     <Compile Include="frmLayout.Designer.cs">
       <DependentUpon>frmLayout.cs</DependentUpon>
     </Compile>
+    <Compile Include="Main UC\CaiDat\UC_SaoLuu&amp;PhucHoi.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Main UC\CaiDat\UC_SaoLuu&amp;PhucHoi.Designer.cs">
+      <DependentUpon>UC_SaoLuu&amp;PhucHoi.cs</DependentUpon>
+    </Compile>
     <Compile Include="Main UC\QLSach\UC_ChiTietSach.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -102,6 +108,24 @@
     </Compile>
     <Compile Include="Main UC\QLSach\UC_DauSach.Designer.cs">
       <DependentUpon>UC_DauSach.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main UC\QLTacGia\UC_QLTacGia.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Main UC\QLTacGia\UC_QLTacGia.Designer.cs">
+      <DependentUpon>UC_QLTacGia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main UC\QLTacGia\UC_TacGiaSach.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Main UC\QLTacGia\UC_TacGiaSach.Designer.cs">
+      <DependentUpon>UC_TacGiaSach.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main UC\TrangChu\UC_TrangChu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Main UC\TrangChu\UC_TrangChu.Designer.cs">
+      <DependentUpon>UC_TrangChu.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -129,6 +153,9 @@
     <EmbeddedResource Include="frmLayout.resx">
       <DependentUpon>frmLayout.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Main UC\CaiDat\UC_SaoLuu&amp;PhucHoi.resx">
+      <DependentUpon>UC_SaoLuu&amp;PhucHoi.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Main UC\QLSach\UC_ChiTietSach.resx">
       <DependentUpon>UC_ChiTietSach.cs</DependentUpon>
     </EmbeddedResource>
@@ -137,6 +164,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Main UC\QLSach\UC_DauSach.resx">
       <DependentUpon>UC_DauSach.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main UC\QLTacGia\UC_QLTacGia.resx">
+      <DependentUpon>UC_QLTacGia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main UC\QLTacGia\UC_TacGiaSach.resx">
+      <DependentUpon>UC_TacGiaSach.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main UC\TrangChu\UC_TrangChu.resx">
+      <DependentUpon>UC_TrangChu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -241,9 +277,7 @@
     <None Include="Resources\polygon-background-gzhgpgzzhfpdds6e.png" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Main UC\CaiDat\" />
     <Folder Include="Main UC\QLDocGia\" />
-    <Folder Include="Main UC\QLTacGia\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

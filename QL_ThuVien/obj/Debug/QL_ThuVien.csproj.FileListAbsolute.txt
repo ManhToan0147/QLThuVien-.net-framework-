@@ -77,3 +77,7 @@ D:\My Project\QL_ThuVien\QL_ThuVien\obj\Debug\QL_ThuVien.Main_UC.QLSach.UC_ChiTi
 D:\My Project\QL_ThuVien\QL_ThuVien\obj\Debug\QL_ThuVien.ChiTietSach.resources
 D:\My Project\QL_ThuVien\QL_ThuVien\obj\Debug\QL_ThuVien.Main_UC.QLSach.UC_DauSach.resources
 D:\My Project\QL_ThuVien\QL_ThuVien\obj\Debug\QL_ThuVien.Main_UC.QLSach.UC_CuonSach.resources
+D:\My Project\QL_ThuVien\QL_ThuVien\obj\Debug\QL_ThuVien.Main_UC.QLTacGia.UC_QLTacGia.resources
+D:\My Project\QL_ThuVien\QL_ThuVien\obj\Debug\QL_ThuVien.Main_UC.QLTacGia.UC_TacGiaSach.resources
+D:\My Project\QL_ThuVien\QL_ThuVien\obj\Debug\QL_ThuVien.Main_UC.TrangChu.UC_TrangChu.resources
+D:\My Project\QL_ThuVien\QL_ThuVien\obj\Debug\QL_ThuVien.Main_UC.CaiDat.UC_SaoLuu_PhucHoi.resources

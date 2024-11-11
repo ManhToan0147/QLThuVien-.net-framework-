@@ -41,22 +41,22 @@
             this.btnSignIn_Out = new Guna.UI2.WinForms.Guna2Button();
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.lblTenToChuc = new System.Windows.Forms.Label();
-            this.panelContainer = new System.Windows.Forms.Panel();
-            this.guna2ShadowForm1 = new Guna.UI2.WinForms.Guna2ShadowForm(this.components);
-            this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.btnCaiDat = new Guna.UI2.WinForms.Guna2Button();
             this.btnHDSD = new Guna.UI2.WinForms.Guna2Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.btnBaoCao = new Guna.UI2.WinForms.Guna2Button();
             this.btnQLMuonTra = new Guna.UI2.WinForms.Guna2Button();
             this.btnQLDocGia = new Guna.UI2.WinForms.Guna2Button();
             this.btnQLTacGia = new Guna.UI2.WinForms.Guna2Button();
             this.btnQLSach = new Guna.UI2.WinForms.Guna2Button();
             this.btnHome = new Guna.UI2.WinForms.Guna2Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.lblTenToChuc = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panelContainer = new System.Windows.Forms.Panel();
+            this.guna2ShadowForm1 = new Guna.UI2.WinForms.Guna2ShadowForm(this.components);
+            this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panelControl.SuspendLayout();
             this.panelFooter.SuspendLayout();
             this.statusStrip1.SuspendLayout();
@@ -227,64 +227,6 @@
             this.panel2.Size = new System.Drawing.Size(350, 2);
             this.panel2.TabIndex = 8;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.DimGray;
-            this.label1.Location = new System.Drawing.Point(35, 370);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(134, 30);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "MAIN MENU";
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.DimGray;
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.ForeColor = System.Drawing.SystemColors.Control;
-            this.panel1.Location = new System.Drawing.Point(35, 346);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(350, 2);
-            this.panel1.TabIndex = 2;
-            // 
-            // lblTenToChuc
-            // 
-            this.lblTenToChuc.AutoSize = true;
-            this.lblTenToChuc.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTenToChuc.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(76)))), ((int)(((byte)(170)))));
-            this.lblTenToChuc.Location = new System.Drawing.Point(24, 219);
-            this.lblTenToChuc.Name = "lblTenToChuc";
-            this.lblTenToChuc.Size = new System.Drawing.Size(390, 74);
-            this.lblTenToChuc.TabIndex = 1;
-            this.lblTenToChuc.Text = "NEU LIBRARY";
-            // 
-            // panelContainer
-            // 
-            this.panelContainer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.panelContainer.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panelContainer.ForeColor = System.Drawing.Color.Black;
-            this.panelContainer.Location = new System.Drawing.Point(437, 53);
-            this.panelContainer.Name = "panelContainer";
-            this.panelContainer.Size = new System.Drawing.Size(2035, 1379);
-            this.panelContainer.TabIndex = 3;
-            // 
-            // guna2ShadowForm1
-            // 
-            this.guna2ShadowForm1.TargetForm = this;
-            // 
-            // guna2DragControl1
-            // 
-            this.guna2DragControl1.DockIndicatorTransparencyValue = 0.6D;
-            this.guna2DragControl1.TargetControl = this.panelControl;
-            this.guna2DragControl1.UseTransparentDrag = true;
-            // 
-            // timer1
-            // 
-            this.timer1.Enabled = true;
-            this.timer1.Interval = 1000;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
             // btnCaiDat
             // 
             this.btnCaiDat.AutoRoundedCorners = true;
@@ -342,6 +284,17 @@
             this.btnHDSD.Text = "Hướng dẫn";
             this.btnHDSD.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnHDSD.TextOffset = new System.Drawing.Point(80, 0);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.DimGray;
+            this.label1.Location = new System.Drawing.Point(35, 370);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(134, 30);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "MAIN MENU";
             // 
             // btnBaoCao
             // 
@@ -518,6 +471,28 @@
             this.btnHome.Text = "Trang chủ";
             this.btnHome.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnHome.TextOffset = new System.Drawing.Point(80, 0);
+            this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.DimGray;
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.ForeColor = System.Drawing.SystemColors.Control;
+            this.panel1.Location = new System.Drawing.Point(35, 346);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(350, 2);
+            this.panel1.TabIndex = 2;
+            // 
+            // lblTenToChuc
+            // 
+            this.lblTenToChuc.AutoSize = true;
+            this.lblTenToChuc.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTenToChuc.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(76)))), ((int)(((byte)(170)))));
+            this.lblTenToChuc.Location = new System.Drawing.Point(24, 219);
+            this.lblTenToChuc.Name = "lblTenToChuc";
+            this.lblTenToChuc.Size = new System.Drawing.Size(390, 74);
+            this.lblTenToChuc.TabIndex = 1;
+            this.lblTenToChuc.Text = "NEU LIBRARY";
             // 
             // pictureBox1
             // 
@@ -528,6 +503,32 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
+            // 
+            // panelContainer
+            // 
+            this.panelContainer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.panelContainer.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panelContainer.ForeColor = System.Drawing.Color.Black;
+            this.panelContainer.Location = new System.Drawing.Point(437, 53);
+            this.panelContainer.Name = "panelContainer";
+            this.panelContainer.Size = new System.Drawing.Size(2035, 1379);
+            this.panelContainer.TabIndex = 3;
+            // 
+            // guna2ShadowForm1
+            // 
+            this.guna2ShadowForm1.TargetForm = this;
+            // 
+            // guna2DragControl1
+            // 
+            this.guna2DragControl1.DockIndicatorTransparencyValue = 0.6D;
+            this.guna2DragControl1.TargetControl = this.panelControl;
+            this.guna2DragControl1.UseTransparentDrag = true;
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // frmLayout
             // 

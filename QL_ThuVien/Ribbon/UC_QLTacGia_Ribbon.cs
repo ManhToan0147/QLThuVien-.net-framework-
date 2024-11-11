@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QL_ThuVien.Main_UC.QLTacGia;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -28,6 +29,20 @@ namespace QL_ThuVien.Ribbon
         private void UC_QLTacGia_Ribbon_Load(object sender, EventArgs e)
         {
             btnTacGia.Checked = true;
+            var uc = new UC_QLTacGia();
+            addUserControl(uc);
+        }
+
+        private void btnTacGia_Click(object sender, EventArgs e)
+        {
+            var uc = new UC_QLTacGia();
+            addUserControl(uc);
+        }
+
+        private void btnTacGiaSach_Click(object sender, EventArgs e)
+        {
+            var uc = new UC_TacGiaSach();
+            addUserControl(uc);
         }
     }
 }

@@ -118,12 +118,18 @@ namespace QL_ThuVien.Main_UC.QLSach
             if (dgvChiTietDauSach.SelectedRows.Count > 0) 
             {
                 DataGridViewRow selectedRow = dgvChiTietDauSach.SelectedRows[0];
-                string maDauSach = selectedRow.Cells["MaDauSach"].Value.ToString(); // Lấy mã đầu sách từ cột "MaDauSach"
-
-                // Khởi tạo form chi tiết và truyền mã đầu sách qua constructor
-                ChiTietSach cts = new ChiTietSach(maDauSach);
-
-                cts.ShowDialog();
+                string maDauSach;
+                if (selectedRow.Cells["MaDauSach"].Value != null)
+                {
+                    maDauSach = selectedRow.Cells["MaDauSach"].Value.ToString();
+                    // Khởi tạo form chi tiết và truyền mã đầu sách qua constructor
+                    ChiTietSach cts = new ChiTietSach(maDauSach);
+                    cts.ShowDialog(); // Hiển thị form chi tiết dưới dạng dialog
+                }
+                else
+                {
+                    MessageBox.Show("Dòng được chọn không chứa thông tin.");
+                }
             }
             else
             {

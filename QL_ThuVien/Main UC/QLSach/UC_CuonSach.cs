@@ -27,6 +27,8 @@ namespace QL_ThuVien.Main_UC.QLSach
 
         private void UC_CuonSach_Load(object sender, EventArgs e)
         {
+            //dgvDauSach.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 9, FontStyle.Bold);
+            //dgvCuonSach.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 9, FontStyle.Bold);
             showDauSach();
             showCuonSach();
         }
@@ -89,25 +91,27 @@ namespace QL_ThuVien.Main_UC.QLSach
 
         private void btnXemChiTiet_Click(object sender, EventArgs e)
         {
-            if (dgvDauSach.SelectedRows.Count > 0) // Kiểm tra xem có hàng nào được chọn không
+            if (dgvDauSach.SelectedRows.Count > 0)
             {
                 DataGridViewRow selectedRow = dgvDauSach.SelectedRows[0]; // Lấy hàng được chọn
-                string maDauSach = selectedRow.Cells["MaDauSach"].Value.ToString(); // Lấy mã đầu sách từ cột "MaDauSach"
+                string maDauSach;
 
-                // Khởi tạo form chi tiết và truyền mã đầu sách qua constructor
-                ChiTietSach cts = new ChiTietSach(maDauSach);
-
-                cts.ShowDialog(); // Hiển thị form chi tiết dưới dạng dialog
+                if (selectedRow.Cells["MaDauSach"].Value != null)
+                {
+                    maDauSach = selectedRow.Cells["MaDauSach"].Value.ToString();
+                    // Khởi tạo form chi tiết và truyền mã đầu sách qua constructor
+                    ChiTietSach cts = new ChiTietSach(maDauSach);
+                    cts.ShowDialog(); 
+                }
+                else
+                {
+                    MessageBox.Show("Dòng được chọn không chứa thông tin.");
+                }
             }
             else
             {
                 MessageBox.Show("Vui lòng chọn một đầu sách để xem chi tiết.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-        }
-
-        private void dgvDauSach_SelectionChanged(object sender, EventArgs e)
-        {
-            ShowCuonSach_DauSach();
         }
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
@@ -231,6 +235,11 @@ namespace QL_ThuVien.Main_UC.QLSach
                 MessageBox.Show($"Đã sửa thành công bản ghi", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             }
+            ShowCuonSach_DauSach();
+        }
+
+        private void dgvDauSach_SelectionChanged_1(object sender, EventArgs e)
+        {
             ShowCuonSach_DauSach();
         }
     }

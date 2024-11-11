@@ -67,6 +67,7 @@
             this.btnTacGiaSach.Size = new System.Drawing.Size(247, 90);
             this.btnTacGiaSach.TabIndex = 0;
             this.btnTacGiaSach.Text = "Tác giả sách";
+            this.btnTacGiaSach.Click += new System.EventHandler(this.btnTacGiaSach_Click);
             // 
             // btnTacGia
             // 
@@ -87,6 +88,7 @@
             this.btnTacGia.Size = new System.Drawing.Size(247, 90);
             this.btnTacGia.TabIndex = 0;
             this.btnTacGia.Text = "Tác giả";
+            this.btnTacGia.Click += new System.EventHandler(this.btnTacGia_Click);
             // 
             // panelContainer
             // 

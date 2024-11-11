@@ -1,4 +1,5 @@
-﻿using QL_ThuVien.Ribbon;
+﻿using QL_ThuVien.Main_UC.TrangChu;
+using QL_ThuVien.Ribbon;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -33,6 +34,8 @@ namespace QL_ThuVien
         private void frmLayout_Load(object sender, EventArgs e)
         {
             btnHome.Checked = true;
+            var uc = new UC_TrangChu();
+            addUserControl(uc);
         }
 
         private void btnSignIn_Out_Click(object sender, EventArgs e)
@@ -51,6 +54,12 @@ namespace QL_ThuVien
         {
             var uc = new UC_QLTacGia_Ribbon();
             addUserControl(uc);
+        }
+
+        private void btnHome_Click(object sender, EventArgs e)
+        {
+            var uc = new UC_TrangChu();
+            addUserControl(uc); 
         }
     }
 }
