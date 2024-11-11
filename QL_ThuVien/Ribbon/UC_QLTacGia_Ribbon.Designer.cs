@@ -45,7 +45,7 @@
             this.panelRibbon.ForeColor = System.Drawing.Color.Black;
             this.panelRibbon.Location = new System.Drawing.Point(0, 0);
             this.panelRibbon.Name = "panelRibbon";
-            this.panelRibbon.Size = new System.Drawing.Size(2035, 102);
+            this.panelRibbon.Size = new System.Drawing.Size(2035, 90);
             this.panelRibbon.TabIndex = 1;
             // 
             // btnTacGiaSach
@@ -64,7 +64,7 @@
             this.btnTacGiaSach.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(76)))), ((int)(((byte)(170)))));
             this.btnTacGiaSach.Location = new System.Drawing.Point(306, 0);
             this.btnTacGiaSach.Name = "btnTacGiaSach";
-            this.btnTacGiaSach.Size = new System.Drawing.Size(247, 102);
+            this.btnTacGiaSach.Size = new System.Drawing.Size(247, 90);
             this.btnTacGiaSach.TabIndex = 0;
             this.btnTacGiaSach.Text = "Tác giả sách";
             // 
@@ -84,7 +84,7 @@
             this.btnTacGia.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(76)))), ((int)(((byte)(170)))));
             this.btnTacGia.Location = new System.Drawing.Point(53, 0);
             this.btnTacGia.Name = "btnTacGia";
-            this.btnTacGia.Size = new System.Drawing.Size(247, 102);
+            this.btnTacGia.Size = new System.Drawing.Size(247, 90);
             this.btnTacGia.TabIndex = 0;
             this.btnTacGia.Text = "Tác giả";
             // 
@@ -93,9 +93,9 @@
             this.panelContainer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelContainer.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panelContainer.ForeColor = System.Drawing.Color.Black;
-            this.panelContainer.Location = new System.Drawing.Point(0, 102);
+            this.panelContainer.Location = new System.Drawing.Point(0, 90);
             this.panelContainer.Name = "panelContainer";
-            this.panelContainer.Size = new System.Drawing.Size(2035, 1192);
+            this.panelContainer.Size = new System.Drawing.Size(2035, 1289);
             this.panelContainer.TabIndex = 2;
             // 
             // UC_QLTacGia_Ribbon
@@ -105,7 +105,7 @@
             this.Controls.Add(this.panelContainer);
             this.Controls.Add(this.panelRibbon);
             this.Name = "UC_QLTacGia_Ribbon";
-            this.Size = new System.Drawing.Size(2035, 1294);
+            this.Size = new System.Drawing.Size(2035, 1379);
             this.Load += new System.EventHandler(this.UC_QLTacGia_Ribbon_Load);
             this.panelRibbon.ResumeLayout(false);
             this.ResumeLayout(false);

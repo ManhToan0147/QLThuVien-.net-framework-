@@ -73,11 +73,35 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ChiTietSach.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChiTietSach.Designer.cs">
+      <DependentUpon>ChiTietSach.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmLayout.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmLayout.Designer.cs">
       <DependentUpon>frmLayout.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main UC\QLSach\UC_ChiTietSach.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Main UC\QLSach\UC_ChiTietSach.Designer.cs">
+      <DependentUpon>UC_ChiTietSach.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main UC\QLSach\UC_CuonSach.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Main UC\QLSach\UC_CuonSach.Designer.cs">
+      <DependentUpon>UC_CuonSach.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main UC\QLSach\UC_DauSach.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Main UC\QLSach\UC_DauSach.Designer.cs">
+      <DependentUpon>UC_DauSach.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -99,8 +123,20 @@
     <Compile Include="Ribbon\UC_QLTacGia_Ribbon.Designer.cs">
       <DependentUpon>UC_QLTacGia_Ribbon.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ChiTietSach.resx">
+      <DependentUpon>ChiTietSach.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmLayout.resx">
       <DependentUpon>frmLayout.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main UC\QLSach\UC_ChiTietSach.resx">
+      <DependentUpon>UC_ChiTietSach.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main UC\QLSach\UC_CuonSach.resx">
+      <DependentUpon>UC_CuonSach.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main UC\QLSach\UC_DauSach.resx">
+      <DependentUpon>UC_DauSach.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -207,7 +243,6 @@
   <ItemGroup>
     <Folder Include="Main UC\CaiDat\" />
     <Folder Include="Main UC\QLDocGia\" />
-    <Folder Include="Main UC\QLSach\" />
     <Folder Include="Main UC\QLTacGia\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

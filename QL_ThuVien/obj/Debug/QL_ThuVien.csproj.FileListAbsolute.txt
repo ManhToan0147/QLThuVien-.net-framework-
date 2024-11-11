@@ -73,3 +73,7 @@ D:\My Project\QL_ThuVien\QL_ThuVien\obj\Debug\QL_ThuVien.frmLayout.resources
 D:\My Project\QL_ThuVien\QL_ThuVien\obj\Debug\QL_ThuVien.frmSignIn.resources
 D:\My Project\QL_ThuVien\QL_ThuVien\obj\Debug\QL_ThuVien.Ribbon.UC_QLSach_Ribbon.resources
 D:\My Project\QL_ThuVien\QL_ThuVien\obj\Debug\QL_ThuVien.Ribbon.UC_QLTacGia_Ribbon.resources
+D:\My Project\QL_ThuVien\QL_ThuVien\obj\Debug\QL_ThuVien.Main_UC.QLSach.UC_ChiTietSach.resources
+D:\My Project\QL_ThuVien\QL_ThuVien\obj\Debug\QL_ThuVien.ChiTietSach.resources
+D:\My Project\QL_ThuVien\QL_ThuVien\obj\Debug\QL_ThuVien.Main_UC.QLSach.UC_DauSach.resources
+D:\My Project\QL_ThuVien\QL_ThuVien\obj\Debug\QL_ThuVien.Main_UC.QLSach.UC_CuonSach.resources

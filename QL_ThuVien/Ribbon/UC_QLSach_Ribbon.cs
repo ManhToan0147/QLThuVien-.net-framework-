@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QL_ThuVien.Main_UC.QLSach;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -27,6 +28,26 @@ namespace QL_ThuVien.Ribbon
         private void UC_QLSach_Ribbon_Load(object sender, EventArgs e)
         {
             btnChiTietSach.Checked = true;
+            var uc = new UC_ChiTietSach();
+            addUserControl(uc);
+        }
+
+        private void btnChiTietSach_Click(object sender, EventArgs e)
+        {
+            var uc = new UC_ChiTietSach();
+            addUserControl(uc);
+        }
+
+        private void btnDauSach_Click_1(object sender, EventArgs e)
+        {
+            var uc = new UC_DauSach();
+            addUserControl(uc);
+        }
+
+        private void btnCuonSach_Click(object sender, EventArgs e)
+        {
+            var uc = new UC_CuonSach();
+            addUserControl(uc);
         }
     }
 }
