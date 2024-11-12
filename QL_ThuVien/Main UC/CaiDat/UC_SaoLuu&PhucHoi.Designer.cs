@@ -30,10 +30,10 @@
         {
             this.lblSaoLuuPhucHoi = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnBackup = new Guna.UI2.WinForms.Guna2Button();
             this.btnBrowse1 = new Guna.UI2.WinForms.Guna2Button();
             this.txtBackupPath = new Guna.UI2.WinForms.Guna2TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnBackup = new Guna.UI2.WinForms.Guna2Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnRestore = new Guna.UI2.WinForms.Guna2Button();
             this.btnBrowse2 = new Guna.UI2.WinForms.Guna2Button();
@@ -67,6 +67,30 @@
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Backup dữ liệu";
+            // 
+            // btnBackup
+            // 
+            this.btnBackup.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnBackup.BorderColor = System.Drawing.Color.Transparent;
+            this.btnBackup.BorderThickness = 2;
+            this.btnBackup.CheckedState.FillColor = System.Drawing.Color.White;
+            this.btnBackup.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnBackup.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnBackup.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnBackup.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnBackup.Enabled = false;
+            this.btnBackup.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(232)))));
+            this.btnBackup.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBackup.ForeColor = System.Drawing.Color.White;
+            this.btnBackup.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(232)))));
+            this.btnBackup.HoverState.FillColor = System.Drawing.Color.White;
+            this.btnBackup.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(232)))));
+            this.btnBackup.Location = new System.Drawing.Point(558, 231);
+            this.btnBackup.Name = "btnBackup";
+            this.btnBackup.Size = new System.Drawing.Size(417, 79);
+            this.btnBackup.TabIndex = 15;
+            this.btnBackup.Text = "Backup";
+            this.btnBackup.Click += new System.EventHandler(this.btnBackup_Click);
             // 
             // btnBrowse1
             // 
@@ -129,30 +153,6 @@
             this.label1.Size = new System.Drawing.Size(249, 38);
             this.label1.TabIndex = 0;
             this.label1.Text = "Đường dẫn lưu file";
-            // 
-            // btnBackup
-            // 
-            this.btnBackup.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnBackup.BorderColor = System.Drawing.Color.Transparent;
-            this.btnBackup.BorderThickness = 2;
-            this.btnBackup.CheckedState.FillColor = System.Drawing.Color.White;
-            this.btnBackup.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnBackup.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnBackup.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnBackup.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnBackup.Enabled = false;
-            this.btnBackup.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(232)))));
-            this.btnBackup.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBackup.ForeColor = System.Drawing.Color.White;
-            this.btnBackup.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(232)))));
-            this.btnBackup.HoverState.FillColor = System.Drawing.Color.White;
-            this.btnBackup.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(232)))));
-            this.btnBackup.Location = new System.Drawing.Point(558, 231);
-            this.btnBackup.Name = "btnBackup";
-            this.btnBackup.Size = new System.Drawing.Size(417, 79);
-            this.btnBackup.TabIndex = 15;
-            this.btnBackup.Text = "Backup";
-            this.btnBackup.Click += new System.EventHandler(this.btnBackup_Click);
             // 
             // groupBox2
             // 

@@ -106,7 +106,7 @@
             this.txtNamSinh.PlaceholderText = "";
             this.txtNamSinh.SelectedText = "";
             this.txtNamSinh.Size = new System.Drawing.Size(242, 54);
-            this.txtNamSinh.TabIndex = 12;
+            this.txtNamSinh.TabIndex = 3;
             // 
             // label4
             // 
@@ -135,7 +135,7 @@
             this.cboGioiTinh.Location = new System.Drawing.Point(1300, 56);
             this.cboGioiTinh.Name = "cboGioiTinh";
             this.cboGioiTinh.Size = new System.Drawing.Size(242, 54);
-            this.cboGioiTinh.TabIndex = 10;
+            this.cboGioiTinh.TabIndex = 2;
             // 
             // label3
             // 
@@ -166,7 +166,7 @@
             this.txtTenTacGia.PlaceholderText = "";
             this.txtTenTacGia.SelectedText = "";
             this.txtTenTacGia.Size = new System.Drawing.Size(485, 54);
-            this.txtTenTacGia.TabIndex = 5;
+            this.txtTenTacGia.TabIndex = 1;
             // 
             // label2
             // 
@@ -197,7 +197,7 @@
             this.txtMaTacGia.PlaceholderText = "";
             this.txtMaTacGia.SelectedText = "";
             this.txtMaTacGia.Size = new System.Drawing.Size(485, 54);
-            this.txtMaTacGia.TabIndex = 6;
+            this.txtMaTacGia.TabIndex = 0;
             // 
             // label1
             // 

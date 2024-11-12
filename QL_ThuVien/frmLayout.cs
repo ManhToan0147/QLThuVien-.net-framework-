@@ -1,4 +1,5 @@
 ﻿using QL_ThuVien.Main_UC.CaiDat;
+using QL_ThuVien.Main_UC.QLDocGia;
 using QL_ThuVien.Main_UC.TrangChu;
 using QL_ThuVien.Ribbon;
 using System;
@@ -66,6 +67,12 @@ namespace QL_ThuVien
         private void btnCaiDat_Click(object sender, EventArgs e)
         {
             var uc = new UC_SaoLuu_PhucHoi();
+            addUserControl(uc);
+        }
+
+        private void btnQLDocGia_Click(object sender, EventArgs e)
+        {
+            var uc = new UC_QLDocGia();
             addUserControl(uc);
         }
     }

@@ -128,7 +128,7 @@
             this.cboMaKho.MaxDropDownItems = 15;
             this.cboMaKho.Name = "cboMaKho";
             this.cboMaKho.Size = new System.Drawing.Size(372, 53);
-            this.cboMaKho.TabIndex = 10;
+            this.cboMaKho.TabIndex = 8;
             // 
             // label9
             // 
@@ -155,7 +155,7 @@
             this.cboMaNXB.MaxDropDownItems = 15;
             this.cboMaNXB.Name = "cboMaNXB";
             this.cboMaNXB.Size = new System.Drawing.Size(372, 53);
-            this.cboMaNXB.TabIndex = 10;
+            this.cboMaNXB.TabIndex = 7;
             // 
             // label8
             // 
@@ -182,7 +182,7 @@
             this.cboMaChuDe.MaxDropDownItems = 15;
             this.cboMaChuDe.Name = "cboMaChuDe";
             this.cboMaChuDe.Size = new System.Drawing.Size(372, 53);
-            this.cboMaChuDe.TabIndex = 10;
+            this.cboMaChuDe.TabIndex = 6;
             // 
             // label7
             // 
@@ -209,7 +209,7 @@
             this.cboMaLoaiSach.MaxDropDownItems = 15;
             this.cboMaLoaiSach.Name = "cboMaLoaiSach";
             this.cboMaLoaiSach.Size = new System.Drawing.Size(372, 53);
-            this.cboMaLoaiSach.TabIndex = 10;
+            this.cboMaLoaiSach.TabIndex = 5;
             // 
             // label6
             // 
@@ -240,7 +240,7 @@
             this.txtSoTrang.PlaceholderText = "";
             this.txtSoTrang.SelectedText = "";
             this.txtSoTrang.Size = new System.Drawing.Size(205, 55);
-            this.txtSoTrang.TabIndex = 8;
+            this.txtSoTrang.TabIndex = 4;
             // 
             // label5
             // 
@@ -271,7 +271,7 @@
             this.txtGiaBia.PlaceholderText = "";
             this.txtGiaBia.SelectedText = "";
             this.txtGiaBia.Size = new System.Drawing.Size(205, 55);
-            this.txtGiaBia.TabIndex = 5;
+            this.txtGiaBia.TabIndex = 3;
             // 
             // label4
             // 
@@ -302,7 +302,7 @@
             this.txtNamXB.PlaceholderText = "";
             this.txtNamXB.SelectedText = "";
             this.txtNamXB.Size = new System.Drawing.Size(623, 55);
-            this.txtNamXB.TabIndex = 3;
+            this.txtNamXB.TabIndex = 2;
             // 
             // label3
             // 
@@ -333,7 +333,7 @@
             this.txtTenDauSach.PlaceholderText = "";
             this.txtTenDauSach.SelectedText = "";
             this.txtTenDauSach.Size = new System.Drawing.Size(623, 55);
-            this.txtTenDauSach.TabIndex = 3;
+            this.txtTenDauSach.TabIndex = 1;
             // 
             // label2
             // 
@@ -364,7 +364,7 @@
             this.txtMaDauSach.PlaceholderText = "";
             this.txtMaDauSach.SelectedText = "";
             this.txtMaDauSach.Size = new System.Drawing.Size(623, 55);
-            this.txtMaDauSach.TabIndex = 3;
+            this.txtMaDauSach.TabIndex = 0;
             // 
             // label1
             // 

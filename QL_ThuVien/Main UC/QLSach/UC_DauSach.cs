@@ -148,7 +148,7 @@ namespace QL_ThuVien.Main_UC.QLSach
                     string maNXB = cboMaNXB.SelectedValue?.ToString();
                     string maKho = cboMaKho.SelectedValue?.ToString();
 
-                    string sql = $"INSERT INTO DauSach VALUES ('{maDauSach}', '{tenDauSach}', {namXB}, {giaBia}," +
+                    string sql = $"INSERT INTO DauSach VALUES ('{maDauSach}', N'{tenDauSach}', {namXB}, {giaBia}," +
                         $" {soTrang}, '{maLoaiSach}', '{maChuDe}', '{maNXB}', '{maKho}')";
                     DoSQL(sql);
                     MessageBox.Show($"Đã thêm thành công bản ghi", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);

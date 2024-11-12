@@ -81,3 +81,4 @@ D:\My Project\QL_ThuVien\QL_ThuVien\obj\Debug\QL_ThuVien.Main_UC.QLTacGia.UC_QLT
 D:\My Project\QL_ThuVien\QL_ThuVien\obj\Debug\QL_ThuVien.Main_UC.QLTacGia.UC_TacGiaSach.resources
 D:\My Project\QL_ThuVien\QL_ThuVien\obj\Debug\QL_ThuVien.Main_UC.TrangChu.UC_TrangChu.resources
 D:\My Project\QL_ThuVien\QL_ThuVien\obj\Debug\QL_ThuVien.Main_UC.CaiDat.UC_SaoLuu_PhucHoi.resources
+D:\My Project\QL_ThuVien\QL_ThuVien\obj\Debug\QL_ThuVien.Main_UC.QLDocGia.UC_QLDocGia.resources

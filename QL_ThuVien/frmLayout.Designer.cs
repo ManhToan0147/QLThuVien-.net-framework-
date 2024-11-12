@@ -383,6 +383,7 @@
             this.btnQLDocGia.Text = "Quản lý độc giả";
             this.btnQLDocGia.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnQLDocGia.TextOffset = new System.Drawing.Point(80, 0);
+            this.btnQLDocGia.Click += new System.EventHandler(this.btnQLDocGia_Click);
             // 
             // btnQLTacGia
             // 
