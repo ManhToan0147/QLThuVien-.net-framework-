@@ -97,6 +97,12 @@
     <Compile Include="Main UC\QLDocGia\UC_QLDocGia.Designer.cs">
       <DependentUpon>UC_QLDocGia.cs</DependentUpon>
     </Compile>
+    <Compile Include="Main UC\QLMuonTra\UC_QLThuThu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Main UC\QLMuonTra\UC_QLThuThu.Designer.cs">
+      <DependentUpon>UC_QLThuThu.cs</DependentUpon>
+    </Compile>
     <Compile Include="Main UC\QLSach\UC_ChiTietSach.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -141,6 +147,12 @@
     <Compile Include="frmSignIn.Designer.cs">
       <DependentUpon>frmSignIn.cs</DependentUpon>
     </Compile>
+    <Compile Include="Ribbon\UC_QLMuonTra_Ribbon.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ribbon\UC_QLMuonTra_Ribbon.Designer.cs">
+      <DependentUpon>UC_QLMuonTra_Ribbon.cs</DependentUpon>
+    </Compile>
     <Compile Include="Ribbon\UC_QLSach_Ribbon.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -164,6 +176,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Main UC\QLDocGia\UC_QLDocGia.resx">
       <DependentUpon>UC_QLDocGia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main UC\QLMuonTra\UC_QLThuThu.resx">
+      <DependentUpon>UC_QLThuThu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main UC\QLSach\UC_ChiTietSach.resx">
       <DependentUpon>UC_ChiTietSach.cs</DependentUpon>
@@ -195,6 +210,9 @@
     </Compile>
     <EmbeddedResource Include="frmSignIn.resx">
       <DependentUpon>frmSignIn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ribbon\UC_QLMuonTra_Ribbon.resx">
+      <DependentUpon>UC_QLMuonTra_Ribbon.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Ribbon\UC_QLSach_Ribbon.resx">
       <DependentUpon>UC_QLSach_Ribbon.cs</DependentUpon>
@@ -287,6 +305,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\avatar_default.png" />
+    <None Include="Resources\caret-up.png" />
+    <None Include="Resources\caret-down.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

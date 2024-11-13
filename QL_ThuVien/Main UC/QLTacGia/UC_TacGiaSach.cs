@@ -29,14 +29,17 @@ namespace QL_ThuVien.Main_UC.QLTacGia
 
         private void cboTruong_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (dvDS == null || dvTG == null) return;
             txtSearch.Clear();
             if (cboTruong.SelectedIndex == 0)
             {
                 txtSearch.PlaceholderText = "Nhập để tìm kiếm tên đầu sách";
+                dvTG.RowFilter = null;
             }
             else
             {
                 txtSearch.PlaceholderText = "Nhập để tìm kiếm tên tác giả";
+                dvDS.RowFilter = null;
             }
         }
 
@@ -106,7 +109,7 @@ namespace QL_ThuVien.Main_UC.QLTacGia
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
-            if (cboTruong.Text == "Đầu sách")
+            if (cboTruong.SelectedIndex == 0)
             {
                 dvDS.RowFilter = $"TenDauSach like '%{txtSearch.Text}%'";
             }

@@ -1,5 +1,5 @@
-﻿using QL_ThuVien.Main_UC.QLDocGia;
-using QL_ThuVien.Main_UC.QLTacGia;
+﻿using QL_ThuVien.Main_UC.QLMuonTra;
+using QL_ThuVien.Main_UC.QLSach;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace QL_ThuVien.Ribbon
 {
-    public partial class UC_QLTacGia_Ribbon : UserControl
+    public partial class UC_QLMuonTra_Ribbon : UserControl
     {
         private void addUserControl(UserControl userControl)
         {
@@ -22,28 +22,28 @@ namespace QL_ThuVien.Ribbon
             userControl.BringToFront();
         }
 
-        public UC_QLTacGia_Ribbon()
+        public UC_QLMuonTra_Ribbon()
         {
             InitializeComponent();
         }
 
-        private void UC_QLTacGia_Ribbon_Load(object sender, EventArgs e)
+        private void UC_QLMuonTra_Ribbon_Load(object sender, EventArgs e)
         {
-            btnTacGia.Checked = true;
-            var uc = new UC_QLTacGia();
+            btnThuThu.Checked = true;
+            var uc = new UC_QLThuThu();
+            addUserControl(uc);
+
+        }
+
+        private void btnThuThu_Click(object sender, EventArgs e)
+        {
+            var uc = new UC_QLThuThu();
             addUserControl(uc);
         }
 
-        private void btnTacGia_Click_1(object sender, EventArgs e)
+        private void btnPhieuMuon_Click(object sender, EventArgs e)
         {
-            var uc = new UC_QLTacGia();
-            addUserControl(uc);
-        }
-
-        private void btnTacGiaSach_Click(object sender, EventArgs e)
-        {
-            var uc = new UC_TacGiaSach();
-            addUserControl(uc);
+            
         }
     }
 }

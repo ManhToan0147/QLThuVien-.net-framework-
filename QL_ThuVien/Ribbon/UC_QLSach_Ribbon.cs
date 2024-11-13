@@ -23,6 +23,7 @@ namespace QL_ThuVien.Ribbon
         public UC_QLSach_Ribbon()
         {
             InitializeComponent();
+            
         }
 
         private void UC_QLSach_Ribbon_Load(object sender, EventArgs e)
@@ -30,6 +31,7 @@ namespace QL_ThuVien.Ribbon
             btnChiTietSach.Checked = true;
             var uc = new UC_ChiTietSach();
             addUserControl(uc);
+            timer1.Start();
         }
 
         private void btnChiTietSach_Click(object sender, EventArgs e)
@@ -48,6 +50,42 @@ namespace QL_ThuVien.Ribbon
         {
             var uc = new UC_CuonSach();
             addUserControl(uc);
+        }
+
+        private bool isCollapsed;
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            if (isCollapsed)
+            {
+                btnDanhMuc.Image = Properties.Resources.caret_up;
+                dropDown_DanhMuc.Height += 10;
+                if (dropDown_DanhMuc.Size == dropDown_DanhMuc.MaximumSize)
+                {
+                    timer1.Stop();
+                    isCollapsed = false;
+                }
+            }
+            else
+            {
+                btnDanhMuc.Image = Properties.Resources.caret_down;
+                dropDown_DanhMuc.Height -= 10;
+                if (dropDown_DanhMuc.Size == dropDown_DanhMuc.MinimumSize)
+                {
+                    timer1.Stop();
+                    isCollapsed = true;
+                }
+            }
+        }
+
+        private void btnDanhMuc_Click(object sender, EventArgs e)
+        {
+            timer1.Start();
+        }
+
+        private void panelContainer_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

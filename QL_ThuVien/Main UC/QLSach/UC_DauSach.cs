@@ -79,12 +79,14 @@ namespace QL_ThuVien.Main_UC.QLSach
             dgvDSDauSach.DataSource = dv;
         }
 
+        string selectedMaDauSach;
         private void NapCT()
         {
             if (dgvDSDauSach.CurrentRow != null && dgvDSDauSach.CurrentRow.Index >= 0)
             {
                 int i = dgvDSDauSach.CurrentRow.Index;
-                txtMaDauSach.Text = dgvDSDauSach.Rows[i].Cells["MaDauSach"].Value.ToString();
+                selectedMaDauSach = dgvDSDauSach.Rows[i].Cells["MaDauSach"].Value.ToString();
+                txtMaDauSach.Text = selectedMaDauSach;
                 txtMaDauSach.Enabled = string.IsNullOrEmpty(txtMaDauSach.Text);
 
                 txtTenDauSach.Text = dgvDSDauSach.Rows[i].Cells["TenDauSach"].Value.ToString();
@@ -194,36 +196,80 @@ namespace QL_ThuVien.Main_UC.QLSach
 
         private void btnSua_Click(object sender, EventArgs e)
         {
-            if (addNewFlag == false)
+            //Them nhiều bản ghi
+            //if (addNewFlag == false)
+            //{
+            //    int n = dgvDSDauSach.RowCount;
+            //    for (int i = 0; i < n - 1; i++)
+            //    {
+            //        string maDauSach = dgvDSDauSach.Rows[i].Cells["MaDauSach"].Value.ToString();
+            //        string tenDauSach = dgvDSDauSach.Rows[i].Cells["TenDauSach"].Value.ToString();
+            //        string namXB = dgvDSDauSach.Rows[i].Cells["NamXuatBan"].Value.ToString();
+            //        string giaBia = dgvDSDauSach.Rows[i].Cells["GiaBia"].Value.ToString();
+            //        string soTrang = dgvDSDauSach.Rows[i].Cells["SoTrang"].Value.ToString();
+
+            //        string maLoaiSach = dgvDSDauSach.Rows[i].Cells["MaLoaiSach"].Value.ToString();
+            //        string maChuDe = dgvDSDauSach.Rows[i].Cells["MaChuDe"].Value.ToString();
+            //        string maNXB = dgvDSDauSach.Rows[i].Cells["MaNXB"].Value.ToString();
+            //        string maKho = dgvDSDauSach.Rows[i].Cells["MaKho"].Value.ToString();
+
+            //        string sql = $"UPDATE DauSach SET " +
+            //            $"TenDauSach = N'{tenDauSach}', " +
+            //            $"NamXuatBan = {namXB}, " +
+            //            $"GiaBia = {giaBia}, " +
+            //            $"SoTrang = {soTrang}, " +
+            //            $"MaLoaiSach = '{maLoaiSach}', " +
+            //            $"MaChuDe = '{maChuDe}', " +
+            //            $"MaNXB = '{maNXB}', " +
+            //            $"MaKho = '{maKho}' " +
+            //            $"WHERE MaDauSach = '{maDauSach}'";
+            //        DoSQL(sql);
+            //    }
+            //    MessageBox.Show($"Đã cập nhật", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //}
+            
+            //Sua tren GroupBox
+
+            if (string.IsNullOrEmpty(selectedMaDauSach))
             {
-                int n = dgvDSDauSach.RowCount;
-                for (int i = 0; i < n - 1; i++)
-                {
-                    string maDauSach = dgvDSDauSach.Rows[i].Cells["MaDauSach"].Value.ToString();
-                    string tenDauSach = dgvDSDauSach.Rows[i].Cells["TenDauSach"].Value.ToString();
-                    string namXB = dgvDSDauSach.Rows[i].Cells["NamXuatBan"].Value.ToString();
-                    string giaBia = dgvDSDauSach.Rows[i].Cells["GiaBia"].Value.ToString();
-                    string soTrang = dgvDSDauSach.Rows[i].Cells["SoTrang"].Value.ToString();
-
-                    string maLoaiSach = dgvDSDauSach.Rows[i].Cells["MaLoaiSach"].Value.ToString();
-                    string maChuDe = dgvDSDauSach.Rows[i].Cells["MaChuDe"].Value.ToString();
-                    string maNXB = dgvDSDauSach.Rows[i].Cells["MaNXB"].Value.ToString();
-                    string maKho = dgvDSDauSach.Rows[i].Cells["MaKho"].Value.ToString();
-
-                    string sql = $"UPDATE DauSach SET " +
-                        $"TenDauSach = N'{tenDauSach}', " +
-                        $"NamXuatBan = {namXB}, " +
-                        $"GiaBia = {giaBia}, " +
-                        $"SoTrang = {soTrang}, " +
-                        $"MaLoaiSach = '{maLoaiSach}', " +
-                        $"MaChuDe = '{maChuDe}', " +
-                        $"MaNXB = '{maNXB}', " +
-                        $"MaKho = '{maKho}' " +
-                        $"WHERE MaDauSach = '{maDauSach}'";
-                    DoSQL(sql);
-                }
-                MessageBox.Show($"Đã cập nhật", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Chưa chọn bản ghi để sửa", "Thông báo", 
+                    MessageBoxButtons.OK, MessageBoxIcon.Information); 
+                return;
             }
+
+            using (con = new SqlConnection(strCon))
+            {
+                con.Open();
+                string sql = $"UPDATE DauSach SET " +
+                        $"TenDauSach = N'{txtTenDauSach.Text.Trim()}', " +
+                        $"NamXuatBan = {txtNamXB.Text.Trim()}, " +
+                        $"GiaBia = {txtGiaBia.Text.Trim()}, " +
+                        $"SoTrang = {txtSoTrang.Text.Trim()}, " +
+                        $"MaLoaiSach = '{cboMaLoaiSach.SelectedValue}', " +
+                        $"MaChuDe = '{cboMaChuDe.SelectedValue}', " +
+                        $"MaNXB = '{cboMaNXB.SelectedValue}', " +
+                        $"MaKho = '{cboMaKho.SelectedValue}' " +
+                        $"WHERE MaDauSach = '{selectedMaDauSach}'";
+                cmd = new SqlCommand(sql, con);
+                try
+                {
+                    int kq = cmd.ExecuteNonQuery();
+                    if (kq > 0)
+                    {
+                        MessageBox.Show("Đã cập nhật", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Cập nhật thất bại", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Lỗi khi cập nhật " + ex.Message);
+                }
+            }
+
+
             ShowDauSach();
         }
     }

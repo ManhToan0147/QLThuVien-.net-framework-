@@ -44,6 +44,7 @@ namespace QL_ThuVien.Main_UC.QLDocGia
                 dgvDocGia.DataSource = dv;
                 dgvDocGia.Columns["HinhAnh"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
+                //DB chưa có ảnh thì để ảnh mặc định
                 foreach (DataGridViewRow row in dgvDocGia.Rows)
                 {
                     if (row.Cells["HinhAnh"].Value == DBNull.Value)
@@ -57,6 +58,7 @@ namespace QL_ThuVien.Main_UC.QLDocGia
 
         private void cboTruong_SelectedIndexChanged(object sender, EventArgs e)
         {
+            txtSearch.Clear();
             if (cboTruong.SelectedIndex == 0)
             {
                 txtSearch.PlaceholderText = "Nhập tên độc giả để tìm kiếm";

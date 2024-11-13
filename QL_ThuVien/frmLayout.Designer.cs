@@ -354,6 +354,7 @@
             this.btnQLMuonTra.Text = "Quản lý mượn trả";
             this.btnQLMuonTra.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnQLMuonTra.TextOffset = new System.Drawing.Point(80, 0);
+            this.btnQLMuonTra.Click += new System.EventHandler(this.btnQLMuonTra_Click);
             // 
             // btnQLDocGia
             // 

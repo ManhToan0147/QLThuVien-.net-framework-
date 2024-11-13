@@ -46,10 +46,11 @@
             this.panelRibbon.Location = new System.Drawing.Point(0, 0);
             this.panelRibbon.Name = "panelRibbon";
             this.panelRibbon.Size = new System.Drawing.Size(2035, 90);
-            this.panelRibbon.TabIndex = 1;
+            this.panelRibbon.TabIndex = 2;
             // 
             // btnTacGiaSach
             // 
+            this.btnTacGiaSach.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             this.btnTacGiaSach.CheckedState.FillColor = System.Drawing.Color.White;
             this.btnTacGiaSach.CustomBorderThickness = new System.Windows.Forms.Padding(0, 0, 0, 5);
             this.btnTacGiaSach.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
@@ -71,6 +72,7 @@
             // 
             // btnTacGia
             // 
+            this.btnTacGia.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             this.btnTacGia.CheckedState.FillColor = System.Drawing.Color.White;
             this.btnTacGia.CustomBorderThickness = new System.Windows.Forms.Padding(0, 0, 0, 5);
             this.btnTacGia.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
@@ -88,22 +90,19 @@
             this.btnTacGia.Size = new System.Drawing.Size(247, 90);
             this.btnTacGia.TabIndex = 0;
             this.btnTacGia.Text = "Tác giả";
-            this.btnTacGia.Click += new System.EventHandler(this.btnTacGia_Click);
+            this.btnTacGia.Click += new System.EventHandler(this.btnTacGia_Click_1);
             // 
             // panelContainer
             // 
             this.panelContainer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelContainer.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panelContainer.ForeColor = System.Drawing.Color.Black;
             this.panelContainer.Location = new System.Drawing.Point(0, 90);
             this.panelContainer.Name = "panelContainer";
             this.panelContainer.Size = new System.Drawing.Size(2035, 1289);
-            this.panelContainer.TabIndex = 2;
+            this.panelContainer.TabIndex = 3;
             // 
             // UC_QLTacGia_Ribbon
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.Controls.Add(this.panelContainer);
             this.Controls.Add(this.panelRibbon);
             this.Name = "UC_QLTacGia_Ribbon";

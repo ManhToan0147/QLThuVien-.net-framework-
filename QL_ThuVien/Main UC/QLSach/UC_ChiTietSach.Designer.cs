@@ -30,8 +30,9 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelSearching = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -43,8 +44,11 @@
             this.cboChuDe = new Guna.UI2.WinForms.Guna2ComboBox();
             this.cboTacGia = new Guna.UI2.WinForms.Guna2ComboBox();
             this.cboLoaiSach = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.txtSearch = new Guna.UI2.WinForms.Guna2TextBox();
             this.panelContainer = new System.Windows.Forms.Panel();
             this.dgvChiTietDauSach = new System.Windows.Forms.DataGridView();
+            this.btnXemChiTiet = new Guna.UI2.WinForms.Guna2Button();
+            this.lblChiTietDS = new System.Windows.Forms.Label();
             this.MaDauSach = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenDauSach = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenTacGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -56,9 +60,6 @@
             this.TenChuDe = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenNXB = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenKho = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnXemChiTiet = new Guna.UI2.WinForms.Guna2Button();
-            this.lblChiTietDS = new System.Windows.Forms.Label();
-            this.txtSearch = new Guna.UI2.WinForms.Guna2TextBox();
             this.panelSearching.SuspendLayout();
             this.panelContainer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvChiTietDauSach)).BeginInit();
@@ -217,6 +218,34 @@
             this.cboLoaiSach.Size = new System.Drawing.Size(219, 46);
             this.cboLoaiSach.TabIndex = 1;
             // 
+            // txtSearch
+            // 
+            this.txtSearch.AutoRoundedCorners = true;
+            this.txtSearch.BorderRadius = 35;
+            this.txtSearch.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtSearch.DefaultText = "";
+            this.txtSearch.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtSearch.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtSearch.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtSearch.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtSearch.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtSearch.Font = new System.Drawing.Font("Segoe UI", 9.857143F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearch.ForeColor = System.Drawing.Color.DimGray;
+            this.txtSearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtSearch.IconLeft = global::QL_ThuVien.Properties.Resources.search;
+            this.txtSearch.IconLeftOffset = new System.Drawing.Point(20, 0);
+            this.txtSearch.IconLeftSize = new System.Drawing.Size(25, 25);
+            this.txtSearch.Location = new System.Drawing.Point(240, 42);
+            this.txtSearch.Margin = new System.Windows.Forms.Padding(6);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.PasswordChar = '\0';
+            this.txtSearch.PlaceholderForeColor = System.Drawing.Color.DimGray;
+            this.txtSearch.PlaceholderText = "Nhập để tìm kiếm đầu sách";
+            this.txtSearch.SelectedText = "";
+            this.txtSearch.Size = new System.Drawing.Size(1447, 72);
+            this.txtSearch.TabIndex = 0;
+            this.txtSearch.TextOffset = new System.Drawing.Point(10, 0);
+            // 
             // panelContainer
             // 
             this.panelContainer.Controls.Add(this.dgvChiTietDauSach);
@@ -227,6 +256,7 @@
             // 
             // dgvChiTietDauSach
             // 
+            this.dgvChiTietDauSach.AllowUserToAddRows = false;
             this.dgvChiTietDauSach.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -259,31 +289,65 @@
             this.TenChuDe,
             this.TenNXB,
             this.TenKho});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(76)))), ((int)(((byte)(170)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvChiTietDauSach.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(76)))), ((int)(((byte)(170)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvChiTietDauSach.DefaultCellStyle = dataGridViewCellStyle4;
             this.dgvChiTietDauSach.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvChiTietDauSach.EnableHeadersVisualStyles = false;
             this.dgvChiTietDauSach.GridColor = System.Drawing.Color.Black;
             this.dgvChiTietDauSach.Location = new System.Drawing.Point(0, 0);
             this.dgvChiTietDauSach.Name = "dgvChiTietDauSach";
             this.dgvChiTietDauSach.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvChiTietDauSach.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvChiTietDauSach.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvChiTietDauSach.RowHeadersWidth = 72;
             this.dgvChiTietDauSach.RowTemplate.Height = 50;
             this.dgvChiTietDauSach.Size = new System.Drawing.Size(1927, 657);
             this.dgvChiTietDauSach.TabIndex = 0;
+            // 
+            // btnXemChiTiet
+            // 
+            this.btnXemChiTiet.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnXemChiTiet.BorderColor = System.Drawing.Color.Transparent;
+            this.btnXemChiTiet.BorderThickness = 2;
+            this.btnXemChiTiet.CheckedState.FillColor = System.Drawing.Color.White;
+            this.btnXemChiTiet.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnXemChiTiet.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnXemChiTiet.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnXemChiTiet.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnXemChiTiet.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(232)))));
+            this.btnXemChiTiet.Font = new System.Drawing.Font("Segoe UI", 9.857143F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXemChiTiet.ForeColor = System.Drawing.Color.White;
+            this.btnXemChiTiet.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(232)))));
+            this.btnXemChiTiet.HoverState.FillColor = System.Drawing.Color.White;
+            this.btnXemChiTiet.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(232)))));
+            this.btnXemChiTiet.Location = new System.Drawing.Point(409, 1133);
+            this.btnXemChiTiet.Name = "btnXemChiTiet";
+            this.btnXemChiTiet.Size = new System.Drawing.Size(1216, 79);
+            this.btnXemChiTiet.TabIndex = 3;
+            this.btnXemChiTiet.Text = "Xem chi tiết";
+            this.btnXemChiTiet.Click += new System.EventHandler(this.btnXemChiTiet_Click);
+            // 
+            // lblChiTietDS
+            // 
+            this.lblChiTietDS.AutoSize = true;
+            this.lblChiTietDS.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblChiTietDS.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(76)))), ((int)(((byte)(170)))));
+            this.lblChiTietDS.Location = new System.Drawing.Point(740, 33);
+            this.lblChiTietDS.Name = "lblChiTietDS";
+            this.lblChiTietDS.Size = new System.Drawing.Size(555, 74);
+            this.lblChiTietDS.TabIndex = 4;
+            this.lblChiTietDS.Text = "CHI TIẾT ĐẦU SÁCH";
             // 
             // MaDauSach
             // 
@@ -316,6 +380,9 @@
             // GiaBia
             // 
             this.GiaBia.DataPropertyName = "GiaBia";
+            dataGridViewCellStyle3.Format = "#,###.##";
+            dataGridViewCellStyle3.NullValue = null;
+            this.GiaBia.DefaultCellStyle = dataGridViewCellStyle3;
             this.GiaBia.HeaderText = "Giá bìa";
             this.GiaBia.MinimumWidth = 9;
             this.GiaBia.Name = "GiaBia";
@@ -362,68 +429,6 @@
             this.TenKho.MinimumWidth = 9;
             this.TenKho.Name = "TenKho";
             // 
-            // btnXemChiTiet
-            // 
-            this.btnXemChiTiet.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnXemChiTiet.BorderColor = System.Drawing.Color.Transparent;
-            this.btnXemChiTiet.BorderThickness = 2;
-            this.btnXemChiTiet.CheckedState.FillColor = System.Drawing.Color.White;
-            this.btnXemChiTiet.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnXemChiTiet.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnXemChiTiet.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnXemChiTiet.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnXemChiTiet.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(232)))));
-            this.btnXemChiTiet.Font = new System.Drawing.Font("Segoe UI", 9.857143F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXemChiTiet.ForeColor = System.Drawing.Color.White;
-            this.btnXemChiTiet.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(232)))));
-            this.btnXemChiTiet.HoverState.FillColor = System.Drawing.Color.White;
-            this.btnXemChiTiet.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(232)))));
-            this.btnXemChiTiet.Location = new System.Drawing.Point(409, 1133);
-            this.btnXemChiTiet.Name = "btnXemChiTiet";
-            this.btnXemChiTiet.Size = new System.Drawing.Size(1216, 79);
-            this.btnXemChiTiet.TabIndex = 3;
-            this.btnXemChiTiet.Text = "Xem chi tiết";
-            this.btnXemChiTiet.Click += new System.EventHandler(this.btnXemChiTiet_Click);
-            // 
-            // lblChiTietDS
-            // 
-            this.lblChiTietDS.AutoSize = true;
-            this.lblChiTietDS.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblChiTietDS.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(76)))), ((int)(((byte)(170)))));
-            this.lblChiTietDS.Location = new System.Drawing.Point(740, 23);
-            this.lblChiTietDS.Name = "lblChiTietDS";
-            this.lblChiTietDS.Size = new System.Drawing.Size(555, 74);
-            this.lblChiTietDS.TabIndex = 4;
-            this.lblChiTietDS.Text = "CHI TIẾT ĐẦU SÁCH";
-            // 
-            // txtSearch
-            // 
-            this.txtSearch.AutoRoundedCorners = true;
-            this.txtSearch.BorderRadius = 35;
-            this.txtSearch.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtSearch.DefaultText = "";
-            this.txtSearch.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtSearch.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtSearch.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtSearch.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtSearch.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtSearch.Font = new System.Drawing.Font("Segoe UI", 9.857143F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearch.ForeColor = System.Drawing.Color.DimGray;
-            this.txtSearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtSearch.IconLeft = global::QL_ThuVien.Properties.Resources.search;
-            this.txtSearch.IconLeftOffset = new System.Drawing.Point(20, 0);
-            this.txtSearch.IconLeftSize = new System.Drawing.Size(25, 25);
-            this.txtSearch.Location = new System.Drawing.Point(240, 42);
-            this.txtSearch.Margin = new System.Windows.Forms.Padding(6);
-            this.txtSearch.Name = "txtSearch";
-            this.txtSearch.PasswordChar = '\0';
-            this.txtSearch.PlaceholderForeColor = System.Drawing.Color.DimGray;
-            this.txtSearch.PlaceholderText = "Nhập để tìm kiếm đầu sách";
-            this.txtSearch.SelectedText = "";
-            this.txtSearch.Size = new System.Drawing.Size(1447, 72);
-            this.txtSearch.TabIndex = 0;
-            this.txtSearch.TextOffset = new System.Drawing.Point(10, 0);
-            // 
             // UC_ChiTietSach
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 30F);
@@ -452,17 +457,6 @@
         private System.Windows.Forms.Panel panelContainer;
         private System.Windows.Forms.DataGridView dgvChiTietDauSach;
         private Guna.UI2.WinForms.Guna2Button btnXemChiTiet;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MaDauSach;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TenDauSach;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TenTacGia;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NamXuatBan;
-        private System.Windows.Forms.DataGridViewTextBoxColumn GiaBia;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SoTrang;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SoLuong;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TenLoaiSach;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TenChuDe;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TenNXB;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TenKho;
         private Guna.UI2.WinForms.Guna2DataGridViewStyler guna2DataGridViewStyler1;
         private Guna.UI2.WinForms.Guna2TextBox txtSearch;
         private Guna.UI2.WinForms.Guna2ComboBox cboKho;
@@ -476,5 +470,16 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblChiTietDS;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaDauSach;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TenDauSach;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TenTacGia;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NamXuatBan;
+        private System.Windows.Forms.DataGridViewTextBoxColumn GiaBia;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SoTrang;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SoLuong;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TenLoaiSach;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TenChuDe;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TenNXB;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TenKho;
     }
 }

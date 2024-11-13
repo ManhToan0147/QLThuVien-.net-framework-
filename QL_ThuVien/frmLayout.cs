@@ -75,5 +75,11 @@ namespace QL_ThuVien
             var uc = new UC_QLDocGia();
             addUserControl(uc);
         }
+
+        private void btnQLMuonTra_Click(object sender, EventArgs e)
+        {
+            var uc = new UC_QLMuonTra_Ribbon();
+            addUserControl(uc);
+        }
     }
 }
