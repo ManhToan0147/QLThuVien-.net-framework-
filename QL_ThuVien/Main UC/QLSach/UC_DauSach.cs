@@ -268,8 +268,6 @@ namespace QL_ThuVien.Main_UC.QLSach
                     MessageBox.Show("Lỗi khi cập nhật " + ex.Message);
                 }
             }
-
-
             ShowDauSach();
         }
     }

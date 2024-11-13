@@ -83,9 +83,28 @@ namespace QL_ThuVien.Ribbon
             timer1.Start();
         }
 
-        private void panelContainer_Paint(object sender, PaintEventArgs e)
+        private void btnLoaiSach_Click(object sender, EventArgs e)
         {
+            var f = new frmLoaiSach();
+            f.ShowDialog();
+        }
 
+        private void btnChuDe_Click(object sender, EventArgs e)
+        {
+            var f = new frmChuDe();
+            f.ShowDialog();
+        }
+
+        private void btnNXB_Click(object sender, EventArgs e)
+        {
+            var f = new frmNXB();
+            f.ShowDialog();
+        }
+
+        private void btnKhoSach_Click(object sender, EventArgs e)
+        {
+            var f= new frmKhoSach();
+            f.ShowDialog();
         }
     }
 }

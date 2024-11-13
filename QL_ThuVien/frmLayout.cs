@@ -42,8 +42,14 @@ namespace QL_ThuVien
 
         private void btnSignIn_Out_Click(object sender, EventArgs e)
         {
-            var f = new frmSignIn();
-            f.ShowDialog();
+            DialogResult rs = MessageBox.Show("Bạn có muốn đăng xuất khỏi hệ thống không", "Xác nhận",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (rs == DialogResult.Yes)
+            {
+                this.Close();
+                var f = new frmSignIn();
+                f.ShowDialog();
+            }
         }
 
         private void btnQLSach_Click(object sender, EventArgs e)

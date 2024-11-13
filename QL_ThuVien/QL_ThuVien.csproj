@@ -79,11 +79,41 @@
     <Compile Include="ChiTietSach.Designer.cs">
       <DependentUpon>ChiTietSach.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmChuDe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmChuDe.Designer.cs">
+      <DependentUpon>frmChuDe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmKhoSach.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmKhoSach.Designer.cs">
+      <DependentUpon>frmKhoSach.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmLayout.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmLayout.Designer.cs">
       <DependentUpon>frmLayout.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmLoaiSach.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLoaiSach.Designer.cs">
+      <DependentUpon>frmLoaiSach.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmNXB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmNXB.Designer.cs">
+      <DependentUpon>frmNXB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmThuThu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmThuThu.Designer.cs">
+      <DependentUpon>frmThuThu.cs</DependentUpon>
     </Compile>
     <Compile Include="Main UC\CaiDat\UC_SaoLuu&amp;PhucHoi.cs">
       <SubType>UserControl</SubType>
@@ -168,8 +198,23 @@
     <EmbeddedResource Include="ChiTietSach.resx">
       <DependentUpon>ChiTietSach.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmChuDe.resx">
+      <DependentUpon>frmChuDe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmKhoSach.resx">
+      <DependentUpon>frmKhoSach.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmLayout.resx">
       <DependentUpon>frmLayout.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLoaiSach.resx">
+      <DependentUpon>frmLoaiSach.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmNXB.resx">
+      <DependentUpon>frmNXB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmThuThu.resx">
+      <DependentUpon>frmThuThu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main UC\CaiDat\UC_SaoLuu&amp;PhucHoi.resx">
       <DependentUpon>UC_SaoLuu&amp;PhucHoi.cs</DependentUpon>
@@ -305,6 +350,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\avatar_default.png" />
+    <None Include="Resources\eye %281%29.png" />
+    <None Include="Resources\eye-crossed %281%29.png" />
     <None Include="Resources\caret-up.png" />
     <None Include="Resources\caret-down.png" />
   </ItemGroup>

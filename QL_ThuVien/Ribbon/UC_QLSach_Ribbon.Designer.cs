@@ -30,17 +30,17 @@
         {
             this.components = new System.ComponentModel.Container();
             this.panelRibbon = new System.Windows.Forms.Panel();
+            this.btnCuonSach = new Guna.UI2.WinForms.Guna2Button();
+            this.btnDauSach = new Guna.UI2.WinForms.Guna2Button();
+            this.btnChiTietSach = new Guna.UI2.WinForms.Guna2Button();
             this.dropDown_DanhMuc = new System.Windows.Forms.Panel();
             this.btnKhoSach = new Guna.UI2.WinForms.Guna2Button();
             this.btnNXB = new Guna.UI2.WinForms.Guna2Button();
             this.btnChuDe = new Guna.UI2.WinForms.Guna2Button();
-            this.btnCuonSach = new Guna.UI2.WinForms.Guna2Button();
-            this.btnDauSach = new Guna.UI2.WinForms.Guna2Button();
-            this.btnChiTietSach = new Guna.UI2.WinForms.Guna2Button();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.panelContainer = new System.Windows.Forms.Panel();
             this.btnLoaiSach = new Guna.UI2.WinForms.Guna2Button();
             this.btnDanhMuc = new Guna.UI2.WinForms.Guna2Button();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.panelContainer = new System.Windows.Forms.Panel();
             this.panelRibbon.SuspendLayout();
             this.dropDown_DanhMuc.SuspendLayout();
             this.SuspendLayout();
@@ -58,98 +58,6 @@
             this.panelRibbon.Name = "panelRibbon";
             this.panelRibbon.Size = new System.Drawing.Size(2035, 90);
             this.panelRibbon.TabIndex = 0;
-            // 
-            // dropDown_DanhMuc
-            // 
-            this.dropDown_DanhMuc.Controls.Add(this.btnKhoSach);
-            this.dropDown_DanhMuc.Controls.Add(this.btnNXB);
-            this.dropDown_DanhMuc.Controls.Add(this.btnChuDe);
-            this.dropDown_DanhMuc.Controls.Add(this.btnLoaiSach);
-            this.dropDown_DanhMuc.Controls.Add(this.btnDanhMuc);
-            this.dropDown_DanhMuc.Location = new System.Drawing.Point(802, 0);
-            this.dropDown_DanhMuc.MaximumSize = new System.Drawing.Size(247, 404);
-            this.dropDown_DanhMuc.MinimumSize = new System.Drawing.Size(247, 90);
-            this.dropDown_DanhMuc.Name = "dropDown_DanhMuc";
-            this.dropDown_DanhMuc.Size = new System.Drawing.Size(247, 90);
-            this.dropDown_DanhMuc.TabIndex = 2;
-            // 
-            // btnKhoSach
-            // 
-            this.btnKhoSach.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            this.btnKhoSach.CheckedState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(76)))), ((int)(((byte)(170)))));
-            this.btnKhoSach.CheckedState.FillColor = System.Drawing.Color.White;
-            this.btnKhoSach.CustomBorderThickness = new System.Windows.Forms.Padding(0, 3, 0, 3);
-            this.btnKhoSach.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnKhoSach.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnKhoSach.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnKhoSach.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnKhoSach.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnKhoSach.FillColor = System.Drawing.Color.DodgerBlue;
-            this.btnKhoSach.Font = new System.Drawing.Font("Segoe UI", 9.857143F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnKhoSach.ForeColor = System.Drawing.Color.White;
-            this.btnKhoSach.HoverState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(76)))), ((int)(((byte)(170)))));
-            this.btnKhoSach.HoverState.FillColor = System.Drawing.Color.White;
-            this.btnKhoSach.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(76)))), ((int)(((byte)(170)))));
-            this.btnKhoSach.Location = new System.Drawing.Point(0, 324);
-            this.btnKhoSach.MaximumSize = new System.Drawing.Size(247, 90);
-            this.btnKhoSach.Name = "btnKhoSach";
-            this.btnKhoSach.Size = new System.Drawing.Size(247, 78);
-            this.btnKhoSach.TabIndex = 5;
-            this.btnKhoSach.Text = "Kho sách";
-            this.btnKhoSach.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnKhoSach.TextOffset = new System.Drawing.Point(20, 0);
-            // 
-            // btnNXB
-            // 
-            this.btnNXB.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            this.btnNXB.CheckedState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(76)))), ((int)(((byte)(170)))));
-            this.btnNXB.CheckedState.FillColor = System.Drawing.Color.White;
-            this.btnNXB.CustomBorderThickness = new System.Windows.Forms.Padding(0, 3, 0, 3);
-            this.btnNXB.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnNXB.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnNXB.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnNXB.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnNXB.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnNXB.FillColor = System.Drawing.Color.DodgerBlue;
-            this.btnNXB.Font = new System.Drawing.Font("Segoe UI", 9.857143F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNXB.ForeColor = System.Drawing.Color.White;
-            this.btnNXB.HoverState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(76)))), ((int)(((byte)(170)))));
-            this.btnNXB.HoverState.FillColor = System.Drawing.Color.White;
-            this.btnNXB.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(76)))), ((int)(((byte)(170)))));
-            this.btnNXB.Location = new System.Drawing.Point(0, 246);
-            this.btnNXB.MaximumSize = new System.Drawing.Size(247, 90);
-            this.btnNXB.Name = "btnNXB";
-            this.btnNXB.Size = new System.Drawing.Size(247, 78);
-            this.btnNXB.TabIndex = 4;
-            this.btnNXB.Text = "NXB";
-            this.btnNXB.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnNXB.TextOffset = new System.Drawing.Point(20, 0);
-            // 
-            // btnChuDe
-            // 
-            this.btnChuDe.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            this.btnChuDe.CheckedState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(76)))), ((int)(((byte)(170)))));
-            this.btnChuDe.CheckedState.FillColor = System.Drawing.Color.White;
-            this.btnChuDe.CustomBorderThickness = new System.Windows.Forms.Padding(0, 3, 0, 3);
-            this.btnChuDe.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnChuDe.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnChuDe.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnChuDe.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnChuDe.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnChuDe.FillColor = System.Drawing.Color.DodgerBlue;
-            this.btnChuDe.Font = new System.Drawing.Font("Segoe UI", 9.857143F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnChuDe.ForeColor = System.Drawing.Color.White;
-            this.btnChuDe.HoverState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(76)))), ((int)(((byte)(170)))));
-            this.btnChuDe.HoverState.FillColor = System.Drawing.Color.White;
-            this.btnChuDe.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(76)))), ((int)(((byte)(170)))));
-            this.btnChuDe.Location = new System.Drawing.Point(0, 168);
-            this.btnChuDe.MaximumSize = new System.Drawing.Size(247, 90);
-            this.btnChuDe.Name = "btnChuDe";
-            this.btnChuDe.Size = new System.Drawing.Size(247, 78);
-            this.btnChuDe.TabIndex = 3;
-            this.btnChuDe.Text = "Chủ đề";
-            this.btnChuDe.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnChuDe.TextOffset = new System.Drawing.Point(20, 0);
             // 
             // btnCuonSach
             // 
@@ -220,18 +128,100 @@
             this.btnChiTietSach.Text = "Chi tiết sách";
             this.btnChiTietSach.Click += new System.EventHandler(this.btnChiTietSach_Click);
             // 
-            // timer1
+            // dropDown_DanhMuc
             // 
-            this.timer1.Interval = 15;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            this.dropDown_DanhMuc.Controls.Add(this.btnKhoSach);
+            this.dropDown_DanhMuc.Controls.Add(this.btnNXB);
+            this.dropDown_DanhMuc.Controls.Add(this.btnChuDe);
+            this.dropDown_DanhMuc.Controls.Add(this.btnLoaiSach);
+            this.dropDown_DanhMuc.Controls.Add(this.btnDanhMuc);
+            this.dropDown_DanhMuc.Location = new System.Drawing.Point(802, 0);
+            this.dropDown_DanhMuc.MaximumSize = new System.Drawing.Size(247, 404);
+            this.dropDown_DanhMuc.MinimumSize = new System.Drawing.Size(247, 90);
+            this.dropDown_DanhMuc.Name = "dropDown_DanhMuc";
+            this.dropDown_DanhMuc.Size = new System.Drawing.Size(247, 90);
+            this.dropDown_DanhMuc.TabIndex = 2;
             // 
-            // panelContainer
+            // btnKhoSach
             // 
-            this.panelContainer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelContainer.Location = new System.Drawing.Point(0, 90);
-            this.panelContainer.Name = "panelContainer";
-            this.panelContainer.Size = new System.Drawing.Size(2035, 1289);
-            this.panelContainer.TabIndex = 1;
+            this.btnKhoSach.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.btnKhoSach.CheckedState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(76)))), ((int)(((byte)(170)))));
+            this.btnKhoSach.CheckedState.FillColor = System.Drawing.Color.White;
+            this.btnKhoSach.CustomBorderThickness = new System.Windows.Forms.Padding(0, 3, 0, 3);
+            this.btnKhoSach.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnKhoSach.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnKhoSach.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnKhoSach.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnKhoSach.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnKhoSach.FillColor = System.Drawing.Color.DodgerBlue;
+            this.btnKhoSach.Font = new System.Drawing.Font("Segoe UI", 9.857143F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnKhoSach.ForeColor = System.Drawing.Color.White;
+            this.btnKhoSach.HoverState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(76)))), ((int)(((byte)(170)))));
+            this.btnKhoSach.HoverState.FillColor = System.Drawing.Color.White;
+            this.btnKhoSach.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(76)))), ((int)(((byte)(170)))));
+            this.btnKhoSach.Location = new System.Drawing.Point(0, 324);
+            this.btnKhoSach.MaximumSize = new System.Drawing.Size(247, 90);
+            this.btnKhoSach.Name = "btnKhoSach";
+            this.btnKhoSach.Size = new System.Drawing.Size(247, 78);
+            this.btnKhoSach.TabIndex = 5;
+            this.btnKhoSach.Text = "Kho sách";
+            this.btnKhoSach.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnKhoSach.TextOffset = new System.Drawing.Point(20, 0);
+            this.btnKhoSach.Click += new System.EventHandler(this.btnKhoSach_Click);
+            // 
+            // btnNXB
+            // 
+            this.btnNXB.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.btnNXB.CheckedState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(76)))), ((int)(((byte)(170)))));
+            this.btnNXB.CheckedState.FillColor = System.Drawing.Color.White;
+            this.btnNXB.CustomBorderThickness = new System.Windows.Forms.Padding(0, 3, 0, 3);
+            this.btnNXB.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnNXB.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnNXB.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnNXB.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnNXB.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnNXB.FillColor = System.Drawing.Color.DodgerBlue;
+            this.btnNXB.Font = new System.Drawing.Font("Segoe UI", 9.857143F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNXB.ForeColor = System.Drawing.Color.White;
+            this.btnNXB.HoverState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(76)))), ((int)(((byte)(170)))));
+            this.btnNXB.HoverState.FillColor = System.Drawing.Color.White;
+            this.btnNXB.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(76)))), ((int)(((byte)(170)))));
+            this.btnNXB.Location = new System.Drawing.Point(0, 246);
+            this.btnNXB.MaximumSize = new System.Drawing.Size(247, 90);
+            this.btnNXB.Name = "btnNXB";
+            this.btnNXB.Size = new System.Drawing.Size(247, 78);
+            this.btnNXB.TabIndex = 4;
+            this.btnNXB.Text = "NXB";
+            this.btnNXB.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnNXB.TextOffset = new System.Drawing.Point(20, 0);
+            this.btnNXB.Click += new System.EventHandler(this.btnNXB_Click);
+            // 
+            // btnChuDe
+            // 
+            this.btnChuDe.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.btnChuDe.CheckedState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(76)))), ((int)(((byte)(170)))));
+            this.btnChuDe.CheckedState.FillColor = System.Drawing.Color.White;
+            this.btnChuDe.CustomBorderThickness = new System.Windows.Forms.Padding(0, 3, 0, 3);
+            this.btnChuDe.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnChuDe.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnChuDe.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnChuDe.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnChuDe.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnChuDe.FillColor = System.Drawing.Color.DodgerBlue;
+            this.btnChuDe.Font = new System.Drawing.Font("Segoe UI", 9.857143F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnChuDe.ForeColor = System.Drawing.Color.White;
+            this.btnChuDe.HoverState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(76)))), ((int)(((byte)(170)))));
+            this.btnChuDe.HoverState.FillColor = System.Drawing.Color.White;
+            this.btnChuDe.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(76)))), ((int)(((byte)(170)))));
+            this.btnChuDe.Location = new System.Drawing.Point(0, 168);
+            this.btnChuDe.MaximumSize = new System.Drawing.Size(247, 90);
+            this.btnChuDe.Name = "btnChuDe";
+            this.btnChuDe.Size = new System.Drawing.Size(247, 78);
+            this.btnChuDe.TabIndex = 3;
+            this.btnChuDe.Text = "Chủ đề";
+            this.btnChuDe.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnChuDe.TextOffset = new System.Drawing.Point(20, 0);
+            this.btnChuDe.Click += new System.EventHandler(this.btnChuDe_Click);
             // 
             // btnLoaiSach
             // 
@@ -258,6 +248,7 @@
             this.btnLoaiSach.Text = "Loại sách";
             this.btnLoaiSach.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnLoaiSach.TextOffset = new System.Drawing.Point(20, 0);
+            this.btnLoaiSach.Click += new System.EventHandler(this.btnLoaiSach_Click);
             // 
             // btnDanhMuc
             // 
@@ -284,6 +275,19 @@
             this.btnDanhMuc.TabIndex = 1;
             this.btnDanhMuc.Text = "Danh mục";
             this.btnDanhMuc.Click += new System.EventHandler(this.btnDanhMuc_Click);
+            // 
+            // timer1
+            // 
+            this.timer1.Interval = 15;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // panelContainer
+            // 
+            this.panelContainer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelContainer.Location = new System.Drawing.Point(0, 90);
+            this.panelContainer.Name = "panelContainer";
+            this.panelContainer.Size = new System.Drawing.Size(2035, 1289);
+            this.panelContainer.TabIndex = 1;
             // 
             // UC_QLSach_Ribbon
             // 

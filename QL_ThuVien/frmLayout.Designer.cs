@@ -203,7 +203,7 @@
             this.btnSignIn_Out.Name = "btnSignIn_Out";
             this.btnSignIn_Out.Size = new System.Drawing.Size(367, 79);
             this.btnSignIn_Out.TabIndex = 10;
-            this.btnSignIn_Out.Text = "Sign In";
+            this.btnSignIn_Out.Text = "Đăng xuất";
             this.btnSignIn_Out.Click += new System.EventHandler(this.btnSignIn_Out_Click);
             // 
             // label2
