@@ -34,6 +34,8 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelContainer = new Guna.UI2.WinForms.Guna2Panel();
             this.dgvKhoSach = new System.Windows.Forms.DataGridView();
+            this.MaKho = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenKho = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblNXB = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtTenKho = new Guna.UI2.WinForms.Guna2TextBox();
@@ -45,8 +47,6 @@
             this.btnThem = new Guna.UI2.WinForms.Guna2Button();
             this.btnTaoMoi = new Guna.UI2.WinForms.Guna2Button();
             this.txtSearch = new Guna.UI2.WinForms.Guna2TextBox();
-            this.MaKho = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenKho = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelContainer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvKhoSach)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -113,6 +113,24 @@
             this.dgvKhoSach.Size = new System.Drawing.Size(1203, 355);
             this.dgvKhoSach.TabIndex = 0;
             this.dgvKhoSach.SelectionChanged += new System.EventHandler(this.dgvKhoSach_SelectionChanged);
+            // 
+            // MaKho
+            // 
+            this.MaKho.DataPropertyName = "MaKho";
+            this.MaKho.FillWeight = 10.84337F;
+            this.MaKho.HeaderText = "Mã kho sách";
+            this.MaKho.MinimumWidth = 9;
+            this.MaKho.Name = "MaKho";
+            this.MaKho.Width = 377;
+            // 
+            // TenKho
+            // 
+            this.TenKho.DataPropertyName = "TenKho";
+            this.TenKho.FillWeight = 189.1566F;
+            this.TenKho.HeaderText = "Tên kho sách";
+            this.TenKho.MinimumWidth = 9;
+            this.TenKho.Name = "TenKho";
+            this.TenKho.Width = 775;
             // 
             // lblNXB
             // 
@@ -201,7 +219,6 @@
             // 
             // btnXoa
             // 
-            this.btnXoa.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnXoa.BorderColor = System.Drawing.Color.Transparent;
             this.btnXoa.BorderThickness = 2;
             this.btnXoa.CheckedState.FillColor = System.Drawing.Color.White;
@@ -224,7 +241,6 @@
             // 
             // btnSua
             // 
-            this.btnSua.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnSua.BorderColor = System.Drawing.Color.Transparent;
             this.btnSua.BorderThickness = 2;
             this.btnSua.CheckedState.FillColor = System.Drawing.Color.White;
@@ -247,7 +263,6 @@
             // 
             // btnThem
             // 
-            this.btnThem.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnThem.BorderColor = System.Drawing.Color.Transparent;
             this.btnThem.BorderThickness = 2;
             this.btnThem.CheckedState.FillColor = System.Drawing.Color.White;
@@ -270,7 +285,6 @@
             // 
             // btnTaoMoi
             // 
-            this.btnTaoMoi.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnTaoMoi.BorderColor = System.Drawing.Color.Transparent;
             this.btnTaoMoi.BorderThickness = 2;
             this.btnTaoMoi.CheckedState.FillColor = System.Drawing.Color.White;
@@ -319,24 +333,6 @@
             this.txtSearch.TabIndex = 21;
             this.txtSearch.TextOffset = new System.Drawing.Point(10, 0);
             this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
-            // 
-            // MaKho
-            // 
-            this.MaKho.DataPropertyName = "MaKho";
-            this.MaKho.FillWeight = 10.84337F;
-            this.MaKho.HeaderText = "Mã kho sách";
-            this.MaKho.MinimumWidth = 9;
-            this.MaKho.Name = "MaKho";
-            this.MaKho.Width = 377;
-            // 
-            // TenKho
-            // 
-            this.TenKho.DataPropertyName = "TenKho";
-            this.TenKho.FillWeight = 189.1566F;
-            this.TenKho.HeaderText = "Tên kho sách";
-            this.TenKho.MinimumWidth = 9;
-            this.TenKho.Name = "TenKho";
-            this.TenKho.Width = 775;
             // 
             // frmKhoSach
             // 

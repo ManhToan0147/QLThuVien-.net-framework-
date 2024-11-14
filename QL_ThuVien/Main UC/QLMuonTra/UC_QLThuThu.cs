@@ -64,7 +64,7 @@ namespace QL_ThuVien.Main_UC.QLMuonTra
         string selectedMaThuThu;
         private void NapCT()
         {
-            if (dgvThuThu.CurrentRow != null && dgvThuThu.CurrentRow.Index >= 0)
+            if (dgvThuThu.CurrentCell != null && dgvThuThu.CurrentCell.RowIndex >= 0)
             {
                 //Xu ly chu
                 int i = dgvThuThu.CurrentRow.Index;
@@ -141,6 +141,7 @@ namespace QL_ThuVien.Main_UC.QLMuonTra
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
+            int currentIndex = dgvThuThu.CurrentRow.Index;
 
             using (SqlConnection con = new SqlConnection(strCon))
             {
@@ -175,19 +176,39 @@ namespace QL_ThuVien.Main_UC.QLMuonTra
                 }
             }
             LoadThuThu();
+            dgvThuThu.ClearSelection();
+            dgvThuThu.CurrentCell = dgvThuThu.Rows[currentIndex].Cells[0];//Đặt cell đầu tiên là cell của dòng sửa
+            NapCT();
+            dgvThuThu.FirstDisplayedScrollingRowIndex = currentIndex; //Cuộn đến dòng đó
         }
 
         private void btnTaoMoi_Click(object sender, EventArgs e)
         {
-            txtMaThuThu.Text = "";
-            txtMaThuThu.Enabled = true;
+            using (con = new SqlConnection(strCon))
+            {
+                con.Open();
+                string sql = "Select max(MaThuThu) from ThuThu";
+                cmd = new SqlCommand(sql, con);
+                object rs = cmd.ExecuteScalar();
+                if (rs != DBNull.Value && rs != null)
+                {
+                    string maThuThu = rs.ToString();
+                    int number = int.Parse(maThuThu.Substring(2)); //Lấy số sau phần "TT"
+                    ++number;
+                    txtMaThuThu.Text = "TT" + number.ToString("D2"); // Dam bao co 2 chu so (01 thay vi 1)
+                }
+                else
+                {
+                    //TH không có bản ghi nào thì bắt đầu từ 01
+                    txtMaThuThu.Text = "TT01";
+                }
+            }
 
             txtTenThuThu.Text = "";
             txtSDT.Text = "";
             txtEmail.Text = "";
             picAvatar.Image = null;
-
-            txtMaThuThu.Focus();
+            txtTenThuThu.Focus();
         }
 
         private void btnXoaAnh_Click(object sender, EventArgs e)
@@ -256,6 +277,11 @@ namespace QL_ThuVien.Main_UC.QLMuonTra
                 MessageBox.Show("Lỗi khi thêm " + ex.Message);
             }
             LoadThuThu();
+            int lastIndex = dgvThuThu.RowCount - 1;
+            dgvThuThu.ClearSelection();
+            dgvThuThu.CurrentCell = dgvThuThu.Rows[lastIndex].Cells[0];//Đặt cell đầu tiên là cell của dòng sửa
+            NapCT();
+            dgvThuThu.FirstDisplayedScrollingRowIndex = lastIndex; //Cuộn đến dòng đó
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
@@ -266,6 +292,9 @@ namespace QL_ThuVien.Main_UC.QLMuonTra
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
+
+            int currentIndex = dgvThuThu.CurrentRow.Index;
+
             DialogResult rs = MessageBox.Show("Bạn có chắc chắn muốn xóa bản ghi đã chọn và các bản ghi khác liên quan?",
                    "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
@@ -297,6 +326,11 @@ namespace QL_ThuVien.Main_UC.QLMuonTra
                 }
             }
             LoadThuThu();
+            int beforeRowIndex = currentIndex - 1;
+            dgvThuThu.ClearSelection();
+            dgvThuThu.CurrentCell = dgvThuThu.Rows[beforeRowIndex].Cells[0];//Đặt cell đầu tiên là cell của dòng sửa
+            NapCT();
+            dgvThuThu.FirstDisplayedScrollingRowIndex = beforeRowIndex; //Cuộn đến dòng đó
         }
     }
 }

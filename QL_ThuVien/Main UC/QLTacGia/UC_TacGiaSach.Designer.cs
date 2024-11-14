@@ -46,25 +46,27 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.grbDauSach = new System.Windows.Forms.GroupBox();
-            this.grbTacGia = new System.Windows.Forms.GroupBox();
-            this.grbDSTG = new System.Windows.Forms.GroupBox();
-            this.btnXoa = new Guna.UI2.WinForms.Guna2Button();
-            this.btnChuyen = new Guna.UI2.WinForms.Guna2Button();
             this.dgvDauSach = new System.Windows.Forms.DataGridView();
+            this.grbTacGia = new System.Windows.Forms.GroupBox();
             this.dgvTacGia = new System.Windows.Forms.DataGridView();
+            this.MaTG = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenTG = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.grbDSTG = new System.Windows.Forms.GroupBox();
             this.dgvDSTG = new System.Windows.Forms.DataGridView();
             this.MaDauSach2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MaTacGia2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnXoa = new Guna.UI2.WinForms.Guna2Button();
+            this.btnChuyen = new Guna.UI2.WinForms.Guna2Button();
             this.txtSearch = new Guna.UI2.WinForms.Guna2TextBox();
-            this.MaTG = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenTG = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.btnXemChiTiet = new Guna.UI2.WinForms.Guna2Button();
             this.MaDauSach = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenDauSach = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grbDauSach.SuspendLayout();
-            this.grbTacGia.SuspendLayout();
-            this.grbDSTG.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDauSach)).BeginInit();
+            this.grbTacGia.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTacGia)).BeginInit();
+            this.grbDSTG.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSTG)).BeginInit();
             this.SuspendLayout();
             // 
@@ -141,6 +143,7 @@
             // 
             // grbDauSach
             // 
+            this.grbDauSach.Controls.Add(this.reportViewer1);
             this.grbDauSach.Controls.Add(this.dgvDauSach);
             this.grbDauSach.Font = new System.Drawing.Font("Segoe UI", 9.857143F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grbDauSach.ForeColor = System.Drawing.Color.Black;
@@ -150,76 +153,6 @@
             this.grbDauSach.TabIndex = 13;
             this.grbDauSach.TabStop = false;
             this.grbDauSach.Text = "Đầu sách";
-            // 
-            // grbTacGia
-            // 
-            this.grbTacGia.Controls.Add(this.dgvTacGia);
-            this.grbTacGia.Font = new System.Drawing.Font("Segoe UI", 9.857143F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grbTacGia.ForeColor = System.Drawing.Color.Black;
-            this.grbTacGia.Location = new System.Drawing.Point(789, 335);
-            this.grbTacGia.Name = "grbTacGia";
-            this.grbTacGia.Size = new System.Drawing.Size(572, 751);
-            this.grbTacGia.TabIndex = 14;
-            this.grbTacGia.TabStop = false;
-            this.grbTacGia.Text = "Tác giả";
-            // 
-            // grbDSTG
-            // 
-            this.grbDSTG.Controls.Add(this.dgvDSTG);
-            this.grbDSTG.Font = new System.Drawing.Font("Segoe UI", 9.857143F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grbDSTG.ForeColor = System.Drawing.Color.Black;
-            this.grbDSTG.Location = new System.Drawing.Point(1481, 335);
-            this.grbDSTG.Name = "grbDSTG";
-            this.grbDSTG.Size = new System.Drawing.Size(430, 751);
-            this.grbDSTG.TabIndex = 15;
-            this.grbDSTG.TabStop = false;
-            this.grbDSTG.Text = "Đầu sách - Tác giả";
-            // 
-            // btnXoa
-            // 
-            this.btnXoa.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnXoa.BorderColor = System.Drawing.Color.Transparent;
-            this.btnXoa.BorderThickness = 2;
-            this.btnXoa.CheckedState.FillColor = System.Drawing.Color.White;
-            this.btnXoa.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnXoa.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnXoa.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnXoa.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnXoa.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(232)))));
-            this.btnXoa.Font = new System.Drawing.Font("Segoe UI", 9.857143F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXoa.ForeColor = System.Drawing.Color.White;
-            this.btnXoa.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(232)))));
-            this.btnXoa.HoverState.FillColor = System.Drawing.Color.White;
-            this.btnXoa.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(232)))));
-            this.btnXoa.Location = new System.Drawing.Point(1481, 1130);
-            this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(430, 79);
-            this.btnXoa.TabIndex = 16;
-            this.btnXoa.Text = "Xóa";
-            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
-            // 
-            // btnChuyen
-            // 
-            this.btnChuyen.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnChuyen.BorderColor = System.Drawing.Color.Transparent;
-            this.btnChuyen.BorderThickness = 2;
-            this.btnChuyen.CheckedState.FillColor = System.Drawing.Color.White;
-            this.btnChuyen.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnChuyen.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnChuyen.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnChuyen.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnChuyen.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(232)))));
-            this.btnChuyen.Font = new System.Drawing.Font("Segoe UI", 9.857143F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnChuyen.ForeColor = System.Drawing.Color.White;
-            this.btnChuyen.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(232)))));
-            this.btnChuyen.HoverState.FillColor = System.Drawing.Color.White;
-            this.btnChuyen.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(232)))));
-            this.btnChuyen.Location = new System.Drawing.Point(1367, 667);
-            this.btnChuyen.Name = "btnChuyen";
-            this.btnChuyen.Size = new System.Drawing.Size(108, 57);
-            this.btnChuyen.TabIndex = 17;
-            this.btnChuyen.Text = ">>";
-            this.btnChuyen.Click += new System.EventHandler(this.btnChuyen_Click);
             // 
             // dgvDauSach
             // 
@@ -270,9 +203,22 @@
             this.dgvDauSach.RowHeadersWidth = 72;
             this.dgvDauSach.RowTemplate.Height = 50;
             this.dgvDauSach.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.dgvDauSach.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDauSach.Size = new System.Drawing.Size(633, 714);
             this.dgvDauSach.TabIndex = 3;
             this.dgvDauSach.SelectionChanged += new System.EventHandler(this.dgvDauSach_SelectionChanged);
+            // 
+            // grbTacGia
+            // 
+            this.grbTacGia.Controls.Add(this.dgvTacGia);
+            this.grbTacGia.Font = new System.Drawing.Font("Segoe UI", 9.857143F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grbTacGia.ForeColor = System.Drawing.Color.Black;
+            this.grbTacGia.Location = new System.Drawing.Point(789, 335);
+            this.grbTacGia.Name = "grbTacGia";
+            this.grbTacGia.Size = new System.Drawing.Size(572, 751);
+            this.grbTacGia.TabIndex = 14;
+            this.grbTacGia.TabStop = false;
+            this.grbTacGia.Text = "Tác giả";
             // 
             // dgvTacGia
             // 
@@ -283,6 +229,7 @@
             dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(76)))), ((int)(((byte)(170)))));
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
             this.dgvTacGia.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            this.dgvTacGia.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvTacGia.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvTacGia.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgvTacGia.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -323,9 +270,36 @@
             this.dgvTacGia.RowHeadersWidth = 72;
             this.dgvTacGia.RowTemplate.Height = 50;
             this.dgvTacGia.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.dgvTacGia.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvTacGia.Size = new System.Drawing.Size(566, 714);
             this.dgvTacGia.TabIndex = 3;
             this.dgvTacGia.SelectionChanged += new System.EventHandler(this.dgvTacGia_SelectionChanged);
+            // 
+            // MaTG
+            // 
+            this.MaTG.DataPropertyName = "MaTG";
+            this.MaTG.HeaderText = "Mã tác giả";
+            this.MaTG.MinimumWidth = 9;
+            this.MaTG.Name = "MaTG";
+            // 
+            // TenTG
+            // 
+            this.TenTG.DataPropertyName = "TenTG";
+            this.TenTG.HeaderText = "Tên tác giả";
+            this.TenTG.MinimumWidth = 9;
+            this.TenTG.Name = "TenTG";
+            // 
+            // grbDSTG
+            // 
+            this.grbDSTG.Controls.Add(this.dgvDSTG);
+            this.grbDSTG.Font = new System.Drawing.Font("Segoe UI", 9.857143F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grbDSTG.ForeColor = System.Drawing.Color.Black;
+            this.grbDSTG.Location = new System.Drawing.Point(1481, 335);
+            this.grbDSTG.Name = "grbDSTG";
+            this.grbDSTG.Size = new System.Drawing.Size(430, 751);
+            this.grbDSTG.TabIndex = 15;
+            this.grbDSTG.TabStop = false;
+            this.grbDSTG.Text = "Đầu sách - Tác giả";
             // 
             // dgvDSTG
             // 
@@ -377,6 +351,7 @@
             this.dgvDSTG.RowHeadersWidth = 72;
             this.dgvDSTG.RowTemplate.Height = 50;
             this.dgvDSTG.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.dgvDSTG.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDSTG.Size = new System.Drawing.Size(424, 714);
             this.dgvDSTG.TabIndex = 3;
             // 
@@ -393,6 +368,52 @@
             this.MaTacGia2.HeaderText = "Mã tác giả";
             this.MaTacGia2.MinimumWidth = 9;
             this.MaTacGia2.Name = "MaTacGia2";
+            // 
+            // btnXoa
+            // 
+            this.btnXoa.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnXoa.BorderColor = System.Drawing.Color.Transparent;
+            this.btnXoa.BorderThickness = 2;
+            this.btnXoa.CheckedState.FillColor = System.Drawing.Color.White;
+            this.btnXoa.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnXoa.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnXoa.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnXoa.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnXoa.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(232)))));
+            this.btnXoa.Font = new System.Drawing.Font("Segoe UI", 9.857143F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXoa.ForeColor = System.Drawing.Color.White;
+            this.btnXoa.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(232)))));
+            this.btnXoa.HoverState.FillColor = System.Drawing.Color.White;
+            this.btnXoa.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(232)))));
+            this.btnXoa.Location = new System.Drawing.Point(1481, 1130);
+            this.btnXoa.Name = "btnXoa";
+            this.btnXoa.Size = new System.Drawing.Size(430, 79);
+            this.btnXoa.TabIndex = 16;
+            this.btnXoa.Text = "Xóa";
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
+            // 
+            // btnChuyen
+            // 
+            this.btnChuyen.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnChuyen.BorderColor = System.Drawing.Color.Transparent;
+            this.btnChuyen.BorderThickness = 2;
+            this.btnChuyen.CheckedState.FillColor = System.Drawing.Color.White;
+            this.btnChuyen.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnChuyen.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnChuyen.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnChuyen.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnChuyen.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(232)))));
+            this.btnChuyen.Font = new System.Drawing.Font("Segoe UI", 9.857143F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnChuyen.ForeColor = System.Drawing.Color.White;
+            this.btnChuyen.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(232)))));
+            this.btnChuyen.HoverState.FillColor = System.Drawing.Color.White;
+            this.btnChuyen.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(232)))));
+            this.btnChuyen.Location = new System.Drawing.Point(1367, 667);
+            this.btnChuyen.Name = "btnChuyen";
+            this.btnChuyen.Size = new System.Drawing.Size(108, 57);
+            this.btnChuyen.TabIndex = 17;
+            this.btnChuyen.Text = ">>";
+            this.btnChuyen.Click += new System.EventHandler(this.btnChuyen_Click);
             // 
             // txtSearch
             // 
@@ -421,21 +442,36 @@
             this.txtSearch.TextOffset = new System.Drawing.Point(10, 0);
             this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
-            // MaTG
+            // reportViewer1
             // 
-            this.MaTG.DataPropertyName = "MaTG";
-            this.MaTG.HeaderText = "Mã tác giả";
-            this.MaTG.MinimumWidth = 9;
-            this.MaTG.Name = "MaTG";
-            this.MaTG.Width = 150;
+            this.reportViewer1.Location = new System.Drawing.Point(88, 120);
+            this.reportViewer1.Name = "reportViewer1";
+            this.reportViewer1.ServerReport.BearerToken = null;
+            this.reportViewer1.Size = new System.Drawing.Size(8, 8);
+            this.reportViewer1.TabIndex = 4;
             // 
-            // TenTG
+            // btnXemChiTiet
             // 
-            this.TenTG.DataPropertyName = "TenTG";
-            this.TenTG.HeaderText = "Tên tác giả";
-            this.TenTG.MinimumWidth = 9;
-            this.TenTG.Name = "TenTG";
-            this.TenTG.Width = 344;
+            this.btnXemChiTiet.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnXemChiTiet.BorderColor = System.Drawing.Color.Transparent;
+            this.btnXemChiTiet.BorderThickness = 2;
+            this.btnXemChiTiet.CheckedState.FillColor = System.Drawing.Color.White;
+            this.btnXemChiTiet.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnXemChiTiet.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnXemChiTiet.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnXemChiTiet.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnXemChiTiet.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(232)))));
+            this.btnXemChiTiet.Font = new System.Drawing.Font("Segoe UI", 9.857143F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXemChiTiet.ForeColor = System.Drawing.Color.White;
+            this.btnXemChiTiet.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(232)))));
+            this.btnXemChiTiet.HoverState.FillColor = System.Drawing.Color.White;
+            this.btnXemChiTiet.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(232)))));
+            this.btnXemChiTiet.Location = new System.Drawing.Point(129, 1130);
+            this.btnXemChiTiet.Name = "btnXemChiTiet";
+            this.btnXemChiTiet.Size = new System.Drawing.Size(633, 79);
+            this.btnXemChiTiet.TabIndex = 18;
+            this.btnXemChiTiet.Text = "Xem chi tiết";
+            this.btnXemChiTiet.Click += new System.EventHandler(this.btnXemChiTiet_Click);
             // 
             // MaDauSach
             // 
@@ -443,7 +479,7 @@
             this.MaDauSach.HeaderText = "Mã đầu sách";
             this.MaDauSach.MinimumWidth = 9;
             this.MaDauSach.Name = "MaDauSach";
-            this.MaDauSach.Width = 150;
+            this.MaDauSach.Width = 170;
             // 
             // TenDauSach
             // 
@@ -457,6 +493,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 30F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.btnXemChiTiet);
             this.Controls.Add(this.btnChuyen);
             this.Controls.Add(this.btnXoa);
             this.Controls.Add(this.grbDSTG);
@@ -474,10 +511,10 @@
             this.Size = new System.Drawing.Size(2035, 1277);
             this.Load += new System.EventHandler(this.UC_TacGiaSach_Load);
             this.grbDauSach.ResumeLayout(false);
-            this.grbTacGia.ResumeLayout(false);
-            this.grbDSTG.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDauSach)).EndInit();
+            this.grbTacGia.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvTacGia)).EndInit();
+            this.grbDSTG.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSTG)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -503,9 +540,11 @@
         private Guna.UI2.WinForms.Guna2DataGridViewStyler guna2DataGridViewStyler1;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaDauSach2;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaTacGia2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MaDauSach;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TenDauSach;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaTG;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenTG;
+        private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
+        private Guna.UI2.WinForms.Guna2Button btnXemChiTiet;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaDauSach;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TenDauSach;
     }
 }

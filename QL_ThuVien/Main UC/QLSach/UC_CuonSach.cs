@@ -5,6 +5,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -137,38 +138,67 @@ namespace QL_ThuVien.Main_UC.QLSach
                 MessageBox.Show("Vui lòng chọn một đầu sách trước khi thêm các cuốn sách.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
+            //Code them nhieu ban ghi thu cong:
+            //using (con = new SqlConnection(strCon))
+            //{
+            //    con.Open();
+
+            //    int records = 0;
+            //    foreach (DataGridViewRow row in dgvCuonSach.Rows)
+            //    {
+            //        // Bỏ qua các hàng trống hoặc chưa hoàn thành
+            //        if (row.IsNewRow || row.Cells["MaSach"].Value == null || row.Cells["TinhTrang"].Value == null)
+            //        {
+            //            continue;
+            //        }
+
+            //        string maSach = row.Cells["MaSach"].Value.ToString();
+            //        string tinhTrang = row.Cells["TinhTrang"].Value.ToString();
+
+            //        using (SqlCommand cmd = new SqlCommand("ThemCuonSach", con))
+            //        {
+            //            cmd.Parameters.Clear();
+            //            cmd.CommandType = CommandType.StoredProcedure;
+
+            //            cmd.Parameters.AddWithValue("@MaSach", maSach);
+            //            cmd.Parameters.AddWithValue("@MaDauSach", selectedMaDauSach);
+            //            cmd.Parameters.AddWithValue("@TinhTrang", tinhTrang);
+
+            //            int rowsAffected = cmd.ExecuteNonQuery();
+            //            if (rowsAffected > 0)
+            //            {
+            //                records++;
+            //            }
+            //        }
+            //    }
+            //    MessageBox.Show($"Đã thêm thành công {records} bản ghi", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //}
+
+            //Code tu dong tang khi click vao them:
             using (con = new SqlConnection(strCon))
             {
-                int records = 0;
+                string insertMaDauSach;
                 con.Open();
-                foreach (DataGridViewRow row in dgvCuonSach.Rows)
+                string sql1 = $"Select max(MaSach) from CuonSach where MaDauSach = '{selectedMaDauSach}'";
+                cmd = new SqlCommand(sql1, con);
+                object rs = cmd.ExecuteScalar();
+                if (rs != DBNull.Value && rs != null)
                 {
-                    // Bỏ qua các hàng trống hoặc chưa hoàn thành
-                    if (row.IsNewRow || row.Cells["MaSach"].Value == null || row.Cells["TinhTrang"].Value == null)
-                    {
-                        continue;
-                    }
-
-                    string maSach = row.Cells["MaSach"].Value.ToString();
-                    string tinhTrang = row.Cells["TinhTrang"].Value.ToString();
-
-                    using (SqlCommand cmd = new SqlCommand("ThemCuonSach", con))
-                    {
-                        cmd.Parameters.Clear();
-                        cmd.CommandType = CommandType.StoredProcedure;
-
-                        cmd.Parameters.AddWithValue("@MaSach", maSach);
-                        cmd.Parameters.AddWithValue("@MaDauSach", selectedMaDauSach);
-                        cmd.Parameters.AddWithValue("@TinhTrang", tinhTrang);
-
-                        int rowsAffected = cmd.ExecuteNonQuery();
-                        if (rowsAffected > 0)
-                        {
-                            records++;
-                        }
-                    }
+                    string maSach = rs.ToString();
+                    int number = int.Parse(maSach.Substring(5)); //Lấy số sau phần "xxxx_"
+                    ++number;
+                    insertMaDauSach = selectedMaDauSach + "_" + number.ToString("D2");
                 }
-                MessageBox.Show($"Đã thêm thành công {records} bản ghi", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                else
+                {
+                    //TH không có bản ghi nào thì bắt đầu từ 01
+                    insertMaDauSach = selectedMaDauSach + "_01";
+                }
+
+                string sql2 = $"Insert into CuonSach values ('{insertMaDauSach}', '{selectedMaDauSach}' , N'Còn')";
+                cmd = new SqlCommand(sql2, con);
+                cmd.ExecuteNonQuery();
+                //MessageBox.Show($"Đã thêm thành công bản ghi", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             ShowCuonSach_DauSach();
         }
@@ -181,13 +211,22 @@ namespace QL_ThuVien.Main_UC.QLSach
                 MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (rs == DialogResult.Yes)
                 {
+                    int count = 0;
                     foreach (DataGridViewRow row in dgvCuonSach.SelectedRows)
                     {
                         string maSach = row.Cells["MaSach"].Value?.ToString() ?? string.Empty;
                         string sql = $"Delete from CuonSach where MaSach = '{maSach}'";
-                        DoSQL(sql);
+                        using (con = new SqlConnection(strCon))
+                        {
+                            con.Open();
+                            cmd = new SqlCommand(sql, con);
+                            if (cmd.ExecuteNonQuery() > 0)
+                            {
+                                count++;
+                            }
+                        }
                     }
-                    MessageBox.Show($"Đã xóa thành công {dgvCuonSach.SelectedRows.Count} bản ghi.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show($"Đã xóa thành công {count} bản ghi.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     ShowCuonSach_DauSach();
                 }
             }

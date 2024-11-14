@@ -219,7 +219,6 @@
             // 
             // btnXoa
             // 
-            this.btnXoa.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnXoa.BorderColor = System.Drawing.Color.Transparent;
             this.btnXoa.BorderThickness = 2;
             this.btnXoa.CheckedState.FillColor = System.Drawing.Color.White;
@@ -242,7 +241,6 @@
             // 
             // btnSua
             // 
-            this.btnSua.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnSua.BorderColor = System.Drawing.Color.Transparent;
             this.btnSua.BorderThickness = 2;
             this.btnSua.CheckedState.FillColor = System.Drawing.Color.White;
@@ -265,7 +263,6 @@
             // 
             // btnThem
             // 
-            this.btnThem.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnThem.BorderColor = System.Drawing.Color.Transparent;
             this.btnThem.BorderThickness = 2;
             this.btnThem.CheckedState.FillColor = System.Drawing.Color.White;
@@ -288,7 +285,6 @@
             // 
             // btnTaoMoi
             // 
-            this.btnTaoMoi.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnTaoMoi.BorderColor = System.Drawing.Color.Transparent;
             this.btnTaoMoi.BorderThickness = 2;
             this.btnTaoMoi.CheckedState.FillColor = System.Drawing.Color.White;

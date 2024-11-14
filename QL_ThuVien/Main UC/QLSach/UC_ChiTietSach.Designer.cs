@@ -47,8 +47,6 @@
             this.txtSearch = new Guna.UI2.WinForms.Guna2TextBox();
             this.panelContainer = new System.Windows.Forms.Panel();
             this.dgvChiTietDauSach = new System.Windows.Forms.DataGridView();
-            this.btnXemChiTiet = new Guna.UI2.WinForms.Guna2Button();
-            this.lblChiTietDS = new System.Windows.Forms.Label();
             this.MaDauSach = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenDauSach = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenTacGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -60,6 +58,9 @@
             this.TenChuDe = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenNXB = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenKho = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnXemChiTiet = new Guna.UI2.WinForms.Guna2Button();
+            this.lblChiTietDS = new System.Windows.Forms.Label();
+            this.btnReset = new Guna.UI2.WinForms.Guna2Button();
             this.panelSearching.SuspendLayout();
             this.panelContainer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvChiTietDauSach)).BeginInit();
@@ -67,6 +68,7 @@
             // 
             // panelSearching
             // 
+            this.panelSearching.Controls.Add(this.btnReset);
             this.panelSearching.Controls.Add(this.label5);
             this.panelSearching.Controls.Add(this.label4);
             this.panelSearching.Controls.Add(this.label3);
@@ -315,40 +317,6 @@
             this.dgvChiTietDauSach.Size = new System.Drawing.Size(1927, 657);
             this.dgvChiTietDauSach.TabIndex = 0;
             // 
-            // btnXemChiTiet
-            // 
-            this.btnXemChiTiet.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnXemChiTiet.BorderColor = System.Drawing.Color.Transparent;
-            this.btnXemChiTiet.BorderThickness = 2;
-            this.btnXemChiTiet.CheckedState.FillColor = System.Drawing.Color.White;
-            this.btnXemChiTiet.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnXemChiTiet.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnXemChiTiet.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnXemChiTiet.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnXemChiTiet.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(232)))));
-            this.btnXemChiTiet.Font = new System.Drawing.Font("Segoe UI", 9.857143F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXemChiTiet.ForeColor = System.Drawing.Color.White;
-            this.btnXemChiTiet.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(232)))));
-            this.btnXemChiTiet.HoverState.FillColor = System.Drawing.Color.White;
-            this.btnXemChiTiet.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(232)))));
-            this.btnXemChiTiet.Location = new System.Drawing.Point(409, 1133);
-            this.btnXemChiTiet.Name = "btnXemChiTiet";
-            this.btnXemChiTiet.Size = new System.Drawing.Size(1216, 79);
-            this.btnXemChiTiet.TabIndex = 3;
-            this.btnXemChiTiet.Text = "Xem chi tiết";
-            this.btnXemChiTiet.Click += new System.EventHandler(this.btnXemChiTiet_Click);
-            // 
-            // lblChiTietDS
-            // 
-            this.lblChiTietDS.AutoSize = true;
-            this.lblChiTietDS.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblChiTietDS.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(76)))), ((int)(((byte)(170)))));
-            this.lblChiTietDS.Location = new System.Drawing.Point(740, 33);
-            this.lblChiTietDS.Name = "lblChiTietDS";
-            this.lblChiTietDS.Size = new System.Drawing.Size(555, 74);
-            this.lblChiTietDS.TabIndex = 4;
-            this.lblChiTietDS.Text = "CHI TIẾT ĐẦU SÁCH";
-            // 
             // MaDauSach
             // 
             this.MaDauSach.DataPropertyName = "MaDauSach";
@@ -429,6 +397,64 @@
             this.TenKho.MinimumWidth = 9;
             this.TenKho.Name = "TenKho";
             // 
+            // btnXemChiTiet
+            // 
+            this.btnXemChiTiet.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnXemChiTiet.BorderColor = System.Drawing.Color.Transparent;
+            this.btnXemChiTiet.BorderThickness = 2;
+            this.btnXemChiTiet.CheckedState.FillColor = System.Drawing.Color.White;
+            this.btnXemChiTiet.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnXemChiTiet.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnXemChiTiet.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnXemChiTiet.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnXemChiTiet.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(232)))));
+            this.btnXemChiTiet.Font = new System.Drawing.Font("Segoe UI", 9.857143F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXemChiTiet.ForeColor = System.Drawing.Color.White;
+            this.btnXemChiTiet.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(232)))));
+            this.btnXemChiTiet.HoverState.FillColor = System.Drawing.Color.White;
+            this.btnXemChiTiet.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(232)))));
+            this.btnXemChiTiet.Location = new System.Drawing.Point(409, 1133);
+            this.btnXemChiTiet.Name = "btnXemChiTiet";
+            this.btnXemChiTiet.Size = new System.Drawing.Size(1216, 79);
+            this.btnXemChiTiet.TabIndex = 3;
+            this.btnXemChiTiet.Text = "Xem chi tiết";
+            this.btnXemChiTiet.Click += new System.EventHandler(this.btnXemChiTiet_Click);
+            // 
+            // lblChiTietDS
+            // 
+            this.lblChiTietDS.AutoSize = true;
+            this.lblChiTietDS.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblChiTietDS.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(76)))), ((int)(((byte)(170)))));
+            this.lblChiTietDS.Location = new System.Drawing.Point(740, 33);
+            this.lblChiTietDS.Name = "lblChiTietDS";
+            this.lblChiTietDS.Size = new System.Drawing.Size(555, 74);
+            this.lblChiTietDS.TabIndex = 4;
+            this.lblChiTietDS.Text = "CHI TIẾT ĐẦU SÁCH";
+            // 
+            // btnReset
+            // 
+            this.btnReset.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnReset.BorderColor = System.Drawing.Color.Transparent;
+            this.btnReset.BorderRadius = 20;
+            this.btnReset.BorderThickness = 2;
+            this.btnReset.CheckedState.FillColor = System.Drawing.Color.White;
+            this.btnReset.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnReset.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnReset.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnReset.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnReset.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(232)))));
+            this.btnReset.Font = new System.Drawing.Font("Segoe UI", 9.857143F, System.Drawing.FontStyle.Bold);
+            this.btnReset.ForeColor = System.Drawing.Color.White;
+            this.btnReset.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(232)))));
+            this.btnReset.HoverState.FillColor = System.Drawing.Color.White;
+            this.btnReset.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(232)))));
+            this.btnReset.Location = new System.Drawing.Point(1713, 42);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(172, 72);
+            this.btnReset.TabIndex = 7;
+            this.btnReset.Text = "Reset";
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
+            // 
             // UC_ChiTietSach
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 30F);
@@ -481,5 +507,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn TenChuDe;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenNXB;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenKho;
+        private Guna.UI2.WinForms.Guna2Button btnReset;
     }
 }

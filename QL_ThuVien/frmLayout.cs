@@ -72,7 +72,7 @@ namespace QL_ThuVien
 
         private void btnCaiDat_Click(object sender, EventArgs e)
         {
-            var uc = new UC_SaoLuu_PhucHoi();
+            var uc = new UC_CaiDat_Ribbon();
             addUserControl(uc);
         }
 

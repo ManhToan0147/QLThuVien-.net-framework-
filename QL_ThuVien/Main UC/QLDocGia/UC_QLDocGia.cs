@@ -65,7 +65,7 @@ namespace QL_ThuVien.Main_UC.QLDocGia
             }
             else
             {
-                txtSearch.PlaceholderText = "Nhập mã thẻ mượn để tìm kiếm";
+                txtSearch.PlaceholderText = "Nhập mã độc giả để tìm kiếm";
             }
         }
 
@@ -73,15 +73,15 @@ namespace QL_ThuVien.Main_UC.QLDocGia
         {
             NapCT();
         }
-        string selectedMaTheMuon;
+        string selectedMaDocGia;
         private void NapCT()
         {
-            if (dgvDocGia.CurrentRow != null && dgvDocGia.CurrentRow.Index >= 0)
+            if (dgvDocGia.CurrentCell != null && dgvDocGia.CurrentCell.RowIndex >= 0)
             {
                 //Xu ly chu
                 int i = dgvDocGia.CurrentRow.Index;
-                selectedMaTheMuon = dgvDocGia.Rows[i].Cells["MaTheMuon"]?.Value.ToString() ?? string.Empty;
-                txtMaTheMuon.Text = selectedMaTheMuon;
+                selectedMaDocGia = dgvDocGia.Rows[i].Cells["MaDocGia"]?.Value.ToString() ?? string.Empty;
+                txtMaTheMuon.Text = selectedMaDocGia;
                 txtMaTheMuon.Enabled = string.IsNullOrEmpty(txtMaTheMuon.Text);
 
                 txtHoTen.Text = dgvDocGia.Rows[i].Cells["HoTen"].Value.ToString();
@@ -90,18 +90,18 @@ namespace QL_ThuVien.Main_UC.QLDocGia
                 dateNgayCap.Value = dgvDocGia.Rows[i].Cells["NgayCapThe"].Value is DBNull ? DateTime.Now : (DateTime)dgvDocGia.Rows[i].Cells["NgayCapThe"].Value;
                 dateNgayHan.Value = dgvDocGia.Rows[i].Cells["NgayHanThe"].Value is DBNull ? DateTime.Now : (DateTime)dgvDocGia.Rows[i].Cells["NgayHanThe"].Value;
 
-                LoadImage(selectedMaTheMuon);
+                LoadImage(selectedMaDocGia);
             }
         }
-        private void LoadImage(string maTheMuon)
+        private void LoadImage(string maDocGia)
         {
             using (con = new SqlConnection(strCon))
             {
                 con.Open();
-                string sql = "Select HinhAnh from DocGia where MaTheMuon = @MaTheMuon";
+                string sql = "Select HinhAnh from DocGia where MaDocGia = @MaDocGia";
                 using (cmd = new SqlCommand(sql, con))
                 {
-                    cmd.Parameters.AddWithValue("@MaTheMuon", maTheMuon);
+                    cmd.Parameters.AddWithValue("@MaDocGia", maDocGia);
 
                     object imageData = cmd.ExecuteScalar();
                     if (imageData != null && imageData != DBNull.Value)
@@ -149,23 +149,24 @@ namespace QL_ThuVien.Main_UC.QLDocGia
 
         private void btnSua_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(selectedMaTheMuon))
+            if (string.IsNullOrEmpty(selectedMaDocGia))
             {
                 MessageBox.Show("Chưa chọn bản ghi để sửa", "Thông báo",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
-
+            int currentIndex = dgvDocGia.CurrentRow.Index;
             using (SqlConnection con = new SqlConnection(strCon))
             {
                 con.Open();
+
                 byte[] imageData = ImageToByteArray(picAvatar);
                 string ngayCap = dateNgayCap.Value.ToString("yyyy-MM-dd");
                 string ngayHan = dateNgayHan.Value.ToString("yyyy-MM-dd");
 
                 string sql = "UPDATE DocGia SET HoTen = @HoTen, NgheNghiep = @NgheNghiep, " +
                              "NgayCapThe = @NgayCapThe, NgayHanThe = @NgayHanThe, HinhAnh = @HinhAnh " +
-                             "WHERE MaTheMuon = @MaTheMuon";
+                             "WHERE MaDocGia = @MaDocGia";
 
                 using (SqlCommand cmd = new SqlCommand(sql, con))
                 {
@@ -178,7 +179,7 @@ namespace QL_ThuVien.Main_UC.QLDocGia
                     // Xử lý ảnh (nếu không có ảnh thì gán null)
                     cmd.Parameters.Add("@HinhAnh", SqlDbType.VarBinary).Value = imageData ?? (object)DBNull.Value;
 
-                    cmd.Parameters.AddWithValue("@MaTheMuon", selectedMaTheMuon);
+                    cmd.Parameters.AddWithValue("@MaDocGia", selectedMaDocGia);
 
                     // Thực thi câu lệnh
                     int rowsAffected = cmd.ExecuteNonQuery();
@@ -194,12 +195,28 @@ namespace QL_ThuVien.Main_UC.QLDocGia
                 }
             }
             LoadDocGia();
+            dgvDocGia.ClearSelection();
+            dgvDocGia.CurrentCell = dgvDocGia.Rows[currentIndex].Cells[0];
+            NapCT();
+            dgvDocGia.FirstDisplayedScrollingRowIndex = currentIndex;
         }
 
         private void btnTaoMoi_Click(object sender, EventArgs e)
         {
-            txtMaTheMuon.Text = "";
-            txtMaTheMuon.Enabled = string.IsNullOrEmpty(txtMaTheMuon.Text);
+            using (con = new SqlConnection(strCon))
+            {
+                con.Open();
+                string sql = "Select max(MaDocGia) from DocGia";
+                cmd = new SqlCommand(sql, con);
+                object rs = cmd.ExecuteScalar();
+                if (rs != DBNull.Value && rs != null)
+                {
+                    string maTheMuon = rs.ToString();
+                    int number = int.Parse(maTheMuon.Substring(2)); //Lấy sau phầm "DG"
+                    ++number;
+                    txtMaTheMuon.Text = "DG" + number.ToString("D3"); 
+                }
+            }
 
             txtHoTen.Text = "";
             txtNgheNghiep.Text = "";
@@ -207,6 +224,7 @@ namespace QL_ThuVien.Main_UC.QLDocGia
             dateNgayHan.Value = DateTime.Now;
             txtMaTheMuon.Focus();
             picAvatar.Image = null;
+            txtHoTen.Focus();
         }
 
         private void btnThem_Click(object sender, EventArgs e)
@@ -221,10 +239,10 @@ namespace QL_ThuVien.Main_UC.QLDocGia
                     string ngayHan = dateNgayHan.Value.ToString("yyyy-MM-dd");
 
                     string sql = "Insert into DocGia " +
-                    "Values (@MaTheMuon, @HoTen, @HinhAnh, @NgheNghiep, @NgayCapThe, @NgayHanThe)";
+                    "Values (@MaDocGia, @HoTen, @HinhAnh, @NgheNghiep, @NgayCapThe, @NgayHanThe)";
                     using (cmd = new SqlCommand(sql, con))
                     {
-                        cmd.Parameters.AddWithValue("@MaTheMuon", txtMaTheMuon.Text.Trim());
+                        cmd.Parameters.AddWithValue("@MaDocGia", txtMaTheMuon.Text.Trim());
                         cmd.Parameters.AddWithValue("@HoTen", txtHoTen.Text.Trim());
                         cmd.Parameters.AddWithValue("@NgheNghiep", txtNgheNghiep.Text.Trim());
                         cmd.Parameters.AddWithValue("@NgayCapThe", ngayCap);
@@ -252,6 +270,11 @@ namespace QL_ThuVien.Main_UC.QLDocGia
             {
                 MessageBox.Show("Lỗi khi thêm " + ex.Message);
             }
+            int lastRowIndex = dgvDocGia.RowCount - 1;
+            dgvDocGia.ClearSelection();
+            dgvDocGia.CurrentCell = dgvDocGia.Rows[lastRowIndex].Cells[0];
+            NapCT();
+            dgvDocGia.FirstDisplayedScrollingRowIndex = lastRowIndex;
         }
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
@@ -262,18 +285,20 @@ namespace QL_ThuVien.Main_UC.QLDocGia
             }
             else
             {
-                dv.RowFilter = $"MaTheMuon like '%{txtSearch.Text}%'";
+                dv.RowFilter = $"MaDocGia like '%{txtSearch.Text}%'";
             }
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(selectedMaTheMuon))
+            if (string.IsNullOrEmpty(selectedMaDocGia))
             {
                 MessageBox.Show("Chưa chọn bản ghi để xóa", "Thông báo",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
+
+            int currentIndex = dgvDocGia.CurrentRow.Index;
 
             DialogResult rs = MessageBox.Show("Bạn có chắc chắn muốn xóa bản ghi đã chọn và các bản ghi khác liên quan?",
                    "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -284,7 +309,7 @@ namespace QL_ThuVien.Main_UC.QLDocGia
                     con.Open();
                     cmd = new SqlCommand();
                     cmd.Connection = con;
-                    string sql = $"Delete from DocGia where MaTheMuon = '{selectedMaTheMuon}'";
+                    string sql = $"Delete from DocGia where MaDocGia = '{selectedMaDocGia}'";
                     cmd.CommandText = sql;
                     try
                     {
@@ -306,6 +331,11 @@ namespace QL_ThuVien.Main_UC.QLDocGia
                 }
             }
             LoadDocGia();
+            int beforeRowIndex = currentIndex - 1;
+            dgvDocGia.ClearSelection();
+            dgvDocGia.CurrentCell = dgvDocGia.Rows[beforeRowIndex].Cells[0];
+            NapCT();
+            dgvDocGia.FirstDisplayedScrollingRowIndex = beforeRowIndex;
         }
 
         private void btnXoaAnh_Click(object sender, EventArgs e)

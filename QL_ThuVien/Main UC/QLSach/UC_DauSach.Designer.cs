@@ -55,11 +55,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dgvDSDauSach = new System.Windows.Forms.DataGridView();
-            this.btnTaoMoi = new Guna.UI2.WinForms.Guna2Button();
-            this.btnThem = new Guna.UI2.WinForms.Guna2Button();
-            this.btnSua = new Guna.UI2.WinForms.Guna2Button();
-            this.btnXoa = new Guna.UI2.WinForms.Guna2Button();
-            this.txtSearch = new Guna.UI2.WinForms.Guna2TextBox();
             this.MaDauSach = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenDauSach = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NamXuatBan = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -69,6 +64,11 @@
             this.MaChuDe = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MaNXB = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MaKho = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnTaoMoi = new Guna.UI2.WinForms.Guna2Button();
+            this.btnThem = new Guna.UI2.WinForms.Guna2Button();
+            this.btnSua = new Guna.UI2.WinForms.Guna2Button();
+            this.btnXoa = new Guna.UI2.WinForms.Guna2Button();
+            this.txtSearch = new Guna.UI2.WinForms.Guna2TextBox();
             this.grbTTDS.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSDauSach)).BeginInit();
@@ -211,6 +211,7 @@
             this.cboMaLoaiSach.Name = "cboMaLoaiSach";
             this.cboMaLoaiSach.Size = new System.Drawing.Size(372, 53);
             this.cboMaLoaiSach.TabIndex = 5;
+            this.cboMaLoaiSach.SelectedIndexChanged += new System.EventHandler(this.cboMaLoaiSach_SelectedIndexChanged);
             // 
             // label6
             // 
@@ -387,6 +388,7 @@
             // 
             // dgvDSDauSach
             // 
+            this.dgvDSDauSach.AllowUserToAddRows = false;
             this.dgvDSDauSach.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -444,6 +446,81 @@
             this.dgvDSDauSach.Size = new System.Drawing.Size(1927, 557);
             this.dgvDSDauSach.TabIndex = 1;
             this.dgvDSDauSach.SelectionChanged += new System.EventHandler(this.dgvDSDauSach_SelectionChanged);
+            // 
+            // MaDauSach
+            // 
+            this.MaDauSach.DataPropertyName = "MaDauSach";
+            this.MaDauSach.HeaderText = "Mã đầu sách";
+            this.MaDauSach.MinimumWidth = 9;
+            this.MaDauSach.Name = "MaDauSach";
+            this.MaDauSach.Width = 170;
+            // 
+            // TenDauSach
+            // 
+            this.TenDauSach.DataPropertyName = "TenDauSach";
+            this.TenDauSach.HeaderText = "Tên đầu sách";
+            this.TenDauSach.MinimumWidth = 9;
+            this.TenDauSach.Name = "TenDauSach";
+            this.TenDauSach.Width = 570;
+            // 
+            // NamXuatBan
+            // 
+            this.NamXuatBan.DataPropertyName = "NamXuatBan";
+            this.NamXuatBan.HeaderText = "Năm XB";
+            this.NamXuatBan.MinimumWidth = 9;
+            this.NamXuatBan.Name = "NamXuatBan";
+            this.NamXuatBan.Width = 150;
+            // 
+            // GiaBia
+            // 
+            this.GiaBia.DataPropertyName = "GiaBia";
+            dataGridViewCellStyle3.Format = "#,###.##";
+            dataGridViewCellStyle3.NullValue = null;
+            this.GiaBia.DefaultCellStyle = dataGridViewCellStyle3;
+            this.GiaBia.HeaderText = "Giá bìa";
+            this.GiaBia.MinimumWidth = 9;
+            this.GiaBia.Name = "GiaBia";
+            this.GiaBia.Width = 150;
+            // 
+            // SoTrang
+            // 
+            this.SoTrang.DataPropertyName = "SoTrang";
+            this.SoTrang.HeaderText = "Số trang";
+            this.SoTrang.MinimumWidth = 9;
+            this.SoTrang.Name = "SoTrang";
+            this.SoTrang.Width = 150;
+            // 
+            // MaLoaiSach
+            // 
+            this.MaLoaiSach.DataPropertyName = "MaLoaiSach";
+            this.MaLoaiSach.HeaderText = "Mã loại sách";
+            this.MaLoaiSach.MinimumWidth = 9;
+            this.MaLoaiSach.Name = "MaLoaiSach";
+            this.MaLoaiSach.Width = 170;
+            // 
+            // MaChuDe
+            // 
+            this.MaChuDe.DataPropertyName = "MaChuDe";
+            this.MaChuDe.HeaderText = "Mã chủ đề";
+            this.MaChuDe.MinimumWidth = 9;
+            this.MaChuDe.Name = "MaChuDe";
+            this.MaChuDe.Width = 170;
+            // 
+            // MaNXB
+            // 
+            this.MaNXB.DataPropertyName = "MaNXB";
+            this.MaNXB.HeaderText = "Mã NXB";
+            this.MaNXB.MinimumWidth = 9;
+            this.MaNXB.Name = "MaNXB";
+            this.MaNXB.Width = 170;
+            // 
+            // MaKho
+            // 
+            this.MaKho.DataPropertyName = "MaKho";
+            this.MaKho.HeaderText = "Mã kho";
+            this.MaKho.MinimumWidth = 9;
+            this.MaKho.Name = "MaKho";
+            this.MaKho.Width = 170;
             // 
             // btnTaoMoi
             // 
@@ -565,81 +642,6 @@
             this.txtSearch.TabIndex = 6;
             this.txtSearch.TextOffset = new System.Drawing.Point(10, 0);
             this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
-            // 
-            // MaDauSach
-            // 
-            this.MaDauSach.DataPropertyName = "MaDauSach";
-            this.MaDauSach.HeaderText = "Mã đầu sách";
-            this.MaDauSach.MinimumWidth = 9;
-            this.MaDauSach.Name = "MaDauSach";
-            this.MaDauSach.Width = 170;
-            // 
-            // TenDauSach
-            // 
-            this.TenDauSach.DataPropertyName = "TenDauSach";
-            this.TenDauSach.HeaderText = "Tên đầu sách";
-            this.TenDauSach.MinimumWidth = 9;
-            this.TenDauSach.Name = "TenDauSach";
-            this.TenDauSach.Width = 570;
-            // 
-            // NamXuatBan
-            // 
-            this.NamXuatBan.DataPropertyName = "NamXuatBan";
-            this.NamXuatBan.HeaderText = "Năm XB";
-            this.NamXuatBan.MinimumWidth = 9;
-            this.NamXuatBan.Name = "NamXuatBan";
-            this.NamXuatBan.Width = 150;
-            // 
-            // GiaBia
-            // 
-            this.GiaBia.DataPropertyName = "GiaBia";
-            dataGridViewCellStyle3.Format = "#,###.##";
-            dataGridViewCellStyle3.NullValue = null;
-            this.GiaBia.DefaultCellStyle = dataGridViewCellStyle3;
-            this.GiaBia.HeaderText = "Giá bìa";
-            this.GiaBia.MinimumWidth = 9;
-            this.GiaBia.Name = "GiaBia";
-            this.GiaBia.Width = 150;
-            // 
-            // SoTrang
-            // 
-            this.SoTrang.DataPropertyName = "SoTrang";
-            this.SoTrang.HeaderText = "Số trang";
-            this.SoTrang.MinimumWidth = 9;
-            this.SoTrang.Name = "SoTrang";
-            this.SoTrang.Width = 150;
-            // 
-            // MaLoaiSach
-            // 
-            this.MaLoaiSach.DataPropertyName = "MaLoaiSach";
-            this.MaLoaiSach.HeaderText = "Mã loại sách";
-            this.MaLoaiSach.MinimumWidth = 9;
-            this.MaLoaiSach.Name = "MaLoaiSach";
-            this.MaLoaiSach.Width = 170;
-            // 
-            // MaChuDe
-            // 
-            this.MaChuDe.DataPropertyName = "MaChuDe";
-            this.MaChuDe.HeaderText = "Mã chủ đề";
-            this.MaChuDe.MinimumWidth = 9;
-            this.MaChuDe.Name = "MaChuDe";
-            this.MaChuDe.Width = 170;
-            // 
-            // MaNXB
-            // 
-            this.MaNXB.DataPropertyName = "MaNXB";
-            this.MaNXB.HeaderText = "Mã NXB";
-            this.MaNXB.MinimumWidth = 9;
-            this.MaNXB.Name = "MaNXB";
-            this.MaNXB.Width = 170;
-            // 
-            // MaKho
-            // 
-            this.MaKho.DataPropertyName = "MaKho";
-            this.MaKho.HeaderText = "Mã kho";
-            this.MaKho.MinimumWidth = 9;
-            this.MaKho.Name = "MaKho";
-            this.MaKho.Width = 170;
             // 
             // UC_DauSach
             // 

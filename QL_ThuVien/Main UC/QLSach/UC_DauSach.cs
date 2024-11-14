@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Threading;
 
 namespace QL_ThuVien.Main_UC.QLSach
 {
@@ -20,7 +21,6 @@ namespace QL_ThuVien.Main_UC.QLSach
         DataTable dt;
         DataView dv;
         bool addNewFlag = false;
-
         public UC_DauSach()
         {
             InitializeComponent();
@@ -79,10 +79,46 @@ namespace QL_ThuVien.Main_UC.QLSach
             dgvDSDauSach.DataSource = dv;
         }
 
+        private void TaoMaDS()
+        {
+            if (cboMaLoaiSach.SelectedValue == null)
+            {
+                return;
+            }
+            string selectedLoaiSach = cboMaLoaiSach.SelectedValue.ToString();
+            using (con = new SqlConnection(strCon))
+            {
+                con.Open();
+                string sql = $"SELECT MAX(MaDauSach) FROM DauSach WHERE MaDauSach like '%{selectedLoaiSach}%'";
+                SqlCommand cmd = new SqlCommand(sql, con);
+                var result = cmd.ExecuteScalar();
+
+                if (result != DBNull.Value && result != null)
+                {
+                    string maxMaDauSach = result.ToString();
+                    int number = int.Parse(maxMaDauSach.Substring(selectedLoaiSach.Length));
+                    ++number;
+                    txtMaDauSach.Text = selectedLoaiSach + number.ToString("D2");
+                }
+                else
+                {
+                    txtMaDauSach.Text = selectedLoaiSach + "01";
+                }
+            }
+        }
+
+        private void cboMaLoaiSach_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (addNewFlag)
+            {
+                TaoMaDS();
+            } 
+        }
+
         string selectedMaDauSach;
         private void NapCT()
         {
-            if (dgvDSDauSach.CurrentRow != null && dgvDSDauSach.CurrentRow.Index >= 0)
+            if (dgvDSDauSach.CurrentCell != null && dgvDSDauSach.CurrentCell.RowIndex >= 0)
             {
                 int i = dgvDSDauSach.CurrentRow.Index;
                 selectedMaDauSach = dgvDSDauSach.Rows[i].Cells["MaDauSach"].Value.ToString();
@@ -108,9 +144,7 @@ namespace QL_ThuVien.Main_UC.QLSach
 
         private void btnTaoMoi_Click(object sender, EventArgs e)
         {
-            txtMaDauSach.Enabled = true;
-
-            txtMaDauSach.Text = "";
+            TaoMaDS();
             txtTenDauSach.Text = "";
             txtNamXB.Text = "";
             txtGiaBia.Text = "";
@@ -121,7 +155,7 @@ namespace QL_ThuVien.Main_UC.QLSach
             cboMaNXB.SelectedIndex = 0;
             cboMaKho.SelectedIndex = 0;
 
-            txtMaDauSach.Focus();
+            txtTenDauSach.Focus();
             addNewFlag = true;
         }
         void DoSQL(string sql)
@@ -156,6 +190,19 @@ namespace QL_ThuVien.Main_UC.QLSach
                     MessageBox.Show($"Đã thêm thành công bản ghi", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     ShowDauSach();
                     addNewFlag = false;
+
+                    // Tìm dòng chứa mã của bản ghi vừa thêm
+                    foreach (DataGridViewRow row in dgvDSDauSach.Rows)
+                    {
+                        if (row.Cells["MaDauSach"].Value.ToString() == maDauSach)
+                        {
+                            dgvDSDauSach.ClearSelection();
+                            dgvDSDauSach.CurrentCell = row.Cells[0]; // Đặt cell đầu tiên của dòng vừa thêm làm cell hiện tại
+                            NapCT();
+                            dgvDSDauSach.FirstDisplayedScrollingRowIndex = row.Index; // Cuộn đến dòng vừa thêm
+                            break;
+                        }
+                    }
                 }
             }
             catch (Exception ex)
@@ -168,24 +215,42 @@ namespace QL_ThuVien.Main_UC.QLSach
         {
             if (dgvDSDauSach.SelectedRows.Count > 0)
             {
-                DialogResult rs = MessageBox.Show("Bạn có chắc chắn muốn xóa các bản ghi đã chọn và các bản ghi liên quan?", "Xác nhận",
+                DialogResult rs = MessageBox.Show("Bạn có chắc chắn muốn xóa các bản ghi đã chọn ?", "Xác nhận",
                     MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
                 if (rs == DialogResult.Yes)
                 {
+                    int currentIndex = dgvDSDauSach.CurrentRow.Index;
+                    int count = 0;
                     foreach (DataGridViewRow row in dgvDSDauSach.SelectedRows)
                     {
                         string maDauSach = row.Cells["MaDauSach"].Value.ToString();
+                        try
+                        {
+                            string sql = $"DELETE FROM DauSach WHERE MaDauSach = '{maDauSach}'";
+                            using (con = new SqlConnection(strCon))
+                            {
+                                con.Open();
+                                cmd = new SqlCommand(sql, con);
+                                if (cmd.ExecuteNonQuery() >0)
+                                {
+                                    count++;
+                                }
+                            }
 
-                        string sql1 = $"DELETE FROM CuonSach WHERE MaDauSach = '{maDauSach}'";
-                        DoSQL(sql1);
-
-                        string sql2 = $"DELETE FROM DauSach WHERE MaDauSach = '{maDauSach}'";
-                        DoSQL(sql2);
+                            MessageBox.Show($"Đã xóa {count} bản ghi.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            ShowDauSach();
+                            int beforeRowIndex = currentIndex - 1;
+                            dgvDSDauSach.ClearSelection();
+                            dgvDSDauSach.CurrentCell = dgvDSDauSach.Rows[beforeRowIndex].Cells[0];
+                            NapCT();
+                            dgvDSDauSach.FirstDisplayedScrollingRowIndex = beforeRowIndex;
+                        }
+                        catch (Exception)
+                        {
+                            MessageBox.Show("Đầu sách liên quan nhiều tới bảng dữ liệu khác");
+                        }
                     }
-
-                    MessageBox.Show("Đã xóa các bản ghi đã chọn.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    ShowDauSach();
                 }
             }
             else
@@ -237,6 +302,8 @@ namespace QL_ThuVien.Main_UC.QLSach
                 return;
             }
 
+            int currentIndex = dgvDSDauSach.CurrentRow.Index;
+
             using (con = new SqlConnection(strCon))
             {
                 con.Open();
@@ -256,7 +323,7 @@ namespace QL_ThuVien.Main_UC.QLSach
                     int kq = cmd.ExecuteNonQuery();
                     if (kq > 0)
                     {
-                        MessageBox.Show("Đã cập nhật", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Cập nhật thông tin thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
                     {
@@ -269,6 +336,10 @@ namespace QL_ThuVien.Main_UC.QLSach
                 }
             }
             ShowDauSach();
+            dgvDSDauSach.ClearSelection();
+            dgvDSDauSach.CurrentCell = dgvDSDauSach.Rows[currentIndex].Cells[0];
+            NapCT();
+            dgvDSDauSach.FirstDisplayedScrollingRowIndex = currentIndex;
         }
     }
 }

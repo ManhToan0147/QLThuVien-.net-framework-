@@ -219,6 +219,7 @@
             // 
             // dgvTacGia
             // 
+            this.dgvTacGia.AllowUserToAddRows = false;
             this.dgvTacGia.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

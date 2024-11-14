@@ -216,17 +216,8 @@ namespace QL_ThuVien.Main_UC.QLTacGia
                     int count = 0;
                     foreach (DataGridViewRow row in dgvDSTG.SelectedRows)
                     {
-                        var cellMaDS = row.Cells[0].Value;
-                        var cellMaTG = row.Cells[1].Value;
-
-                        if (cellMaDS == null || cellMaTG == null)
-                        {
-                            MessageBox.Show("Một trong các bản ghi được chọn không chứa thông tin hợp lệ.");
-                            return;
-                        }
-
-                        string maDS = cellMaDS.ToString();
-                        string maTG = cellMaTG.ToString();
+                        string maDS = row.Cells[0].Value?.ToString() ?? string.Empty;
+                        string maTG = row.Cells[1].Value?.ToString() ?? string.Empty;
 
                         using (con = new SqlConnection(strCon))
                         {
@@ -255,6 +246,30 @@ namespace QL_ThuVien.Main_UC.QLTacGia
                 MessageBox.Show("Chọn bản ghi để xóa", "Thông báo",
                    MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
+            }
+        }
+
+        private void btnXemChiTiet_Click(object sender, EventArgs e)
+        {
+            if (dgvDauSach.SelectedRows.Count > 0)
+            {
+                DataGridViewRow selectedRow = dgvDauSach.SelectedRows[0];
+                string maDauSach;
+                if (selectedRow.Cells["MaDauSach"].Value != null)
+                {
+                    maDauSach = selectedRow.Cells["MaDauSach"].Value.ToString();
+                    // Khởi tạo form chi tiết và truyền mã đầu sách qua constructor
+                    ChiTietSach cts = new ChiTietSach(maDauSach);
+                    cts.ShowDialog(); // Hiển thị form chi tiết dưới dạng dialog
+                }
+                else
+                {
+                    MessageBox.Show("Dòng được chọn không chứa thông tin.");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng chọn một đầu sách để xem chi tiết.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
     }

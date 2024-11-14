@@ -115,6 +115,12 @@
     <Compile Include="frmThuThu.Designer.cs">
       <DependentUpon>frmThuThu.cs</DependentUpon>
     </Compile>
+    <Compile Include="Main UC\CaiDat\UC_QLTaiKhoan.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Main UC\CaiDat\UC_QLTaiKhoan.Designer.cs">
+      <DependentUpon>UC_QLTaiKhoan.cs</DependentUpon>
+    </Compile>
     <Compile Include="Main UC\CaiDat\UC_SaoLuu&amp;PhucHoi.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -177,6 +183,12 @@
     <Compile Include="frmSignIn.Designer.cs">
       <DependentUpon>frmSignIn.cs</DependentUpon>
     </Compile>
+    <Compile Include="Ribbon\UC_CaiDat_Ribbon.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ribbon\UC_CaiDat_Ribbon.Designer.cs">
+      <DependentUpon>UC_CaiDat_Ribbon.cs</DependentUpon>
+    </Compile>
     <Compile Include="Ribbon\UC_QLMuonTra_Ribbon.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -215,6 +227,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmThuThu.resx">
       <DependentUpon>frmThuThu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main UC\CaiDat\UC_QLTaiKhoan.resx">
+      <DependentUpon>UC_QLTaiKhoan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main UC\CaiDat\UC_SaoLuu&amp;PhucHoi.resx">
       <DependentUpon>UC_SaoLuu&amp;PhucHoi.cs</DependentUpon>
@@ -255,6 +270,9 @@
     </Compile>
     <EmbeddedResource Include="frmSignIn.resx">
       <DependentUpon>frmSignIn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ribbon\UC_CaiDat_Ribbon.resx">
+      <DependentUpon>UC_CaiDat_Ribbon.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Ribbon\UC_QLMuonTra_Ribbon.resx">
       <DependentUpon>UC_QLMuonTra_Ribbon.cs</DependentUpon>

@@ -136,5 +136,20 @@ namespace QL_ThuVien.Main_UC.QLSach
                 MessageBox.Show("Vui lòng chọn một đầu sách để xem chi tiết.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
+
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+            if (dgvChiTietDauSach == null)
+            {
+                return;
+            }
+            txtSearch.Text = string.Empty;
+            cboChuDe.SelectedIndex = 0;
+            cboLoaiSach.SelectedIndex = 0;
+            cboTacGia.SelectedIndex = 0;
+            cboNXB.SelectedIndex = 0;
+            cboKho.SelectedIndex = 0;
+            dv.RowFilter = null;
+        }
     }
 }

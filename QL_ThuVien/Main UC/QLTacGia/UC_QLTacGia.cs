@@ -50,7 +50,7 @@ namespace QL_ThuVien.Main_UC.QLTacGia
 
         private void NapCT()
         {
-            if (dgvTacGia.CurrentRow != null && dgvTacGia.CurrentRow.Index >= 0)
+            if (dgvTacGia.CurrentCell != null && dgvTacGia.CurrentCell.RowIndex >= 0)
             {
                 int i = dgvTacGia.CurrentRow.Index;
                 txtMaTacGia.Text = dgvTacGia.Rows[i].Cells["MaTG"].Value.ToString();
@@ -70,13 +70,26 @@ namespace QL_ThuVien.Main_UC.QLTacGia
 
         private void btnTaoMoi_Click(object sender, EventArgs e)
         {
-            txtMaTacGia.Enabled = true;
-            txtMaTacGia.Text = "";
+            using (con = new SqlConnection(strCon))
+            {
+                con.Open();
+                string sql = "Select max(MaTG) from TacGia";
+                cmd = new SqlCommand(sql, con);
+                object rs = cmd.ExecuteScalar();
+                if (rs != DBNull.Value && rs != null)
+                {
+                    string maTacGia = rs.ToString();
+                    int number = int.Parse(maTacGia.Substring(2)); //Lấy sau phầm "TG"
+                    ++number;
+                    txtMaTacGia.Text = "TG" + number.ToString("D2");
+                }
+            }
+
             txtTenTacGia.Text = "";
             cboGioiTinh.SelectedIndex = -1;
             txtNamSinh.Text = "";
 
-            txtMaTacGia.Focus();
+            txtTenTacGia.Focus();
         }
 
         private void btnThem_Click(object sender, EventArgs e)
@@ -105,6 +118,13 @@ namespace QL_ThuVien.Main_UC.QLTacGia
 
                 MessageBox.Show($"Đã thêm thành công bản ghi", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 LoadTacGia();
+                int lastIndex = dgvTacGia.RowCount - 1;
+                dgvTacGia.ClearSelection();
+                dgvTacGia.CurrentCell = dgvTacGia.Rows[lastIndex].Cells[0]; 
+                NapCT();
+                dgvTacGia.FirstDisplayedScrollingRowIndex = lastIndex;
+
+
             }
             catch (Exception ex)
             {
@@ -119,6 +139,8 @@ namespace QL_ThuVien.Main_UC.QLTacGia
                 DialogResult rs = MessageBox.Show("Bạn có chắc chắn muốn xóa các bản ghi đã chọn và các bản ghi khác liên quan?",
                     "Xác nhận yêu cầu", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
+                int currentIndex = dgvTacGia.CurrentRow.Index;
+                int deletedCount = 0;
                 if (rs == DialogResult.Yes)
                 {
                     using (SqlConnection con = new SqlConnection(strCon))
@@ -128,20 +150,20 @@ namespace QL_ThuVien.Main_UC.QLTacGia
                         {
                             cmd.Connection = con;
 
-                            int deletedCount = 0;
+                            
 
                             foreach (DataGridViewRow row in dgvTacGia.SelectedRows)
                             {
                                 string maTG = row.Cells["MaTG"].Value.ToString();
 
-                                string sql1 = $"DELETE FROM DauSach_TacGia WHERE MaTG = '{maTG}';";
+                                //string sql1 = $"DELETE FROM DauSach_TacGia WHERE MaTG = '{maTG}';";
                                 string sql2 = $"DELETE FROM TacGia WHERE MaTG = '{maTG}';";
 
                                 try
                                 {
-                                    // Thực hiện xóa trong bảng DauSach_TacGia
-                                    cmd.CommandText = sql1;
-                                    cmd.ExecuteNonQuery();
+                                    //// Thực hiện xóa trong bảng DauSach_TacGia
+                                    //cmd.CommandText = sql1;
+                                    //cmd.ExecuteNonQuery();
 
                                     // Thực hiện xóa trong bảng TacGia
                                     cmd.CommandText = sql2;
@@ -163,6 +185,11 @@ namespace QL_ThuVien.Main_UC.QLTacGia
                         }
                     }
                     LoadTacGia();
+                    int beforeRowIndex = currentIndex - deletedCount;
+                    dgvTacGia.ClearSelection();
+                    dgvTacGia.CurrentCell = dgvTacGia.Rows[beforeRowIndex].Cells[0];
+                    NapCT();
+                    dgvTacGia.FirstDisplayedScrollingRowIndex = beforeRowIndex;
                 }
             }
             else
@@ -181,6 +208,8 @@ namespace QL_ThuVien.Main_UC.QLTacGia
                 return;
             }
 
+            int currentIndex = dgvTacGia.CurrentRow.Index;
+
             string tenTG = txtTenTacGia.Text.Trim();
             string gioiTinh = cboGioiTinh.Text.Trim();
             string namSinh = txtNamSinh.Text.Trim();
@@ -197,13 +226,17 @@ namespace QL_ThuVien.Main_UC.QLTacGia
                 if (kq > 0)
                 {
                     MessageBox.Show("Cập nhật thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    LoadTacGia();
                 }
                 else
                 {
                     MessageBox.Show("Cập nhật thất bại. Vui lòng kiểm tra lại.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+            LoadTacGia();
+            dgvTacGia.ClearSelection();
+            dgvTacGia.CurrentCell = dgvTacGia.Rows[currentIndex].Cells[0];
+            NapCT();
+            dgvTacGia.FirstDisplayedScrollingRowIndex = currentIndex;
         }
     }
 }

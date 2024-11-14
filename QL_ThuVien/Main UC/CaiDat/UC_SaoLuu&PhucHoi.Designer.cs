@@ -48,7 +48,7 @@
             this.lblSaoLuuPhucHoi.AutoSize = true;
             this.lblSaoLuuPhucHoi.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSaoLuuPhucHoi.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(76)))), ((int)(((byte)(170)))));
-            this.lblSaoLuuPhucHoi.Location = new System.Drawing.Point(604, 63);
+            this.lblSaoLuuPhucHoi.Location = new System.Drawing.Point(604, 96);
             this.lblSaoLuuPhucHoi.Name = "lblSaoLuuPhucHoi";
             this.lblSaoLuuPhucHoi.Size = new System.Drawing.Size(826, 74);
             this.lblSaoLuuPhucHoi.TabIndex = 5;
@@ -61,7 +61,7 @@
             this.groupBox1.Controls.Add(this.txtBackupPath);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(288, 252);
+            this.groupBox1.Location = new System.Drawing.Point(288, 328);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(1459, 343);
             this.groupBox1.TabIndex = 6;
@@ -161,7 +161,7 @@
             this.groupBox2.Controls.Add(this.txtRestorePath);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(288, 658);
+            this.groupBox2.Location = new System.Drawing.Point(288, 734);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(1459, 343);
             this.groupBox2.TabIndex = 7;
@@ -264,7 +264,7 @@
             this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "UC_SaoLuu_PhucHoi";
-            this.Size = new System.Drawing.Size(2035, 1379);
+            this.Size = new System.Drawing.Size(2035, 1277);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
