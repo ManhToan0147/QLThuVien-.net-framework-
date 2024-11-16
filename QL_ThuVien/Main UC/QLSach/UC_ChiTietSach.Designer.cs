@@ -34,6 +34,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelSearching = new System.Windows.Forms.Panel();
+            this.btnReset = new Guna.UI2.WinForms.Guna2Button();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -60,7 +61,6 @@
             this.TenKho = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnXemChiTiet = new Guna.UI2.WinForms.Guna2Button();
             this.lblChiTietDS = new System.Windows.Forms.Label();
-            this.btnReset = new Guna.UI2.WinForms.Guna2Button();
             this.panelSearching.SuspendLayout();
             this.panelContainer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvChiTietDauSach)).BeginInit();
@@ -84,6 +84,30 @@
             this.panelSearching.Name = "panelSearching";
             this.panelSearching.Size = new System.Drawing.Size(1927, 271);
             this.panelSearching.TabIndex = 1;
+            // 
+            // btnReset
+            // 
+            this.btnReset.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnReset.BorderColor = System.Drawing.Color.Transparent;
+            this.btnReset.BorderRadius = 20;
+            this.btnReset.BorderThickness = 2;
+            this.btnReset.CheckedState.FillColor = System.Drawing.Color.White;
+            this.btnReset.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnReset.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnReset.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnReset.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnReset.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(232)))));
+            this.btnReset.Font = new System.Drawing.Font("Segoe UI", 9.857143F, System.Drawing.FontStyle.Bold);
+            this.btnReset.ForeColor = System.Drawing.Color.White;
+            this.btnReset.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(232)))));
+            this.btnReset.HoverState.FillColor = System.Drawing.Color.White;
+            this.btnReset.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(232)))));
+            this.btnReset.Location = new System.Drawing.Point(1713, 42);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(172, 72);
+            this.btnReset.TabIndex = 7;
+            this.btnReset.Text = "Reset";
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
             // label5
             // 
@@ -430,30 +454,6 @@
             this.lblChiTietDS.Size = new System.Drawing.Size(555, 74);
             this.lblChiTietDS.TabIndex = 4;
             this.lblChiTietDS.Text = "CHI TIẾT ĐẦU SÁCH";
-            // 
-            // btnReset
-            // 
-            this.btnReset.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnReset.BorderColor = System.Drawing.Color.Transparent;
-            this.btnReset.BorderRadius = 20;
-            this.btnReset.BorderThickness = 2;
-            this.btnReset.CheckedState.FillColor = System.Drawing.Color.White;
-            this.btnReset.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnReset.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnReset.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnReset.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnReset.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(232)))));
-            this.btnReset.Font = new System.Drawing.Font("Segoe UI", 9.857143F, System.Drawing.FontStyle.Bold);
-            this.btnReset.ForeColor = System.Drawing.Color.White;
-            this.btnReset.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(232)))));
-            this.btnReset.HoverState.FillColor = System.Drawing.Color.White;
-            this.btnReset.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(232)))));
-            this.btnReset.Location = new System.Drawing.Point(1713, 42);
-            this.btnReset.Name = "btnReset";
-            this.btnReset.Size = new System.Drawing.Size(172, 72);
-            this.btnReset.TabIndex = 7;
-            this.btnReset.Text = "Reset";
-            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
             // UC_ChiTietSach
             // 

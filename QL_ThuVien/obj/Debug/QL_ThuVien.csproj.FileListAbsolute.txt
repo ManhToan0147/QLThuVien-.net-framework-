@@ -349,3 +349,8 @@ D:\My Project\QL_ThuVien new - new version\QL_ThuVien\obj\Debug\QL_ThuVien.frmKh
 D:\My Project\QL_ThuVien new - new version\QL_ThuVien\obj\Debug\QL_ThuVien.frmNXB.resources
 D:\My Project\QL_ThuVien new - new version\QL_ThuVien\obj\Debug\QL_ThuVien.Ribbon.UC_CaiDat_Ribbon.resources
 D:\My Project\QL_ThuVien new - new version\QL_ThuVien\obj\Debug\QL_ThuVien.Main_UC.CaiDat.UC_QLTaiKhoan.resources
+D:\My Project\QL_ThuVien new - new version\QL_ThuVien\obj\Debug\QL_ThuVien.Main_UC.QLMuonTra.UC_PhieuMuon.resources
+D:\My Project\QL_ThuVien new - new version\QL_ThuVien\obj\Debug\QL_ThuVien.frmNhapSach.resources
+D:\My Project\QL_ThuVien new - new version\QL_ThuVien\obj\Debug\QL_ThuVien.frmTraSach.resources
+D:\My Project\QL_ThuVien new - new version\QL_ThuVien\obj\Debug\QL_ThuVien.Main_UC.QLMuonTra.UC_PhieuTra.resources
+D:\My Project\QL_ThuVien new - new version\QL_ThuVien\obj\Debug\QL_ThuVien.Main_UC.QLMuonTra.UC_PhieuPhat.resources

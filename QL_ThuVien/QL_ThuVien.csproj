@@ -103,6 +103,12 @@
     <Compile Include="frmLoaiSach.Designer.cs">
       <DependentUpon>frmLoaiSach.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmNhapSach.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmNhapSach.Designer.cs">
+      <DependentUpon>frmNhapSach.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmNXB.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -114,6 +120,12 @@
     </Compile>
     <Compile Include="frmThuThu.Designer.cs">
       <DependentUpon>frmThuThu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTraSach.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTraSach.Designer.cs">
+      <DependentUpon>frmTraSach.cs</DependentUpon>
     </Compile>
     <Compile Include="Main UC\CaiDat\UC_QLTaiKhoan.cs">
       <SubType>UserControl</SubType>
@@ -132,6 +144,24 @@
     </Compile>
     <Compile Include="Main UC\QLDocGia\UC_QLDocGia.Designer.cs">
       <DependentUpon>UC_QLDocGia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main UC\QLMuonTra\UC_PhieuMuon.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Main UC\QLMuonTra\UC_PhieuMuon.Designer.cs">
+      <DependentUpon>UC_PhieuMuon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main UC\QLMuonTra\UC_PhieuPhat.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Main UC\QLMuonTra\UC_PhieuPhat.Designer.cs">
+      <DependentUpon>UC_PhieuPhat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main UC\QLMuonTra\UC_PhieuTra.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Main UC\QLMuonTra\UC_PhieuTra.Designer.cs">
+      <DependentUpon>UC_PhieuTra.cs</DependentUpon>
     </Compile>
     <Compile Include="Main UC\QLMuonTra\UC_QLThuThu.cs">
       <SubType>UserControl</SubType>
@@ -222,11 +252,17 @@
     <EmbeddedResource Include="frmLoaiSach.resx">
       <DependentUpon>frmLoaiSach.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmNhapSach.resx">
+      <DependentUpon>frmNhapSach.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmNXB.resx">
       <DependentUpon>frmNXB.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmThuThu.resx">
       <DependentUpon>frmThuThu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTraSach.resx">
+      <DependentUpon>frmTraSach.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main UC\CaiDat\UC_QLTaiKhoan.resx">
       <DependentUpon>UC_QLTaiKhoan.cs</DependentUpon>
@@ -236,6 +272,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Main UC\QLDocGia\UC_QLDocGia.resx">
       <DependentUpon>UC_QLDocGia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main UC\QLMuonTra\UC_PhieuMuon.resx">
+      <DependentUpon>UC_PhieuMuon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main UC\QLMuonTra\UC_PhieuPhat.resx">
+      <DependentUpon>UC_PhieuPhat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main UC\QLMuonTra\UC_PhieuTra.resx">
+      <DependentUpon>UC_PhieuTra.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main UC\QLMuonTra\UC_QLThuThu.resx">
       <DependentUpon>UC_QLThuThu.cs</DependentUpon>

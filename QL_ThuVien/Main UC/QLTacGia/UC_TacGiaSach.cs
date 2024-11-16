@@ -33,12 +33,12 @@ namespace QL_ThuVien.Main_UC.QLTacGia
             txtSearch.Clear();
             if (cboTruong.SelectedIndex == 0)
             {
-                txtSearch.PlaceholderText = "Nhập để tìm kiếm tên đầu sách";
+                txtSearch.PlaceholderText = "Nhập tên đầu sách để tìm kiếm";
                 dvTG.RowFilter = null;
             }
             else
             {
-                txtSearch.PlaceholderText = "Nhập để tìm kiếm tên tác giả";
+                txtSearch.PlaceholderText = "Nhập tên tác giả để tìm kiếm";
                 dvDS.RowFilter = null;
             }
         }

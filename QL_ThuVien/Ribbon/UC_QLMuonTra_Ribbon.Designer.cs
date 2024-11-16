@@ -72,6 +72,7 @@
             this.btnPhieuPhat.Size = new System.Drawing.Size(247, 90);
             this.btnPhieuPhat.TabIndex = 0;
             this.btnPhieuPhat.Text = "Phiếu phạt";
+            this.btnPhieuPhat.Click += new System.EventHandler(this.btnPhieuPhat_Click);
             // 
             // btnPhieuTra
             // 
@@ -93,6 +94,7 @@
             this.btnPhieuTra.Size = new System.Drawing.Size(247, 90);
             this.btnPhieuTra.TabIndex = 0;
             this.btnPhieuTra.Text = "Phiếu trả";
+            this.btnPhieuTra.Click += new System.EventHandler(this.btnPhieuTra_Click);
             // 
             // btnPhieuMuon
             // 

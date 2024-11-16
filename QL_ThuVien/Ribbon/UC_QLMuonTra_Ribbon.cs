@@ -8,6 +8,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.WebSockets;
 using System.Windows.Forms;
 
 namespace QL_ThuVien.Ribbon
@@ -43,7 +44,20 @@ namespace QL_ThuVien.Ribbon
 
         private void btnPhieuMuon_Click(object sender, EventArgs e)
         {
-            
+            var uc = new UC_PhieuMuon();
+            addUserControl(uc);
+        }
+
+        private void btnPhieuTra_Click(object sender, EventArgs e)
+        {
+            var uc = new UC_PhieuTra();
+            addUserControl(uc);
+        }
+
+        private void btnPhieuPhat_Click(object sender, EventArgs e)
+        {
+            var uc = new UC_PhieuPhat();
+            addUserControl(uc);
         }
     }
 }
