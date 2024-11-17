@@ -198,7 +198,7 @@ namespace QL_ThuVien
                                       SELECT 1
                                       FROM CT_PhieuMuon CT
                                       INNER JOIN PhieuMuon PM ON CT.MaPhieuMuon = PM.MaPhieuMuon
-                                      WHERE CT.MaSach = @MaSach -- Sử dụng @MaSach để kiểm tra đúng sách
+                                      WHERE CT.MaSach = @MaSach 
                                       AND PM.NgayThucTra IS NULL
                                   )";
                             using (SqlCommand cmd = new SqlCommand(sqlUpdate, con))

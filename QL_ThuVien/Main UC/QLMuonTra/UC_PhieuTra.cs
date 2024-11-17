@@ -29,6 +29,8 @@ namespace QL_ThuVien.Main_UC.QLMuonTra
         private void btnTraSach_Click(object sender, EventArgs e)
         {
             var f = new frmTraSach();
+            f.MaPhieuMuon = txtMaPhieuMuon.Text;
+            f.MaDocGia = txtMaDG.Text;
             f.ShowDialog();
         }
 
@@ -39,7 +41,7 @@ namespace QL_ThuVien.Main_UC.QLMuonTra
 
             //Fix lỗi column header
             dgvPMDaTra.ColumnHeadersDefaultCellStyle.Font = new Font(dgvPMDaTra.Font, FontStyle.Bold);
-            dgvSachTra.DefaultCellStyle.Font = new Font(dgvPMDaTra.Font, FontStyle.Regular);
+            dgvSachTra.DefaultCellStyle.Font = new Font(dgvSachTra.Font, FontStyle.Regular);
             dgvSachTra.Columns["DaTraSach"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
             LoadPMDaTra();
@@ -255,6 +257,55 @@ namespace QL_ThuVien.Main_UC.QLMuonTra
 
                 }
             }
+        }
+
+        private void btnSua_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(selectedMaPM))
+            {
+                MessageBox.Show("Chưa chọn phiếu mượn để sửa thông tin trả");
+                return;
+            }
+            int currentIndex = dgvPMDaTra.CurrentRow.Index;
+            using (con = new SqlConnection(strCon))
+            {
+                con.Open();
+                string sql = "Update PhieuMuon set NgayThucTra = @NgayThucTra " +
+                        $"where MaPhieuMuon = '{selectedMaPM}'";
+                cmd = new SqlCommand(sql, con);
+                cmd.Parameters.AddWithValue("@NgayThucTra", dtNgayThucTra.Value.ToString("yyyy-MM-dd"));
+                try
+                {
+                    if (cmd.ExecuteNonQuery() > 0)
+                    {
+                        MessageBox.Show("Sửa thông tin trả thành công!", "Thông báo",
+                            MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Sửa thất bại!", "Lỗi",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                    LoadPMDaTra();
+                    LoadPMCanTra();
+                    dgvPMDaTra.ClearSelection();
+                    dgvPMDaTra.CurrentCell = dgvPMDaTra.Rows[currentIndex].Cells[0];
+                    dgvPMDaTra.FirstDisplayedScrollingRowIndex = currentIndex;
+                    NapCT();
+                    LoadSachTra(selectedMaPM);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Lỗi " + ex.Message, "Lỗi",
+                           MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            LoadSachTra(selectedMaPM);
         }
 
         private void NapCT()
