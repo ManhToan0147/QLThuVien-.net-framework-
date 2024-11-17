@@ -135,7 +135,10 @@ namespace QL_ThuVien.Main_UC.QLMuonTra
         {
             txtMaPhieuMuon.Enabled = true;
             txtMaPhieuMuon.Text = "";
+            txtMaPhieuMuon.Focus();
+
             txtSoNgayTre.Text = "";
+            txtSoNgayTre.Enabled = false;
             txtMaDG.Text = "";
             dtNgayMuon.Value = DateTime.Now;
             dtHanTra.Value = DateTime.Now;
@@ -325,6 +328,7 @@ namespace QL_ThuVien.Main_UC.QLMuonTra
                 dtNgayThucTra.Text = dgvPMDaTra.Rows[i].Cells[4].Value.ToString();
 
                 txtSoNgayTre.Text = dgvPMDaTra.Rows[i].Cells[5].Value.ToString();
+                txtSoNgayTre.Enabled = !string.IsNullOrEmpty(txtSoNgayTre.Text);
 
             }
         }

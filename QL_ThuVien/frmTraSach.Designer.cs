@@ -31,10 +31,10 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblNXB = new System.Windows.Forms.Label();
             this.grbPhieuMuon = new System.Windows.Forms.GroupBox();
             this.txtMaDG = new Guna.UI2.WinForms.Guna2TextBox();
@@ -43,6 +43,10 @@
             this.label2 = new System.Windows.Forms.Label();
             this.grbSachMuon = new System.Windows.Forms.GroupBox();
             this.dgvSachMuon = new System.Windows.Forms.DataGridView();
+            this.MaSach = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TienCoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DaTraSach = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.TinhTrangMuon = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grbSachTra = new System.Windows.Forms.GroupBox();
             this.dgvSachTra = new System.Windows.Forms.DataGridView();
             this.MaSach2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -50,10 +54,6 @@
             this.btnChuyen = new Guna.UI2.WinForms.Guna2Button();
             this.btnXoa = new Guna.UI2.WinForms.Guna2Button();
             this.btnLuu = new Guna.UI2.WinForms.Guna2Button();
-            this.MaSach = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TienCoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DaTraSach = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.TinhTrangMuon = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grbPhieuMuon.SuspendLayout();
             this.grbSachMuon.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSachMuon)).BeginInit();
@@ -100,7 +100,7 @@
             this.txtMaDG.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMaDG.ForeColor = System.Drawing.Color.Black;
             this.txtMaDG.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtMaDG.Location = new System.Drawing.Point(911, 42);
+            this.txtMaDG.Location = new System.Drawing.Point(904, 42);
             this.txtMaDG.Margin = new System.Windows.Forms.Padding(0);
             this.txtMaDG.Name = "txtMaDG";
             this.txtMaDG.PasswordChar = '\0';
@@ -113,7 +113,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(819, 54);
+            this.label3.Location = new System.Drawing.Point(812, 54);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(80, 30);
             this.label3.TabIndex = 8;
@@ -131,7 +131,7 @@
             this.txtMaPhieuMuon.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMaPhieuMuon.ForeColor = System.Drawing.Color.Black;
             this.txtMaPhieuMuon.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtMaPhieuMuon.Location = new System.Drawing.Point(320, 42);
+            this.txtMaPhieuMuon.Location = new System.Drawing.Point(322, 42);
             this.txtMaPhieuMuon.Margin = new System.Windows.Forms.Padding(0);
             this.txtMaPhieuMuon.Name = "txtMaPhieuMuon";
             this.txtMaPhieuMuon.PasswordChar = '\0';
@@ -144,7 +144,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(224, 54);
+            this.label2.Location = new System.Drawing.Point(226, 54);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(83, 30);
             this.label2.TabIndex = 6;
@@ -206,6 +206,42 @@
             this.dgvSachMuon.RowTemplate.Height = 50;
             this.dgvSachMuon.Size = new System.Drawing.Size(764, 214);
             this.dgvSachMuon.TabIndex = 0;
+            // 
+            // MaSach
+            // 
+            this.MaSach.DataPropertyName = "MaSach";
+            this.MaSach.HeaderText = "Mã sách";
+            this.MaSach.MinimumWidth = 9;
+            this.MaSach.Name = "MaSach";
+            this.MaSach.Width = 150;
+            // 
+            // TienCoc
+            // 
+            this.TienCoc.DataPropertyName = "TienCoc";
+            dataGridViewCellStyle3.Format = "#,###";
+            this.TienCoc.DefaultCellStyle = dataGridViewCellStyle3;
+            this.TienCoc.HeaderText = "Tiền cọc";
+            this.TienCoc.MinimumWidth = 9;
+            this.TienCoc.Name = "TienCoc";
+            this.TienCoc.Width = 150;
+            // 
+            // DaTraSach
+            // 
+            this.DaTraSach.DataPropertyName = "DaTraSach";
+            this.DaTraSach.HeaderText = "Đã trả sách";
+            this.DaTraSach.MinimumWidth = 9;
+            this.DaTraSach.Name = "DaTraSach";
+            this.DaTraSach.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.DaTraSach.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.DaTraSach.Width = 160;
+            // 
+            // TinhTrangMuon
+            // 
+            this.TinhTrangMuon.DataPropertyName = "TinhTrangMuon";
+            this.TinhTrangMuon.HeaderText = "Tình trạng mượn";
+            this.TinhTrangMuon.MinimumWidth = 9;
+            this.TinhTrangMuon.Name = "TinhTrangMuon";
+            this.TinhTrangMuon.Width = 230;
             // 
             // grbSachTra
             // 
@@ -342,42 +378,6 @@
             this.btnLuu.TabIndex = 36;
             this.btnLuu.Text = "Lưu";
             this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
-            // 
-            // MaSach
-            // 
-            this.MaSach.DataPropertyName = "MaSach";
-            this.MaSach.HeaderText = "Mã sách";
-            this.MaSach.MinimumWidth = 9;
-            this.MaSach.Name = "MaSach";
-            this.MaSach.Width = 150;
-            // 
-            // TienCoc
-            // 
-            this.TienCoc.DataPropertyName = "TienCoc";
-            dataGridViewCellStyle3.Format = "#,###";
-            this.TienCoc.DefaultCellStyle = dataGridViewCellStyle3;
-            this.TienCoc.HeaderText = "Tiền cọc";
-            this.TienCoc.MinimumWidth = 9;
-            this.TienCoc.Name = "TienCoc";
-            this.TienCoc.Width = 150;
-            // 
-            // DaTraSach
-            // 
-            this.DaTraSach.DataPropertyName = "DaTraSach";
-            this.DaTraSach.HeaderText = "Đã trả sách";
-            this.DaTraSach.MinimumWidth = 9;
-            this.DaTraSach.Name = "DaTraSach";
-            this.DaTraSach.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.DaTraSach.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.DaTraSach.Width = 160;
-            // 
-            // TinhTrangMuon
-            // 
-            this.TinhTrangMuon.DataPropertyName = "TinhTrangMuon";
-            this.TinhTrangMuon.HeaderText = "Tình trạng mượn";
-            this.TinhTrangMuon.MinimumWidth = 9;
-            this.TinhTrangMuon.Name = "TinhTrangMuon";
-            this.TinhTrangMuon.Width = 230;
             // 
             // frmTraSach
             // 

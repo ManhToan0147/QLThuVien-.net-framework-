@@ -47,6 +47,7 @@ namespace QL_ThuVien.Main_UC.QLMuonTra
             //Fix lỗi column header
             dgvPhieuMuon.ColumnHeadersDefaultCellStyle.Font = new Font(dgvPhieuMuon.Font, FontStyle.Bold);
             dgvDocGia.Columns["DaTraSach"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgvSachMuon.DefaultCellStyle.Font = new Font(dgvSachMuon.Font, FontStyle.Regular);
 
             LoadDocGia();
             LoadPhieuMuon();
@@ -252,7 +253,7 @@ namespace QL_ThuVien.Main_UC.QLMuonTra
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show($"Phiếu mượn liên quan tới nhiều bảng dữ liệu khác", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Phiếu mượn liên quan tới nhiều bảng dữ liệu khác", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
             }

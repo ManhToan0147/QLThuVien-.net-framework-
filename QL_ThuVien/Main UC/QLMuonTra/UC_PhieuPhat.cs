@@ -2,19 +2,340 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Net.NetworkInformation;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web;
 using System.Windows.Forms;
 
 namespace QL_ThuVien.Main_UC.QLMuonTra
 {
     public partial class UC_PhieuPhat : UserControl
     {
+        string strCon = @"Data Source=DESKTOP-HPGDAGQ\SQLEXPRESS;Initial Catalog=QuanLyThuVien;Integrated Security=True;Encrypt=True;TrustServerCertificate=True";
+        SqlConnection con;
+        SqlDataAdapter adapter;
+        SqlCommand cmd;
+        DataTable dt;
+        DataView dvPM;
+        DataView dvPP;
+        bool addNewFlag = false;
         public UC_PhieuPhat()
         {
             InitializeComponent();
+        }
+
+        private void UC_PhieuPhat_Load(object sender, EventArgs e)
+        {
+            LoadComboBox(cboThuThu, "ThuThu", "MaThuThu", "TenThuThu");
+
+            //Fix lỗi dgv
+            dgvSachTra.Columns["DaTraSach"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgvSachTra.DefaultCellStyle.Font = new Font(dgvSachTra.Font, FontStyle.Regular);
+            dgvSachPhat.DefaultCellStyle.Font = new Font(dgvSachPhat.Font, FontStyle.Regular);
+            dgvPhieuPhat.ColumnHeadersDefaultCellStyle.Font = new Font(dgvSachPhat.Font, FontStyle.Bold);
+
+            LoadPhieuPhat();
+            LoadPMDaTra();
+        }
+        private void LoadComboBox(ComboBox cbo, string tableName, string Ma, string TenMa)
+        {
+            using (con = new SqlConnection(strCon))
+            {
+                con.Open();
+                string sql = $"SELECT * FROM {tableName}";
+                SqlDataAdapter adapter = new SqlDataAdapter(sql, con);
+                DataTable dt = new DataTable();
+                adapter.Fill(dt);
+
+                // Thêm cột mới kết hợp mã và tên
+                dt.Columns.Add("DisplayColumn", typeof(string), $"{Ma} + ' - ' + {TenMa}");
+
+                cbo.DataSource = dt;
+                cbo.ValueMember = Ma;
+                cbo.DisplayMember = "DisplayColumn";
+                cbo.SelectedIndex = -1;
+            }
+        }
+        string selectedMaPP, selectedMaPM2;
+        private void NapCT()
+        {
+            if (dgvPhieuPhat.CurrentCell != null && dgvPhieuPhat.CurrentCell.RowIndex >= 0)
+            {
+                int i = dgvPhieuPhat.CurrentRow.Index;
+
+                selectedMaPP = dgvPhieuPhat.Rows[i].Cells[0].Value.ToString();
+                txtMaPhieuPhat.Text = selectedMaPP;
+                txtMaPhieuPhat.Enabled = string.IsNullOrEmpty(selectedMaPP);
+
+                selectedMaPM2 = dgvPhieuPhat.Rows[i].Cells[1].Value.ToString();
+                txtMaPhieuMuon.Text = selectedMaPM2;
+                txtMaPhieuMuon.Enabled = string.IsNullOrEmpty(selectedMaPM2);
+
+                dtNgayNopPhat.Text = dgvPhieuPhat.Rows[i].Cells[2].Value.ToString();
+                txtTongTienPhat.Text = dgvPhieuPhat.Rows[i].Cells[3].Value.ToString();
+                txtTongTienPhat.Enabled = !string.IsNullOrEmpty(txtTongTienPhat.Text);
+                cboThuThu.SelectedValue = dgvPhieuPhat.Rows[i].Cells[4].Value.ToString();
+            }
+        }
+
+        private void LoadSachTra(string maPhieuMuon)
+        {
+            using (con = new SqlConnection(strCon))
+            {
+                con.Open();
+                string sql = "select MaSach, TinhTrangMuon, DaTraSach, TinhTrangTra, " +
+                    "case when pm.HanTra < pm.NgayThucTra then DATEDIFF(day, pm.HanTra, pm.NgayThucTra) " +
+                    "else 0 end as SoNgayTre " +
+                    "from CT_PhieuMuon ct_pm join PhieuMuon pm on ct_pm.MaPhieuMuon = pm.MaPhieuMuon " +
+                    $"where ct_pm.MaPhieuMuon = '{maPhieuMuon}'";
+                adapter = new SqlDataAdapter(sql, con);
+                dt = new DataTable();
+                adapter.Fill(dt);
+                dgvSachTra.DataSource = dt;
+            }
+        }
+
+        private void LoadSachPhat(string maPhieuPhat)
+        {
+            using (con = new SqlConnection(strCon))
+            {
+                con.Open();
+                string sql = "select MaSach, vp.TenViPham, NopPhat " +
+                    "from CT_PhieuPhat ct_pp join ViPham vp on ct_pp.MaViPham = vp.MaViPham " +
+                    $"where MaPhieuPhat = '{maPhieuPhat}'";
+                adapter = new SqlDataAdapter(sql, con);
+                dt = new DataTable();
+                adapter.Fill(dt);
+                dgvSachPhat.DataSource = dt;
+            }
+        }
+
+        private void LoadPMDaTra()
+        {
+            using (con = new SqlConnection(strCon))
+            {
+                con.Open();
+                string sql = "select pm.MaPhieuMuon, pm.MaDocGia, sum(ct_pm.TienCoc) as TongTienCoc, pm.NgayThucTra " +
+                    "from PhieuMuon pm join CT_PhieuMuon ct_pm on pm.MaPhieuMuon = ct_pm.MaPhieuMuon " +
+                    "where pm.NgayThucTra is not null " +
+                    "group by pm.MaPhieuMuon, pm.MaDocGia, pm.NgayThucTra";
+                adapter = new SqlDataAdapter(sql, con);
+                dt = new DataTable();
+                adapter.Fill(dt);
+                dvPM = new DataView(dt);
+                dgvPhieuMuon.DataSource = dvPM;
+            }
+        }
+
+        private void LoadPhieuPhat_PhieuMuon(string maPhieuMuon)
+        {
+            foreach (DataGridViewRow row in dgvPhieuMuon.Rows)
+            {
+                // Kiểm tra nếu giá trị trong cột MaDocGia khớp với mã cần tìm
+                if (row.Cells[0].Value != null && row.Cells[0].Value.ToString() == maPhieuMuon)
+                {
+                    dgvPhieuMuon.ClearSelection();
+                    row.Cells[0].Selected = true;
+                    //dgvPhieuMuon.CurrentCell = dgvPhieuMuon.Rows[row.Index].Cells[0];
+                    dgvPhieuMuon.FirstDisplayedScrollingRowIndex = row.Index;
+                    return;
+                }
+            }
+        }
+
+        private void dgvPhieuPhat_SelectionChanged(object sender, EventArgs e)
+        {
+            NapCT();
+            LoadSachPhat(selectedMaPP);
+            LoadPhieuPhat_PhieuMuon(selectedMaPM2);
+            LoadSachTra(selectedMaPM2);
+        }
+        private void dgvPhieuMuon_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dgvPhieuMuon.CurrentCell != null && dgvPhieuMuon.CurrentCell.RowIndex >= 0)
+            {
+                int i = dgvPhieuMuon.CurrentRow.Index;
+                string maPhieuMuon = dgvPhieuMuon.Rows[i].Cells[0].Value.ToString();
+                LoadSachTra(maPhieuMuon);
+            }
+        }
+
+        private void btnTaoMoi_Click(object sender, EventArgs e)
+        {
+            //gen mã phiếu mượn
+            using (con = new SqlConnection(strCon))
+            {
+                con.Open();
+                string sql = "Select max(MaPhieuPhat) from PhieuPhat";
+                cmd = new SqlCommand(sql, con);
+                object rs = cmd.ExecuteScalar();
+                if (rs != DBNull.Value && rs != null)
+                {
+                    string maPhieuPhat = rs.ToString();
+                    int number = int.Parse(maPhieuPhat.Substring(2)); //Lấy sau phầm "PP"
+                    ++number;
+                    txtMaPhieuPhat.Text = "PP" + number.ToString("D4");
+                }
+            }
+            txtMaPhieuMuon.Text = "";
+            txtMaPhieuMuon.Enabled = true;
+            txtMaPhieuMuon.Focus();
+
+            dtNgayNopPhat.Value = DateTime.Now;
+            cboThuThu.SelectedIndex = -1;
+            txtTongTienPhat.Text = "";
+            txtTongTienPhat.Enabled = false;
+
+            addNewFlag = true;
+        }
+
+        private void dgvPhieuMuon_DoubleClick(object sender, EventArgs e)
+        {
+            if (addNewFlag)
+            {
+                if (dgvPhieuMuon.SelectedRows.Count > 0)
+                {
+                    string maPhieuMuon = dgvPhieuMuon.SelectedRows[0].Cells[0].Value.ToString();
+                    txtMaPhieuMuon.Text = maPhieuMuon;
+                }
+                else
+                {
+                    MessageBox.Show("Chọn cả dòng để thực hiện chức năng này");
+                }
+            }
+        }
+
+        private void btnThem_Click(object sender, EventArgs e)
+        {
+            using (con = new SqlConnection(strCon))
+            {
+                con.Open();
+                string sql = "Insert into PhieuPhat values " +
+                    "(@MaPhieuPhat, @MaPhieuMuon, @NgayNopPhat, @MaThuThu)";
+                cmd = new SqlCommand(sql, con);
+
+                // Thêm tham số vào câu lệnh SQL
+                cmd.Parameters.AddWithValue("@MaPhieuPhat", txtMaPhieuPhat.Text);
+                cmd.Parameters.AddWithValue("@MaPhieuMuon", txtMaPhieuMuon.Text);
+                cmd.Parameters.AddWithValue("@NgayNopPhat", dtNgayNopPhat.Value.ToString("yyyy-MM-dd")); 
+                cmd.Parameters.AddWithValue("@MaThuThu", cboThuThu.SelectedValue);
+
+                int kq = cmd.ExecuteNonQuery();
+                if (kq > 0)
+                {
+                    MessageBox.Show("Thêm phiếu phạt thành công!", "Thông báo",
+                         MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    addNewFlag = false;
+                    LoadPhieuPhat();
+                    int lastRowIndex = dgvPhieuPhat.RowCount - 1;
+                    dgvPhieuPhat.ClearSelection();
+                    dgvPhieuPhat.CurrentCell = dgvPhieuPhat.Rows[lastRowIndex].Cells[0];
+                    dgvPhieuPhat.FirstDisplayedScrollingRowIndex = lastRowIndex;
+                    NapCT();
+                    LoadSachPhat(txtMaPhieuPhat.Text);
+                    LoadPhieuPhat_PhieuMuon(txtMaPhieuMuon.Text);
+                    LoadSachTra(txtMaPhieuMuon.Text);
+                }
+                else
+                {
+                    MessageBox.Show("Không thể thêm phiếu phạt!", "Lỗi");
+                }
+            }
+        }
+
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(selectedMaPP))
+            {
+                MessageBox.Show("Vui lòng chọn một phiếu phạt để xóa!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            int currentIndex = dgvPhieuPhat.CurrentRow.Index;
+
+            DialogResult rs = MessageBox.Show($"Bạn có chắc chắn muốn xóa phiếu phạt này không?",
+            "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (rs == DialogResult.Yes)
+            {
+                using (con = new SqlConnection(strCon))
+                {
+                    con.Open();
+                    string sql = $"Delete from PhieuPhat where MaPhieuPhat = '{selectedMaPP}'";
+                    cmd = new SqlCommand(sql, con);
+                    try
+                    {
+                        if (cmd.ExecuteNonQuery() > 0 )
+                        {
+                            MessageBox.Show("Xóa phiếu phạt thành công!", "Thông báo", 
+                                MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            LoadPhieuPhat();
+                            int beforeRowIndex = currentIndex - 1;
+                            dgvPhieuPhat.ClearSelection();
+                            dgvPhieuPhat.CurrentCell = dgvPhieuPhat.Rows[beforeRowIndex].Cells[0];
+                            dgvPhieuPhat.FirstDisplayedScrollingRowIndex = beforeRowIndex;
+                            NapCT();
+                            LoadSachPhat(txtMaPhieuPhat.Text);
+                            LoadPhieuPhat_PhieuMuon(txtMaPhieuMuon.Text);
+                            LoadSachTra(txtMaPhieuMuon.Text);
+                        } 
+                        else
+                        {
+                            MessageBox.Show("Xóa phiếu phạt không thành công!", "Thông báo", 
+                                MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                    catch (Exception)
+                    {
+                        MessageBox.Show("Phiếu phạt liên quan tới nhiều bảng dữ liệu khác", "Lỗi", 
+                            MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+        }
+
+        private void btnSua_Click(object sender, EventArgs e)
+        {
+            int currentIndex = dgvPhieuPhat.CurrentRow.Index;
+            using (con = new SqlConnection(strCon))
+            {
+                con.Open();
+                string sql = "Update PhieuPhat set NgayNopPhat = @NgayNopPhat, MaThuThu = @MaThuThu " +
+                    $"where MaPhieuPhat = '{selectedMaPP}'";
+                cmd = new SqlCommand(sql, con);
+                cmd.Parameters.AddWithValue("@NgayNopPhat", dtNgayNopPhat.Value.ToString("yyyy-MM-dd"));
+                cmd.Parameters.AddWithValue("@MaThuThu", cboThuThu.SelectedValue);
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Sửa phiếu phạt thành công!", "Thông báo", 
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                LoadPhieuPhat();
+                dgvPhieuPhat.ClearSelection();
+                dgvPhieuPhat.CurrentCell = dgvPhieuPhat.Rows[currentIndex].Cells[0];
+                dgvPhieuPhat.FirstDisplayedScrollingRowIndex = currentIndex;
+                NapCT();
+                LoadSachPhat(txtMaPhieuPhat.Text);
+                LoadPhieuPhat_PhieuMuon(txtMaPhieuMuon.Text);
+                LoadSachTra(txtMaPhieuMuon.Text);
+            }
+        }
+
+        private void LoadPhieuPhat()
+        {
+            using (con = new SqlConnection(strCon))
+            {
+                con.Open();
+                string sql = "select pp.MaPhieuPhat, pp.MaPhieuMuon, pp.NgayNopPhat, coalesce(sum(ct_pp.NopPhat), 0) as TongTienPhat, pp.MaThuThu " +
+                    "from PhieuPhat pp left join CT_PhieuPhat ct_pp on pp.MaPhieuPhat = ct_pp.MaPhieuPhat " +
+                    "group by pp.MaPhieuPhat, pp.MaPhieuMuon, pp.NgayNopPhat, pp.MaThuThu";
+                adapter = new SqlDataAdapter(sql, con);
+                dt = new DataTable();
+                adapter.Fill(dt);
+                dvPP = new DataView(dt);
+                dgvPhieuPhat.DataSource = dvPP;
+            }
         }
     }
 }
