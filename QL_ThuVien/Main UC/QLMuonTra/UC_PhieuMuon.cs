@@ -46,6 +46,7 @@ namespace QL_ThuVien.Main_UC.QLMuonTra
             LoadComboBox(cboThuThu, "ThuThu", "MaThuThu", "TenThuThu");
             //Fix lỗi column header
             dgvPhieuMuon.ColumnHeadersDefaultCellStyle.Font = new Font(dgvPhieuMuon.Font, FontStyle.Bold);
+            dgvDocGia.Columns["DaTraSach"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
             LoadDocGia();
             LoadPhieuMuon();
@@ -85,7 +86,7 @@ namespace QL_ThuVien.Main_UC.QLMuonTra
             }
         }
 
-        private void LoadSachMuon(string MaPhieuMuon)
+        private void LoadSachMuon(string maPhieuMuon)
         {
             using (con = new SqlConnection(strCon))
             {
@@ -94,7 +95,7 @@ namespace QL_ThuVien.Main_UC.QLMuonTra
                     "from CT_PhieuMuon ctpm " +
                     "join CuonSach cs on ctpm.MaSach = cs.MaSach " +
                     "join DauSach ds on cs.MaDauSach = ds.MaDauSach " +
-                    $"where ctpm.MaPhieuMuon = '{MaPhieuMuon}'";
+                    $"where ctpm.MaPhieuMuon = '{maPhieuMuon}'";
                 adapter = new SqlDataAdapter(sql, con);
                 dt = new DataTable();
                 adapter.Fill(dt);

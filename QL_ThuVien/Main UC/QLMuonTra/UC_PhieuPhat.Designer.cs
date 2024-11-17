@@ -81,6 +81,7 @@
             // 
             this.grbDocgia.Controls.Add(this.panelDocGia);
             this.grbDocgia.Controls.Add(this.guna2TextBox1);
+            this.grbDocgia.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grbDocgia.Location = new System.Drawing.Point(36, 143);
             this.grbDocgia.Name = "grbDocgia";
             this.grbDocgia.Size = new System.Drawing.Size(952, 353);

@@ -30,6 +30,10 @@ namespace QL_ThuVien.Main_UC.QLSach
         {
             //dgvDauSach.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 9, FontStyle.Bold);
             //dgvCuonSach.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 9, FontStyle.Bold);
+
+            dgvDauSach.DefaultCellStyle.Font = new Font(dgvDauSach.Font, FontStyle.Regular);
+            dgvCuonSach.DefaultCellStyle.Font = new Font(dgvCuonSach.Font, FontStyle.Regular);
+            cboTruong.SelectedIndex = 0;
             showDauSach();
             showCuonSach();
         }
@@ -117,8 +121,14 @@ namespace QL_ThuVien.Main_UC.QLSach
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
-            string search = txtSearch.Text;
-            dv.RowFilter = $"TenDauSach LIKE '%{search}%'";
+            if (cboTruong.SelectedIndex == 0)
+            {
+                dv.RowFilter = $"MaDauSach like '%{txtSearch.Text}%'";
+            }
+            else
+            {
+                dv.RowFilter = $"TenDauSach like '%{txtSearch.Text}%'";
+            }
         }
 
         void DoSQL(string sql)
@@ -280,6 +290,18 @@ namespace QL_ThuVien.Main_UC.QLSach
         private void dgvDauSach_SelectionChanged_1(object sender, EventArgs e)
         {
             ShowCuonSach_DauSach();
+        }
+
+        private void cboTruong_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cboTruong.SelectedIndex == 0 )
+            {
+                txtSearch.PlaceholderText = "Nhập mã đầu sách để tìm kiếm";
+            }
+            else
+            {
+                txtSearch.PlaceholderText = "Nhập tên đầu sách để tìm kiếm";
+            }
         }
     }
 }

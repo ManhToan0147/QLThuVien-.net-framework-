@@ -190,7 +190,17 @@ namespace QL_ThuVien
                                 cmd.ExecuteNonQuery();
                             }
                             // Cập nhật tình trạng trong CuonSach
-                            string sqlUpdate = "UPDATE CuonSach SET TinhTrang = N'Còn' WHERE MaSach = @MaSach";
+                            string sqlUpdate = @"
+                                UPDATE CuonSach
+                                SET TinhTrang = N'Còn'
+                                WHERE MaSach = @MaSach
+                                  AND NOT EXISTS (
+                                      SELECT 1
+                                      FROM CT_PhieuMuon CT
+                                      INNER JOIN PhieuMuon PM ON CT.MaPhieuMuon = PM.MaPhieuMuon
+                                      WHERE CT.MaSach = @MaSach -- Sử dụng @MaSach để kiểm tra đúng sách
+                                      AND PM.NgayThucTra IS NULL
+                                  )";
                             using (SqlCommand cmd = new SqlCommand(sqlUpdate, con))
                             {
                                 cmd.Parameters.AddWithValue("@MaSach", maSach);

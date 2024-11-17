@@ -31,19 +31,19 @@
             this.lblNXB = new System.Windows.Forms.Label();
             this.grbPhieuMuon = new System.Windows.Forms.GroupBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             this.MaSach = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TienCoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TinhTrangMuon = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.MaSach2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TinhTrangTra = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
@@ -61,9 +61,9 @@
             // 
             // grbPhieuMuon
             // 
-            this.grbPhieuMuon.Location = new System.Drawing.Point(200, 133);
+            this.grbPhieuMuon.Location = new System.Drawing.Point(52, 133);
             this.grbPhieuMuon.Name = "grbPhieuMuon";
-            this.grbPhieuMuon.Size = new System.Drawing.Size(1185, 121);
+            this.grbPhieuMuon.Size = new System.Drawing.Size(1477, 121);
             this.grbPhieuMuon.TabIndex = 30;
             this.grbPhieuMuon.TabStop = false;
             this.grbPhieuMuon.Text = "Phiếu mượn";
@@ -77,16 +77,6 @@
             this.groupBox1.TabIndex = 32;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "groupBox1";
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.dataGridView2);
-            this.groupBox2.Location = new System.Drawing.Point(939, 293);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(593, 435);
-            this.groupBox2.TabIndex = 33;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "groupBox2";
             // 
             // dataGridView1
             // 
@@ -104,6 +94,34 @@
             this.dataGridView1.Size = new System.Drawing.Size(725, 401);
             this.dataGridView1.TabIndex = 0;
             // 
+            // MaSach
+            // 
+            this.MaSach.HeaderText = "Mã sách";
+            this.MaSach.MinimumWidth = 9;
+            this.MaSach.Name = "MaSach";
+            // 
+            // TienCoc
+            // 
+            this.TienCoc.HeaderText = "Tiền cọc";
+            this.TienCoc.MinimumWidth = 9;
+            this.TienCoc.Name = "TienCoc";
+            // 
+            // TinhTrangMuon
+            // 
+            this.TinhTrangMuon.HeaderText = "Tình trạng mượn";
+            this.TinhTrangMuon.MinimumWidth = 9;
+            this.TinhTrangMuon.Name = "TinhTrangMuon";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.dataGridView2);
+            this.groupBox2.Location = new System.Drawing.Point(939, 293);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(593, 435);
+            this.groupBox2.TabIndex = 33;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "groupBox2";
+            // 
             // dataGridView2
             // 
             this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
@@ -118,6 +136,18 @@
             this.dataGridView2.RowTemplate.Height = 31;
             this.dataGridView2.Size = new System.Drawing.Size(587, 401);
             this.dataGridView2.TabIndex = 0;
+            // 
+            // MaSach2
+            // 
+            this.MaSach2.HeaderText = "Mã sách";
+            this.MaSach2.MinimumWidth = 9;
+            this.MaSach2.Name = "MaSach2";
+            // 
+            // TinhTrangTra
+            // 
+            this.TinhTrangTra.HeaderText = "Tình trạng trả";
+            this.TinhTrangTra.MinimumWidth = 9;
+            this.TinhTrangTra.Name = "TinhTrangTra";
             // 
             // guna2Button1
             // 
@@ -163,36 +193,6 @@
             this.guna2Button2.TabIndex = 35;
             this.guna2Button2.Text = "Xóa";
             // 
-            // MaSach
-            // 
-            this.MaSach.HeaderText = "Mã sách";
-            this.MaSach.MinimumWidth = 9;
-            this.MaSach.Name = "MaSach";
-            // 
-            // TienCoc
-            // 
-            this.TienCoc.HeaderText = "Tiền cọc";
-            this.TienCoc.MinimumWidth = 9;
-            this.TienCoc.Name = "TienCoc";
-            // 
-            // TinhTrangMuon
-            // 
-            this.TinhTrangMuon.HeaderText = "Tình trạng mượn";
-            this.TinhTrangMuon.MinimumWidth = 9;
-            this.TinhTrangMuon.Name = "TinhTrangMuon";
-            // 
-            // MaSach2
-            // 
-            this.MaSach2.HeaderText = "Mã sách";
-            this.MaSach2.MinimumWidth = 9;
-            this.MaSach2.Name = "MaSach2";
-            // 
-            // TinhTrangTra
-            // 
-            this.TinhTrangTra.HeaderText = "Tình trạng trả";
-            this.TinhTrangTra.MinimumWidth = 9;
-            this.TinhTrangTra.Name = "TinhTrangTra";
-            // 
             // frmTraSach
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 30F);
@@ -210,8 +210,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmTraSach";
             this.groupBox1.ResumeLayout(false);
-            this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
