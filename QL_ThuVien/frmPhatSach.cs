@@ -14,7 +14,7 @@ namespace QL_ThuVien
 {
     public partial class frmPhatSach : Form
     {
-        string strCon = @"Data Source=DESKTOP-HPGDAGQ\SQLEXPRESS;Initial Catalog=QuanLyThuVien;Integrated Security=True;Encrypt=True;TrustServerCertificate=True";
+        string strCon = @"Data Source=DESKTOP-HPGDAGQ\SQLEXPRESS;Initial Catalog=QuanLyThuVien3;Integrated Security=True;Encrypt=True;TrustServerCertificate=True";
         SqlConnection con;
         SqlDataAdapter adapter;
         SqlCommand cmd;
@@ -214,19 +214,9 @@ namespace QL_ThuVien
                             string sql = "Delete from CT_PhieuPhat " +
                                 $"where MaPhieuPhat = '{MaPhieuPhat}' and MaSach = '{maSach}' and MaViPham = '{maViPham}'";
                             cmd = new SqlCommand(sql, con);
-                            if (cmd.ExecuteNonQuery() > 0)
-                            {
-                                MessageBox.Show("Xóa thành công các bản ghi", "Thông báo", 
-                                    MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            } 
-                            else
-                            {
-                                MessageBox.Show("Xóa không thành công", "Thông báo",
-                                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            }
+                            cmd.ExecuteNonQuery();
                         }
-
-
+                        MessageBox.Show("Đã xóa thành công.");
                         LoadSachPhat();
                     }
                     catch (Exception ex)

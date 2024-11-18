@@ -14,7 +14,7 @@ namespace QL_ThuVien.Main_UC.QLSach
 {
     public partial class UC_DauSach : UserControl
     {
-        string strCon = @"Data Source=DESKTOP-HPGDAGQ\SQLEXPRESS;Initial Catalog=QuanLyThuVien;Integrated Security=True;Encrypt=False";
+        string strCon = @"Data Source=DESKTOP-HPGDAGQ\SQLEXPRESS;Initial Catalog=QuanLyThuVien3;Integrated Security=True;Encrypt=False";
         SqlConnection con;
         SqlCommand cmd;
         SqlDataAdapter adapter;

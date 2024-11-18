@@ -13,7 +13,7 @@ namespace QL_ThuVien
 {
     public partial class frmNhapSach : Form
     {
-        string strCon = @"Data Source=DESKTOP-HPGDAGQ\SQLEXPRESS;Initial Catalog=QuanLyThuVien;Integrated Security=True;Encrypt=True;TrustServerCertificate=True";
+        string strCon = @"Data Source=DESKTOP-HPGDAGQ\SQLEXPRESS;Initial Catalog=QuanLyThuVien3;Integrated Security=True;Encrypt=True;TrustServerCertificate=True";
         SqlConnection con;
         SqlDataAdapter adapter;
         SqlCommand cmd;
@@ -131,9 +131,9 @@ namespace QL_ThuVien
                 {
                     string maPM = MaPhieuMuon;
                     string maSach = row.Cells[0].Value.ToString();
-                    string tinhTrang = row.Cells[3].Value.ToString();
+                    string trangThai = row.Cells[3].Value.ToString();
 
-                    if (tinhTrang != "Còn")
+                    if (trangThai != "Còn")
                     {
                         MessageBox.Show("Cuốn sách này hiện giờ không có sẵn.");
                         return;
@@ -142,19 +142,16 @@ namespace QL_ThuVien
                     using (con = new SqlConnection(strCon))
                     {
                         con.Open();
-                        cmd = new SqlCommand("ThemSachMuon", con);
-                        cmd.CommandType = CommandType.StoredProcedure;
-                        // Truyền tham số cho Stored Procedure
-                        cmd.Parameters.AddWithValue("@MaPhieuMuon", maPM);
-                        cmd.Parameters.AddWithValue("@MaSach", maSach);
+                        string sql = "Insert into CT_PhieuMuon(MaPhieuMuon, MaSach) values " +
+                            $"('{MaPhieuMuon}', '{maSach}')";
+                        cmd = new SqlCommand(sql, con);
                         try
                         {
                             cmd.ExecuteNonQuery();
                         }
-                        catch (Exception)
+                        catch (Exception ex)
                         {
-                            MessageBox.Show($"Số lượng sách vượt quá giới hạn cho kiểu mượn '{KieuMuon}'. Chỉ được mượn tối đa {maxCount} sách.");
-                            return;
+                            MessageBox.Show("Lỗi " + ex.Message);
                         }
                     }
                 }
@@ -216,6 +213,7 @@ namespace QL_ThuVien
             else
             {
                 MessageBox.Show("Vui lòng chọn ít nhất một bản ghi để xóa.");
+                return;
             }
         }
 

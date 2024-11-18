@@ -14,7 +14,7 @@ namespace QL_ThuVien.Main_UC.QLDocGia
 {
     public partial class UC_QLDocGia : UserControl
     {
-        string strCon = @"Data Source=DESKTOP-HPGDAGQ\SQLEXPRESS;Initial Catalog=QuanLyThuVien;Integrated Security=True;Encrypt=True;TrustServerCertificate=True";
+        string strCon = @"Data Source=DESKTOP-HPGDAGQ\SQLEXPRESS;Initial Catalog=QuanLyThuVien3;Integrated Security=True;TrustServerCertificate=True";
         SqlConnection con;
         SqlCommand cmd;
         SqlDataAdapter adapter;

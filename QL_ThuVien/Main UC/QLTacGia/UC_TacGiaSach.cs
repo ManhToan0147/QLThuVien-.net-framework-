@@ -13,7 +13,7 @@ namespace QL_ThuVien.Main_UC.QLTacGia
 {
     public partial class UC_TacGiaSach : UserControl
     {
-        string strCon = @"Data Source=DESKTOP-HPGDAGQ\SQLEXPRESS;Initial Catalog=QuanLyThuVien;Integrated Security=True;Encrypt=True;TrustServerCertificate=True";
+        string strCon = @"Data Source=DESKTOP-HPGDAGQ\SQLEXPRESS;Initial Catalog=QuanLyThuVien3;Integrated Security=True;Encrypt=True;TrustServerCertificate=True";
         SqlConnection con;
         SqlCommand cmd;
         SqlDataAdapter adapter;

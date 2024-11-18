@@ -13,7 +13,7 @@ namespace QL_ThuVien
 {
     public partial class frmNXB : Form
     {
-        string strCon = @"Data Source=DESKTOP-HPGDAGQ\SQLEXPRESS;Initial Catalog=QuanLyThuVien;Integrated Security=True;Encrypt=True;TrustServerCertificate=True";
+        string strCon = @"Data Source=DESKTOP-HPGDAGQ\SQLEXPRESS;Initial Catalog=QuanLyThuVien3;Integrated Security=True;Encrypt=True;TrustServerCertificate=True";
         SqlConnection con;
         SqlDataAdapter adapter;
         SqlCommand cmd;

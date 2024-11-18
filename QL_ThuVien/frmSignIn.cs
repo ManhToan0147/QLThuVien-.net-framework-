@@ -45,7 +45,7 @@ namespace QL_ThuVien
 
             // Kết nối với cơ sở dữ liệu và kiểm tra tài khoản
             SqlConnection con = new SqlConnection();
-            con.ConnectionString = @"Data Source=DESKTOP-HPGDAGQ\SQLEXPRESS;Initial Catalog=QuanLyThuVien;Integrated Security=True;Encrypt=True;TrustServerCertificate=True";
+            con.ConnectionString = @"Data Source=DESKTOP-HPGDAGQ\SQLEXPRESS;Initial Catalog=QuanLyThuVien3;Integrated Security=True;Encrypt=True;TrustServerCertificate=True";
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = con;
 

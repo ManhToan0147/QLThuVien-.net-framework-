@@ -15,7 +15,7 @@ namespace QL_ThuVien.Main_UC.QLMuonTra
 {
     public partial class UC_QLThuThu : UserControl
     {
-        string strCon = @"Data Source=DESKTOP-HPGDAGQ\SQLEXPRESS;Initial Catalog=QuanLyThuVien;Integrated Security=True;Encrypt=True;TrustServerCertificate=True";
+        string strCon = @"Data Source=DESKTOP-HPGDAGQ\SQLEXPRESS;Initial Catalog=QuanLyThuVien3;Integrated Security=True;Encrypt=True;TrustServerCertificate=True";
         SqlConnection con;
         SqlDataAdapter adpater;
         SqlCommand cmd;
