@@ -354,3 +354,4 @@ D:\My Project\QL_ThuVien new - new version\QL_ThuVien\obj\Debug\QL_ThuVien.frmNh
 D:\My Project\QL_ThuVien new - new version\QL_ThuVien\obj\Debug\QL_ThuVien.frmTraSach.resources
 D:\My Project\QL_ThuVien new - new version\QL_ThuVien\obj\Debug\QL_ThuVien.Main_UC.QLMuonTra.UC_PhieuTra.resources
 D:\My Project\QL_ThuVien new - new version\QL_ThuVien\obj\Debug\QL_ThuVien.Main_UC.QLMuonTra.UC_PhieuPhat.resources
+D:\My Project\QL_ThuVien new - new version\QL_ThuVien\obj\Debug\QL_ThuVien.frmPhatSach.resources

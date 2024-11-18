@@ -115,6 +115,12 @@
     <Compile Include="frmNXB.Designer.cs">
       <DependentUpon>frmNXB.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmPhatSach.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPhatSach.Designer.cs">
+      <DependentUpon>frmPhatSach.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmThuThu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -257,6 +263,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmNXB.resx">
       <DependentUpon>frmNXB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPhatSach.resx">
+      <DependentUpon>frmPhatSach.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmThuThu.resx">
       <DependentUpon>frmThuThu.cs</DependentUpon>

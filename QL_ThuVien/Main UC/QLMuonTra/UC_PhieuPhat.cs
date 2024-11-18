@@ -31,11 +31,14 @@ namespace QL_ThuVien.Main_UC.QLMuonTra
         private void UC_PhieuPhat_Load(object sender, EventArgs e)
         {
             LoadComboBox(cboThuThu, "ThuThu", "MaThuThu", "TenThuThu");
+            cboTruong1.SelectedIndex = 0;
+            cboTruong2.SelectedIndex = 0;
 
             //Fix lỗi dgv
             dgvSachTra.Columns["DaTraSach"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgvSachTra.DefaultCellStyle.Font = new Font(dgvSachTra.Font, FontStyle.Regular);
             dgvSachPhat.DefaultCellStyle.Font = new Font(dgvSachPhat.Font, FontStyle.Regular);
+            dgvPhieuMuon.ColumnHeadersDefaultCellStyle.Font = new Font(dgvPhieuMuon.Font, FontStyle.Bold);
             dgvPhieuPhat.ColumnHeadersDefaultCellStyle.Font = new Font(dgvSachPhat.Font, FontStyle.Bold);
 
             LoadPhieuPhat();
@@ -75,10 +78,12 @@ namespace QL_ThuVien.Main_UC.QLMuonTra
                 txtMaPhieuMuon.Text = selectedMaPM2;
                 txtMaPhieuMuon.Enabled = string.IsNullOrEmpty(selectedMaPM2);
 
-                dtNgayNopPhat.Text = dgvPhieuPhat.Rows[i].Cells[2].Value.ToString();
-                txtTongTienPhat.Text = dgvPhieuPhat.Rows[i].Cells[3].Value.ToString();
+                txtMaDocGia.Text = dgvPhieuPhat.Rows[i].Cells[2].Value.ToString();
+
+                dtNgayNopPhat.Text = dgvPhieuPhat.Rows[i].Cells[3].Value.ToString();
+                txtTongTienPhat.Text = dgvPhieuPhat.Rows[i].Cells[4].Value.ToString();
                 txtTongTienPhat.Enabled = !string.IsNullOrEmpty(txtTongTienPhat.Text);
-                cboThuThu.SelectedValue = dgvPhieuPhat.Rows[i].Cells[4].Value.ToString();
+                cboThuThu.SelectedValue = dgvPhieuPhat.Rows[i].Cells[5].Value.ToString();
             }
         }
 
@@ -184,6 +189,7 @@ namespace QL_ThuVien.Main_UC.QLMuonTra
             txtMaPhieuMuon.Text = "";
             txtMaPhieuMuon.Enabled = true;
             txtMaPhieuMuon.Focus();
+            txtMaDocGia.Text = "";
 
             dtNgayNopPhat.Value = DateTime.Now;
             cboThuThu.SelectedIndex = -1;
@@ -200,7 +206,9 @@ namespace QL_ThuVien.Main_UC.QLMuonTra
                 if (dgvPhieuMuon.SelectedRows.Count > 0)
                 {
                     string maPhieuMuon = dgvPhieuMuon.SelectedRows[0].Cells[0].Value.ToString();
+                    string maDocGia = dgvPhieuMuon.SelectedRows[0].Cells[1].Value.ToString();
                     txtMaPhieuMuon.Text = maPhieuMuon;
+                    txtMaDocGia.Text= maDocGia;
                 }
                 else
                 {
@@ -322,14 +330,57 @@ namespace QL_ThuVien.Main_UC.QLMuonTra
             }
         }
 
+        private void txtSearch1_TextChanged(object sender, EventArgs e)
+        {
+            if (cboTruong1.SelectedIndex == 0)
+            {
+                dvPM.RowFilter = $"MaPhieuMuon like '%{txtSearch1.Text}%'";
+            }
+            else
+            {
+                dvPM.RowFilter = $"MaDocGia like '%{txtSearch1.Text}%'";
+            }
+        }
+
+        private void txtSearch2_TextChanged(object sender, EventArgs e)
+        {
+            if (cboTruong2.SelectedIndex == 0)
+            {
+                dvPP.RowFilter = $"MaPhieuPhat like '%{txtSearch2.Text}%'";
+            }
+            else if (cboTruong2.SelectedIndex == 1)
+            {
+                dvPP.RowFilter = $"MaPhieuMuon like '%{txtSearch2.Text}%'";
+            }
+            else
+            {
+                dvPP.RowFilter = $"MaDocGia like '%{txtSearch2.Text}%'";
+            }
+        }
+
+        private void btnPhatSach_Click(object sender, EventArgs e)
+        {
+            var f = new frmPhatSach();
+            f.MaPhieuPhat = txtMaPhieuPhat.Text;
+            f.MaPhieuMuon = txtMaPhieuMuon.Text;
+            f.MaDocGia = txtMaDocGia.Text;
+            f.ShowDialog();
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            LoadSachPhat(selectedMaPP);
+        }
+
         private void LoadPhieuPhat()
         {
             using (con = new SqlConnection(strCon))
             {
                 con.Open();
-                string sql = "select pp.MaPhieuPhat, pp.MaPhieuMuon, pp.NgayNopPhat, coalesce(sum(ct_pp.NopPhat), 0) as TongTienPhat, pp.MaThuThu " +
+                string sql = "select pp.MaPhieuPhat, pp.MaPhieuMuon, pm.MaDocGia, pp.NgayNopPhat, coalesce(sum(ct_pp.NopPhat), 0) as TongTienPhat, pp.MaThuThu " +
                     "from PhieuPhat pp left join CT_PhieuPhat ct_pp on pp.MaPhieuPhat = ct_pp.MaPhieuPhat " +
-                    "group by pp.MaPhieuPhat, pp.MaPhieuMuon, pp.NgayNopPhat, pp.MaThuThu";
+                    "join PhieuMuon pm on pp.MaPhieuMuon = pm.MaPhieuMuon " +
+                    "group by pp.MaPhieuPhat, pp.MaPhieuMuon,pm.MaDocGia, pp.NgayNopPhat, pp.MaThuThu";
                 adapter = new SqlDataAdapter(sql, con);
                 dt = new DataTable();
                 adapter.Fill(dt);

@@ -45,6 +45,7 @@ namespace QL_ThuVien.Main_UC.QLMuonTra
             LoadComboBox(cboKieuMuon,"KieuMuon", "MaKieuMuon", "TenKieuMuon");
             LoadComboBox(cboThuThu, "ThuThu", "MaThuThu", "TenThuThu");
             //Fix lỗi column header
+            dgvDocGia.ColumnHeadersDefaultCellStyle.Font = new Font(dgvDocGia.Font, FontStyle.Bold);
             dgvPhieuMuon.ColumnHeadersDefaultCellStyle.Font = new Font(dgvPhieuMuon.Font, FontStyle.Bold);
             dgvDocGia.Columns["DaTraSach"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgvSachMuon.DefaultCellStyle.Font = new Font(dgvSachMuon.Font, FontStyle.Regular);
