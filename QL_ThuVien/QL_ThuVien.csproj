@@ -79,11 +79,42 @@
     <Compile Include="ChiTietSach.Designer.cs">
       <DependentUpon>ChiTietSach.cs</DependentUpon>
     </Compile>
+    <Compile Include="DSInPhieuMuon.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSInPhieuMuon.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DSInPhieuPhat.cs">
+      <DependentUpon>DSInPhieuPhat.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DSInPhieuTra.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSInPhieuTra.xsd</DependentUpon>
+    </Compile>
     <Compile Include="frmChuDe.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmChuDe.Designer.cs">
       <DependentUpon>frmChuDe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmInPhieuMuon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmInPhieuMuon.Designer.cs">
+      <DependentUpon>frmInPhieuMuon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmInPhieuPhat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmInPhieuPhat.Designer.cs">
+      <DependentUpon>frmInPhieuPhat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmInPhieuTra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmInPhieuTra.Designer.cs">
+      <DependentUpon>frmInPhieuTra.cs</DependentUpon>
     </Compile>
     <Compile Include="frmKhoSach.cs">
       <SubType>Form</SubType>
@@ -115,11 +146,11 @@
     <Compile Include="frmNXB.Designer.cs">
       <DependentUpon>frmNXB.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmPhatSach.cs">
+    <Compile Include="frmPhieuTra.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmPhatSach.Designer.cs">
-      <DependentUpon>frmPhatSach.cs</DependentUpon>
+    <Compile Include="frmPhieuTra.Designer.cs">
+      <DependentUpon>frmPhieuTra.cs</DependentUpon>
     </Compile>
     <Compile Include="frmThuThu.cs">
       <SubType>Form</SubType>
@@ -150,6 +181,11 @@
     </Compile>
     <Compile Include="Main UC\QLDocGia\UC_QLDocGia.Designer.cs">
       <DependentUpon>UC_QLDocGia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DSInPhieuPhat.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSInPhieuPhat.xsd</DependentUpon>
     </Compile>
     <Compile Include="Main UC\QLMuonTra\UC_PhieuMuon.cs">
       <SubType>UserControl</SubType>
@@ -249,6 +285,15 @@
     <EmbeddedResource Include="frmChuDe.resx">
       <DependentUpon>frmChuDe.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmInPhieuMuon.resx">
+      <DependentUpon>frmInPhieuMuon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmInPhieuPhat.resx">
+      <DependentUpon>frmInPhieuPhat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmInPhieuTra.resx">
+      <DependentUpon>frmInPhieuTra.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmKhoSach.resx">
       <DependentUpon>frmKhoSach.cs</DependentUpon>
     </EmbeddedResource>
@@ -264,8 +309,8 @@
     <EmbeddedResource Include="frmNXB.resx">
       <DependentUpon>frmNXB.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmPhatSach.resx">
-      <DependentUpon>frmPhatSach.cs</DependentUpon>
+    <EmbeddedResource Include="frmPhieuTra.resx">
+      <DependentUpon>frmPhieuTra.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmThuThu.resx">
       <DependentUpon>frmThuThu.cs</DependentUpon>
@@ -282,6 +327,7 @@
     <EmbeddedResource Include="Main UC\QLDocGia\UC_QLDocGia.resx">
       <DependentUpon>UC_QLDocGia.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="rptInPhieuPhat.rdlc" />
     <EmbeddedResource Include="Main UC\QLMuonTra\UC_PhieuMuon.resx">
       <DependentUpon>UC_PhieuMuon.cs</DependentUpon>
     </EmbeddedResource>
@@ -337,6 +383,41 @@
     <EmbeddedResource Include="Ribbon\UC_QLTacGia_Ribbon.resx">
       <DependentUpon>UC_QLTacGia_Ribbon.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="rptInPhieuMuon.rdlc" />
+    <EmbeddedResource Include="rptInPhieuTra.rdlc" />
+    <None Include="DSInPhieuMuon.xsc">
+      <DependentUpon>DSInPhieuMuon.xsd</DependentUpon>
+    </None>
+    <None Include="DSInPhieuMuon.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSInPhieuMuon.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DSInPhieuMuon.xss">
+      <DependentUpon>DSInPhieuMuon.xsd</DependentUpon>
+    </None>
+    <None Include="DSInPhieuTra.xsc">
+      <DependentUpon>DSInPhieuTra.xsd</DependentUpon>
+    </None>
+    <None Include="DSInPhieuTra.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSInPhieuTra.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DSInPhieuTra.xss">
+      <DependentUpon>DSInPhieuTra.xsd</DependentUpon>
+    </None>
+    <None Include="DSInPhieuPhat.xsc">
+      <DependentUpon>DSInPhieuPhat.xsd</DependentUpon>
+    </None>
+    <None Include="DSInPhieuPhat.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSInPhieuPhat.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DSInPhieuPhat.xss">
+      <DependentUpon>DSInPhieuPhat.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

@@ -312,6 +312,31 @@ namespace QL_ThuVien.Main_UC.QLMuonTra
             LoadSachTra(selectedMaPM);
         }
 
+        private void btnInPhieuTra_Click(object sender, EventArgs e)
+        {
+            using (con = new SqlConnection(strCon))
+            {
+                con.Open();
+                string sql = "select ctpm.MaSach, ds.TenDauSach as TenSach, ctpm.TinhTrangMuon, ctpm.TinhTrangTra " +
+                "from CT_PhieuMuon ctpm join CuonSach cs on ctpm.MaSach = cs.MaSach join DauSach ds on cs.MaDauSach = ds.MaDauSach " +
+                $"where ctpm.MaPhieuMuon = '{txtMaPhieuMuon.Text}' and ctpm.DaTraSach = 1";
+                adapter = new SqlDataAdapter(sql, con);
+                dt = new DataTable();
+                adapter.Fill(dt);
+                string mapm = txtMaPhieuMuon.Text;
+                string madg = txtMaDG.Text;
+                string sqlHoTen = $"Select HoTen from DocGia where MaDocGia = '{madg}'";
+                cmd = new SqlCommand(sqlHoTen, con);
+                string hoten = cmd.ExecuteScalar().ToString();
+                string ngayMuon = dtHanTra.Value.ToString("dd/MM/yyyy");
+                string hanTra = dtNgayThucTra.Value.ToString("dd/MM/yyyy");
+                string soNgayTre = txtSoNgayTre.Text;
+                using (frmInPhieuTra reportForm = new frmInPhieuTra(dt, mapm, madg, hoten, ngayMuon, hanTra, soNgayTre))
+                {
+                    reportForm.ShowDialog();
+                }
+            }
+        }
         private void NapCT()
         {
             if (dgvPMDaTra.CurrentCell != null && dgvPMDaTra.CurrentCell.RowIndex >= 0)

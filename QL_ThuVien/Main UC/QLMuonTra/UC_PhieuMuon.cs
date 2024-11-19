@@ -396,6 +396,33 @@ namespace QL_ThuVien.Main_UC.QLMuonTra
             f.ShowDialog();
         }
 
+        private void btnInPhieuMuon_Click(object sender, EventArgs e)
+        {
+            using (con = new SqlConnection(strCon))
+            {
+                con.Open();
+                string sql = "select ctpm.MaSach, ds.TenDauSach as TenSach, ctpm.TienCoc, ctpm.TinhTrangMuon " +
+                "from CT_PhieuMuon ctpm join CuonSach cs on ctpm.MaSach = cs.MaSach join DauSach ds on cs.MaDauSach = ds.MaDauSach " +
+                $"where ctpm.MaPhieuMuon = '{selectedMaPM}'";
+                adapter = new SqlDataAdapter(sql, con);
+                dt = new DataTable();
+                adapter.Fill(dt);
+                string mapm = selectedMaPM;
+                string madg = txtMaDG.Text;
+                string sqlHoTen = $"Select HoTen from DocGia where MaDocGia = '{madg}'";
+                cmd = new SqlCommand(sqlHoTen, con);
+                string hoten = cmd.ExecuteScalar().ToString();
+                string kieumuon = cboKieuMuon.Text.Substring(5);
+                string ngayMuon = dtNgayMuon.Value.ToString("dd/MM/yyyy");
+                string hanTra = dtHanTra.Value.ToString("dd/MM/yyyy");
+                string thuthu = cboThuThu.Text.Substring(7);
+                using (frmInPhieuMuon reportForm = new frmInPhieuMuon(dt, mapm, madg, hoten, kieumuon, ngayMuon, hanTra, thuthu))
+                {
+                    reportForm.ShowDialog();
+                }
+            }
+        }
+
         private void dgvPhieuMuon_SelectionChanged(object sender, EventArgs e)
         {
             NapCT();

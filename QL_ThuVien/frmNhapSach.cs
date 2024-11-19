@@ -35,6 +35,8 @@ namespace QL_ThuVien
             txtMaDG.Text = MaDocGia;
             txtKieuMuon.Text = KieuMuon;
 
+            dgvCuonSach.DefaultCellStyle.Font = new Font(dgvCuonSach.Font, FontStyle.Regular);
+            dgvSachMuon.DefaultCellStyle.Font = new Font(dgvSachMuon.Font, FontStyle.Regular);
             LoadCuonSach();
             LoadCboTrangThai();
             LoadSachMuon(MaPhieuMuon);
@@ -163,9 +165,9 @@ namespace QL_ThuVien
                         {
                             cmd.ExecuteNonQuery();
                         }
-                        catch (Exception)
+                        catch (Exception ex)
                         {
-                            MessageBox.Show("Số lượng mượn tối đa với kiểu mượn " + KieuMuon + " là " + maxCount.ToString());
+                            MessageBox.Show("Lỗi " + ex.Message);
                         }
                     }
                 }

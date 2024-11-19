@@ -205,7 +205,7 @@ namespace QL_ThuVien.Main_UC.QLSach
                     insertMaDauSach = selectedMaDauSach + "_01";
                 }
 
-                string sql2 = $"Insert into CuonSach values ('{insertMaDauSach}', '{selectedMaDauSach}' , N'Còn', N'OK')";
+                string sql2 = $"Insert into CuonSach values ('{insertMaDauSach}', '{selectedMaDauSach}', N'Còn', N'OK')";
                 cmd = new SqlCommand(sql2, con);
                 cmd.ExecuteNonQuery();
                 //MessageBox.Show($"Đã thêm thành công bản ghi", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);

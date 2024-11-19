@@ -360,7 +360,7 @@ namespace QL_ThuVien.Main_UC.QLMuonTra
 
         private void btnPhatSach_Click(object sender, EventArgs e)
         {
-            var f = new frmPhatSach();
+            var f = new frmPhieuTra();
             f.MaPhieuPhat = txtMaPhieuPhat.Text;
             f.MaPhieuMuon = txtMaPhieuMuon.Text;
             f.MaDocGia = txtMaDocGia.Text;
@@ -370,6 +370,33 @@ namespace QL_ThuVien.Main_UC.QLMuonTra
         private void btnRefresh_Click(object sender, EventArgs e)
         {
             LoadSachPhat(selectedMaPP);
+        }
+
+        private void btnInPhieuPhat_Click(object sender, EventArgs e)
+        {
+            using (con = new SqlConnection(strCon))
+            {
+                con.Open();
+                string sql = "select ctpp.MaSach, ds.TenDauSach as TenSach, vp.TenViPham, ctpp.NopPhat as TienNopPhat " +
+                    "from CT_PhieuPhat ctpp join ViPham vp on ctpp.MaViPham = vp.MaViPham " +
+                    "join CuonSach cs on ctpp.MaSach = cs.MaSach join DauSach ds on cs.MaDauSach = ds.MaDauSach " +
+                    $"where ctpp.MaPhieuPhat = '{txtMaPhieuPhat.Text}'";
+                adapter = new SqlDataAdapter(sql, con);
+                dt = new DataTable();
+                adapter.Fill(dt);
+                string mapp = txtMaPhieuPhat.Text;
+                string mapm = txtMaPhieuMuon.Text;
+                string madg = txtMaDocGia.Text;
+                string sqlHoTen = $"Select HoTen from DocGia where MaDocGia = '{madg}'";
+                cmd = new SqlCommand(sqlHoTen, con);
+                string hoten = cmd.ExecuteScalar().ToString();
+                string ngaynophat = dtNgayNopPhat.Value.ToString("dd/MM/yyyy");
+                string thuthu = cboThuThu.Text.Substring(7);
+                using (frmInPhieuPhat reportForm = new frmInPhieuPhat(dt, mapp, mapm, ngaynophat, madg, hoten, thuthu))
+                {
+                    reportForm.ShowDialog();
+                }
+            }
         }
 
         private void LoadPhieuPhat()

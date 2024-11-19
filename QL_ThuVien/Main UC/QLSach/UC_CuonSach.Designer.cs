@@ -373,15 +373,14 @@
             // TinhTrang
             // 
             this.TinhTrang.DataPropertyName = "TinhTrang";
-            this.TinhTrang.HeaderText = "Tình trạng sách";
+            this.TinhTrang.HeaderText = "Trạng thái";
             this.TinhTrang.MinimumWidth = 9;
             this.TinhTrang.Name = "TinhTrang";
-            this.TinhTrang.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             // 
             // MoTa
             // 
             this.MoTa.DataPropertyName = "MoTa";
-            this.MoTa.HeaderText = "Mô tả tình trạng";
+            this.MoTa.HeaderText = "Mô tả";
             this.MoTa.MinimumWidth = 9;
             this.MoTa.Name = "MoTa";
             // 
