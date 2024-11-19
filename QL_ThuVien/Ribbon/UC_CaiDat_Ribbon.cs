@@ -28,11 +28,19 @@ namespace QL_ThuVien.Ribbon
         private void UC_CaiDat_Ribbon_Load(object sender, EventArgs e)
         {
             btnTaiKhoan.Checked = true;
+            var uc = new UC_QLTaiKhoan();
+            addUserControl(uc);
         }
 
         private void btnDuLieu_Click(object sender, EventArgs e)
         {
             var uc = new UC_SaoLuu_PhucHoi();
+            addUserControl(uc);
+        }
+
+        private void btnTaiKhoan_Click(object sender, EventArgs e)
+        {
+            var uc = new UC_QLTaiKhoan();
             addUserControl(uc);
         }
     }

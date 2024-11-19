@@ -139,19 +139,33 @@ namespace QL_ThuVien
                         return;
                     }
 
+                    string moTa = "";
+                    float tienCoc = 0;
                     using (con = new SqlConnection(strCon))
                     {
                         con.Open();
-                        string sql = "Insert into CT_PhieuMuon(MaPhieuMuon, MaSach) values " +
-                            $"('{MaPhieuMuon}', '{maSach}')";
+                        //Lay mo ta
+                        string sqlMoTa = $"Select MoTa from CuonSach where MaSach = '{maSach}'";
+                        cmd = new SqlCommand(sqlMoTa, con);
+                        moTa = cmd.ExecuteScalar()?.ToString() ?? string.Empty;
+
+                        //Tinh tien coc = 2 * giabia
+                        string sqlGiaBia = $"Select ds.GiaBia from CuonSach cs " +
+                            $"join DauSach ds on cs.MaDauSach = ds.MaDauSach where cs.MaSach = '{maSach}'";
+                        cmd = new SqlCommand(sqlGiaBia, con);
+                        string rs = cmd.ExecuteScalar()?.ToString() ?? string.Empty;
+                        tienCoc = 2 * float.Parse(rs); //Tien coc = 2 * gia bia
+
+                        string sql = "Insert into CT_PhieuMuon(MaPhieuMuon, MaSach, TienCoc, TinhTrangMuon) values " +
+                            $"('{MaPhieuMuon}', '{maSach}', {tienCoc} , N'{moTa}')";
                         cmd = new SqlCommand(sql, con);
                         try
                         {
                             cmd.ExecuteNonQuery();
                         }
-                        catch (Exception ex)
+                        catch (Exception)
                         {
-                            MessageBox.Show("Lỗi " + ex.Message);
+                            MessageBox.Show("Số lượng mượn tối đa với kiểu mượn " + KieuMuon + " là " + maxCount.ToString());
                         }
                     }
                 }

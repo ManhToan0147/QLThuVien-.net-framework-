@@ -13,7 +13,7 @@ namespace QL_ThuVien.Main_UC.CaiDat
 {
     public partial class UC_SaoLuu_PhucHoi : UserControl
     {
-        string strCon = @"Data Source=DESKTOP-HPGDAGQ\SQLEXPRESS;Initial Catalog=QuanLyThuVien;Integrated Security=True;Encrypt=True;TrustServerCertificate=True";
+        string strCon = @"Data Source=DESKTOP-HPGDAGQ\SQLEXPRESS;Initial Catalog=QuanLyThuVien3;Integrated Security=True;Encrypt=True;TrustServerCertificate=True";
         SqlConnection con;
         public UC_SaoLuu_PhucHoi()
         {

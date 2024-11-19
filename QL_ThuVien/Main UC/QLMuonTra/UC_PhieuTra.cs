@@ -186,7 +186,7 @@ namespace QL_ThuVien.Main_UC.QLMuonTra
                     {
                         if (cmd.ExecuteNonQuery() > 0)
                         {
-                            MessageBox.Show("Trả thành công!", "Thông báo",
+                            MessageBox.Show("Đã cập nhật ngày trả!, click Trả sách để lưu thông tin sách trả", "Thông báo",
                                 MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                         else

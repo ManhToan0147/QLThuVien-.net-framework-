@@ -85,6 +85,8 @@ namespace QL_ThuVien.Main_UC.QLDocGia
                 txtMaTheMuon.Enabled = string.IsNullOrEmpty(txtMaTheMuon.Text);
 
                 txtHoTen.Text = dgvDocGia.Rows[i].Cells["HoTen"].Value.ToString();
+                txtEmail.Text = dgvDocGia.Rows[i].Cells["Email"].Value.ToString();
+                txtSDT.Text = dgvDocGia.Rows[i].Cells["SoDienThoai"].Value.ToString();
                 txtNgheNghiep.Text = dgvDocGia.Rows[i].Cells["NgheNghiep"].Value.ToString();
 
                 dateNgayCap.Value = dgvDocGia.Rows[i].Cells["NgayCapThe"].Value is DBNull ? DateTime.Now : (DateTime)dgvDocGia.Rows[i].Cells["NgayCapThe"].Value;
@@ -164,7 +166,7 @@ namespace QL_ThuVien.Main_UC.QLDocGia
                 string ngayCap = dateNgayCap.Value.ToString("yyyy-MM-dd");
                 string ngayHan = dateNgayHan.Value.ToString("yyyy-MM-dd");
 
-                string sql = "UPDATE DocGia SET HoTen = @HoTen, NgheNghiep = @NgheNghiep, " +
+                string sql = "UPDATE DocGia SET HoTen = @HoTen, Email = @Email, SoDienThoai = @SoDienThoai, NgheNghiep = @NgheNghiep, " +
                              "NgayCapThe = @NgayCapThe, NgayHanThe = @NgayHanThe, HinhAnh = @HinhAnh " +
                              "WHERE MaDocGia = @MaDocGia";
 
@@ -172,6 +174,8 @@ namespace QL_ThuVien.Main_UC.QLDocGia
                 {
                     // Thêm các tham số cho câu lệnh SQL
                     cmd.Parameters.AddWithValue("@HoTen", txtHoTen.Text);
+                    cmd.Parameters.AddWithValue("@Email", txtEmail.Text);
+                    cmd.Parameters.AddWithValue("@SoDienThoai", txtSDT.Text);
                     cmd.Parameters.AddWithValue("@NgheNghiep", txtNgheNghiep.Text);
                     cmd.Parameters.AddWithValue("@NgayCapThe", ngayCap);
                     cmd.Parameters.AddWithValue("@NgayHanThe", ngayHan);
@@ -219,6 +223,8 @@ namespace QL_ThuVien.Main_UC.QLDocGia
             }
 
             txtHoTen.Text = "";
+            txtSDT.Text = "";
+            txtEmail.Text = "";
             txtNgheNghiep.Text = "";
             dateNgayCap.Value = DateTime.Now;
             dateNgayHan.Value = DateTime.Now;
@@ -239,11 +245,13 @@ namespace QL_ThuVien.Main_UC.QLDocGia
                     string ngayHan = dateNgayHan.Value.ToString("yyyy-MM-dd");
 
                     string sql = "Insert into DocGia " +
-                    "Values (@MaDocGia, @HoTen, @HinhAnh, @NgheNghiep, @NgayCapThe, @NgayHanThe)";
+                    "Values (@MaDocGia, @HoTen, @HinhAnh,@Email, @SoDienThoai, @NgheNghiep, @NgayCapThe, @NgayHanThe)";
                     using (cmd = new SqlCommand(sql, con))
                     {
                         cmd.Parameters.AddWithValue("@MaDocGia", txtMaTheMuon.Text.Trim());
                         cmd.Parameters.AddWithValue("@HoTen", txtHoTen.Text.Trim());
+                        cmd.Parameters.AddWithValue("@Email", txtEmail.Text.Trim());
+                        cmd.Parameters.AddWithValue("@SoDienThoai", txtSDT.Text.Trim());
                         cmd.Parameters.AddWithValue("@NgheNghiep", txtNgheNghiep.Text.Trim());
                         cmd.Parameters.AddWithValue("@NgayCapThe", ngayCap);
                         cmd.Parameters.AddWithValue("@NgayHanThe", ngayHan);
@@ -300,7 +308,7 @@ namespace QL_ThuVien.Main_UC.QLDocGia
 
             int currentIndex = dgvDocGia.CurrentRow.Index;
 
-            DialogResult rs = MessageBox.Show("Bạn có chắc chắn muốn xóa bản ghi đã chọn và các bản ghi khác liên quan?",
+            DialogResult rs = MessageBox.Show("Bạn có chắc chắn muốn xóa bản ghi đã chọn",
                    "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (rs == DialogResult.Yes)
             {

@@ -90,6 +90,7 @@
             this.btnTaiKhoan.Size = new System.Drawing.Size(247, 90);
             this.btnTaiKhoan.TabIndex = 0;
             this.btnTaiKhoan.Text = "Tài khoản";
+            this.btnTaiKhoan.Click += new System.EventHandler(this.btnTaiKhoan_Click);
             // 
             // panelContainer
             // 

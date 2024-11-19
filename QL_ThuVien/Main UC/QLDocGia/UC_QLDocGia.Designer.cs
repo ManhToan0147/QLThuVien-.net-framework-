@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle37 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle38 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle41 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle42 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle39 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle40 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblQLDocGia = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.cboTruong = new Guna.UI2.WinForms.Guna2ComboBox();
@@ -53,17 +53,23 @@
             this.picAvatar = new System.Windows.Forms.PictureBox();
             this.panelContainer = new System.Windows.Forms.Panel();
             this.dgvDocGia = new System.Windows.Forms.DataGridView();
-            this.MaDocGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.HoTen = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.HinhAnh = new System.Windows.Forms.DataGridViewImageColumn();
-            this.NgheNghiep = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NgayCapThe = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NgayHanThe = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnXoa = new Guna.UI2.WinForms.Guna2Button();
             this.btnSua = new Guna.UI2.WinForms.Guna2Button();
             this.btnThem = new Guna.UI2.WinForms.Guna2Button();
             this.btnTaoMoi = new Guna.UI2.WinForms.Guna2Button();
             this.txtSearch = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtSDT = new Guna.UI2.WinForms.Guna2TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtEmail = new Guna.UI2.WinForms.Guna2TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.MaDocGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HoTen = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HinhAnh = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SoDienThoai = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NgheNghiep = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NgayCapThe = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NgayHanThe = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grbTTDG.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picAvatar)).BeginInit();
             this.panelContainer.SuspendLayout();
@@ -113,6 +119,10 @@
             // 
             // grbTTDG
             // 
+            this.grbTTDG.Controls.Add(this.txtEmail);
+            this.grbTTDG.Controls.Add(this.label8);
+            this.grbTTDG.Controls.Add(this.txtSDT);
+            this.grbTTDG.Controls.Add(this.label7);
             this.grbTTDG.Controls.Add(this.btnXoaAnh);
             this.grbTTDG.Controls.Add(this.dateNgayHan);
             this.grbTTDG.Controls.Add(this.label6);
@@ -150,7 +160,7 @@
             this.btnXoaAnh.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(232)))));
             this.btnXoaAnh.HoverState.FillColor = System.Drawing.Color.White;
             this.btnXoaAnh.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(232)))));
-            this.btnXoaAnh.Location = new System.Drawing.Point(466, 32);
+            this.btnXoaAnh.Location = new System.Drawing.Point(431, 32);
             this.btnXoaAnh.Name = "btnXoaAnh";
             this.btnXoaAnh.Size = new System.Drawing.Size(42, 42);
             this.btnXoaAnh.TabIndex = 20;
@@ -160,25 +170,26 @@
             // dateNgayHan
             // 
             this.dateNgayHan.BackColor = System.Drawing.Color.White;
+            this.dateNgayHan.Checked = true;
             this.dateNgayHan.CheckedState.FillColor = System.Drawing.Color.White;
             this.dateNgayHan.CustomFormat = "dd/MM/yyyy";
             this.dateNgayHan.FillColor = System.Drawing.Color.White;
             this.dateNgayHan.FocusedColor = System.Drawing.Color.White;
             this.dateNgayHan.Font = new System.Drawing.Font("Segoe UI", 9.857143F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateNgayHan.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateNgayHan.Location = new System.Drawing.Point(988, 344);
+            this.dateNgayHan.Location = new System.Drawing.Point(1407, 223);
             this.dateNgayHan.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.dateNgayHan.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.dateNgayHan.Name = "dateNgayHan";
-            this.dateNgayHan.Size = new System.Drawing.Size(350, 55);
-            this.dateNgayHan.TabIndex = 4;
+            this.dateNgayHan.Size = new System.Drawing.Size(344, 55);
+            this.dateNgayHan.TabIndex = 6;
             this.dateNgayHan.Value = new System.DateTime(2024, 11, 12, 13, 17, 6, 634);
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 9.857143F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(752, 355);
+            this.label6.Location = new System.Drawing.Point(1211, 234);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(166, 32);
             this.label6.TabIndex = 19;
@@ -187,26 +198,27 @@
             // dateNgayCap
             // 
             this.dateNgayCap.BackColor = System.Drawing.Color.White;
+            this.dateNgayCap.Checked = true;
             this.dateNgayCap.CheckedState.FillColor = System.Drawing.Color.White;
             this.dateNgayCap.CustomFormat = "dd/MM/yyyy";
             this.dateNgayCap.FillColor = System.Drawing.Color.White;
             this.dateNgayCap.FocusedColor = System.Drawing.Color.White;
             this.dateNgayCap.Font = new System.Drawing.Font("Segoe UI", 9.857143F);
             this.dateNgayCap.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateNgayCap.Location = new System.Drawing.Point(988, 264);
+            this.dateNgayCap.Location = new System.Drawing.Point(1407, 144);
             this.dateNgayCap.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.dateNgayCap.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.dateNgayCap.Name = "dateNgayCap";
             this.dateNgayCap.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.dateNgayCap.Size = new System.Drawing.Size(350, 55);
-            this.dateNgayCap.TabIndex = 3;
+            this.dateNgayCap.Size = new System.Drawing.Size(344, 55);
+            this.dateNgayCap.TabIndex = 5;
             this.dateNgayCap.Value = new System.DateTime(2024, 11, 12, 13, 17, 6, 634);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 9.857143F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(752, 273);
+            this.label5.Location = new System.Drawing.Point(1211, 155);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(164, 32);
             this.label5.TabIndex = 19;
@@ -224,24 +236,24 @@
             this.txtNgheNghiep.Font = new System.Drawing.Font("Segoe UI", 9.857143F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNgheNghiep.ForeColor = System.Drawing.Color.Black;
             this.txtNgheNghiep.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtNgheNghiep.Location = new System.Drawing.Point(988, 184);
+            this.txtNgheNghiep.Location = new System.Drawing.Point(1407, 64);
             this.txtNgheNghiep.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.txtNgheNghiep.Name = "txtNgheNghiep";
             this.txtNgheNghiep.PasswordChar = '\0';
             this.txtNgheNghiep.PlaceholderText = "";
             this.txtNgheNghiep.SelectedText = "";
-            this.txtNgheNghiep.Size = new System.Drawing.Size(550, 55);
-            this.txtNgheNghiep.TabIndex = 2;
+            this.txtNgheNghiep.Size = new System.Drawing.Size(344, 55);
+            this.txtNgheNghiep.TabIndex = 4;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 9.857143F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(752, 194);
+            this.label4.Location = new System.Drawing.Point(536, 234);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(161, 32);
+            this.label4.Size = new System.Drawing.Size(76, 32);
             this.label4.TabIndex = 18;
-            this.label4.Text = "Nghề nghiệp";
+            this.label4.Text = "Email";
             // 
             // txtHoTen
             // 
@@ -255,20 +267,20 @@
             this.txtHoTen.Font = new System.Drawing.Font("Segoe UI", 9.857143F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtHoTen.ForeColor = System.Drawing.Color.Black;
             this.txtHoTen.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtHoTen.Location = new System.Drawing.Point(988, 104);
+            this.txtHoTen.Location = new System.Drawing.Point(733, 144);
             this.txtHoTen.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.txtHoTen.Name = "txtHoTen";
             this.txtHoTen.PasswordChar = '\0';
             this.txtHoTen.PlaceholderText = "";
             this.txtHoTen.SelectedText = "";
-            this.txtHoTen.Size = new System.Drawing.Size(550, 55);
+            this.txtHoTen.Size = new System.Drawing.Size(426, 55);
             this.txtHoTen.TabIndex = 1;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 9.857143F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(752, 115);
+            this.label3.Location = new System.Drawing.Point(536, 155);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(91, 32);
             this.label3.TabIndex = 16;
@@ -286,20 +298,20 @@
             this.txtMaTheMuon.Font = new System.Drawing.Font("Segoe UI", 9.857143F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMaTheMuon.ForeColor = System.Drawing.Color.Black;
             this.txtMaTheMuon.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtMaTheMuon.Location = new System.Drawing.Point(988, 24);
+            this.txtMaTheMuon.Location = new System.Drawing.Point(733, 64);
             this.txtMaTheMuon.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.txtMaTheMuon.Name = "txtMaTheMuon";
             this.txtMaTheMuon.PasswordChar = '\0';
             this.txtMaTheMuon.PlaceholderText = "";
             this.txtMaTheMuon.SelectedText = "";
-            this.txtMaTheMuon.Size = new System.Drawing.Size(550, 55);
+            this.txtMaTheMuon.Size = new System.Drawing.Size(426, 55);
             this.txtMaTheMuon.TabIndex = 0;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 9.857143F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(752, 35);
+            this.label2.Location = new System.Drawing.Point(536, 75);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(168, 32);
             this.label2.TabIndex = 16;
@@ -321,7 +333,7 @@
             this.btnBrowse.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(232)))));
             this.btnBrowse.HoverState.FillColor = System.Drawing.Color.White;
             this.btnBrowse.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(232)))));
-            this.btnBrowse.Location = new System.Drawing.Point(265, 368);
+            this.btnBrowse.Location = new System.Drawing.Point(230, 368);
             this.btnBrowse.Name = "btnBrowse";
             this.btnBrowse.Size = new System.Drawing.Size(243, 53);
             this.btnBrowse.TabIndex = 14;
@@ -332,7 +344,7 @@
             // 
             this.picAvatar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.picAvatar.Image = global::QL_ThuVien.Properties.Resources.avatar_default;
-            this.picAvatar.Location = new System.Drawing.Point(265, 32);
+            this.picAvatar.Location = new System.Drawing.Point(230, 32);
             this.picAvatar.Name = "picAvatar";
             this.picAvatar.Size = new System.Drawing.Size(243, 324);
             this.picAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -351,110 +363,61 @@
             // 
             this.dgvDocGia.AllowUserToAddRows = false;
             this.dgvDocGia.AllowUserToResizeRows = false;
-            dataGridViewCellStyle37.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle37.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle37.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle37.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(76)))), ((int)(((byte)(170)))));
-            dataGridViewCellStyle37.SelectionForeColor = System.Drawing.Color.White;
-            this.dgvDocGia.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle37;
-            this.dgvDocGia.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(76)))), ((int)(((byte)(170)))));
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.White;
+            this.dgvDocGia.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
             this.dgvDocGia.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvDocGia.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgvDocGia.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle38.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle38.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(232)))));
-            dataGridViewCellStyle38.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle38.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle38.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(232)))));
-            dataGridViewCellStyle38.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle38.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDocGia.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle38;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(232)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(232)))));
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDocGia.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.dgvDocGia.ColumnHeadersHeight = 50;
             this.dgvDocGia.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.MaDocGia,
             this.HoTen,
             this.HinhAnh,
+            this.Email,
+            this.SoDienThoai,
             this.NgheNghiep,
             this.NgayCapThe,
             this.NgayHanThe});
-            dataGridViewCellStyle41.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle41.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle41.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle41.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle41.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(76)))), ((int)(((byte)(170)))));
-            dataGridViewCellStyle41.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle41.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvDocGia.DefaultCellStyle = dataGridViewCellStyle41;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(76)))), ((int)(((byte)(170)))));
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvDocGia.DefaultCellStyle = dataGridViewCellStyle11;
             this.dgvDocGia.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvDocGia.EnableHeadersVisualStyles = false;
             this.dgvDocGia.GridColor = System.Drawing.Color.Black;
             this.dgvDocGia.Location = new System.Drawing.Point(0, 0);
             this.dgvDocGia.Name = "dgvDocGia";
             this.dgvDocGia.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle42.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle42.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle42.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle42.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle42.SelectionBackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle42.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle42.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDocGia.RowHeadersDefaultCellStyle = dataGridViewCellStyle42;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDocGia.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
             this.dgvDocGia.RowHeadersWidth = 72;
             this.dgvDocGia.RowTemplate.Height = 100;
             this.dgvDocGia.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvDocGia.Size = new System.Drawing.Size(1803, 558);
             this.dgvDocGia.TabIndex = 3;
             this.dgvDocGia.SelectionChanged += new System.EventHandler(this.dgvDocGia_SelectionChanged);
-            // 
-            // MaDocGia
-            // 
-            this.MaDocGia.DataPropertyName = "MaDocGia";
-            this.MaDocGia.HeaderText = "Mã độc giả";
-            this.MaDocGia.MinimumWidth = 9;
-            this.MaDocGia.Name = "MaDocGia";
-            // 
-            // HoTen
-            // 
-            this.HoTen.DataPropertyName = "HoTen";
-            this.HoTen.HeaderText = "Họ tên";
-            this.HoTen.MinimumWidth = 9;
-            this.HoTen.Name = "HoTen";
-            // 
-            // HinhAnh
-            // 
-            this.HinhAnh.DataPropertyName = "HinhAnh";
-            this.HinhAnh.HeaderText = "Hình ảnh";
-            this.HinhAnh.MinimumWidth = 9;
-            this.HinhAnh.Name = "HinhAnh";
-            this.HinhAnh.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.HinhAnh.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // NgheNghiep
-            // 
-            this.NgheNghiep.DataPropertyName = "NgheNghiep";
-            this.NgheNghiep.HeaderText = "Nghề nghiệp";
-            this.NgheNghiep.MinimumWidth = 9;
-            this.NgheNghiep.Name = "NgheNghiep";
-            // 
-            // NgayCapThe
-            // 
-            this.NgayCapThe.DataPropertyName = "NgayCapThe";
-            dataGridViewCellStyle39.Format = "dd/MM/yyyy";
-            dataGridViewCellStyle39.NullValue = null;
-            this.NgayCapThe.DefaultCellStyle = dataGridViewCellStyle39;
-            this.NgayCapThe.HeaderText = "Ngày cấp thẻ";
-            this.NgayCapThe.MinimumWidth = 9;
-            this.NgayCapThe.Name = "NgayCapThe";
-            // 
-            // NgayHanThe
-            // 
-            this.NgayHanThe.DataPropertyName = "NgayHanThe";
-            dataGridViewCellStyle40.Format = "dd/MM/yyyy";
-            dataGridViewCellStyle40.NullValue = null;
-            this.NgayHanThe.DefaultCellStyle = dataGridViewCellStyle40;
-            this.NgayHanThe.HeaderText = "Ngày hạn thẻ";
-            this.NgayHanThe.MinimumWidth = 9;
-            this.NgayHanThe.Name = "NgayHanThe";
             // 
             // btnXoa
             // 
@@ -575,6 +538,140 @@
             this.txtSearch.TextOffset = new System.Drawing.Point(10, 0);
             this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
+            // txtSDT
+            // 
+            this.txtSDT.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtSDT.DefaultText = "";
+            this.txtSDT.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtSDT.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtSDT.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtSDT.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtSDT.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtSDT.Font = new System.Drawing.Font("Segoe UI", 9.857143F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSDT.ForeColor = System.Drawing.Color.Black;
+            this.txtSDT.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtSDT.Location = new System.Drawing.Point(735, 303);
+            this.txtSDT.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.txtSDT.Name = "txtSDT";
+            this.txtSDT.PasswordChar = '\0';
+            this.txtSDT.PlaceholderText = "";
+            this.txtSDT.SelectedText = "";
+            this.txtSDT.Size = new System.Drawing.Size(426, 55);
+            this.txtSDT.TabIndex = 3;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 9.857143F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(538, 313);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(164, 32);
+            this.label7.TabIndex = 22;
+            this.label7.Text = "Số điện thoại";
+            // 
+            // txtEmail
+            // 
+            this.txtEmail.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtEmail.DefaultText = "";
+            this.txtEmail.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtEmail.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtEmail.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtEmail.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtEmail.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtEmail.Font = new System.Drawing.Font("Segoe UI", 9.857143F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEmail.ForeColor = System.Drawing.Color.Black;
+            this.txtEmail.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtEmail.Location = new System.Drawing.Point(735, 223);
+            this.txtEmail.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.PasswordChar = '\0';
+            this.txtEmail.PlaceholderText = "";
+            this.txtEmail.SelectedText = "";
+            this.txtEmail.Size = new System.Drawing.Size(424, 55);
+            this.txtEmail.TabIndex = 2;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Segoe UI", 9.857143F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(1211, 75);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(161, 32);
+            this.label8.TabIndex = 24;
+            this.label8.Text = "Nghề nghiệp";
+            // 
+            // MaDocGia
+            // 
+            this.MaDocGia.DataPropertyName = "MaDocGia";
+            this.MaDocGia.HeaderText = "Mã độc giả";
+            this.MaDocGia.MinimumWidth = 9;
+            this.MaDocGia.Name = "MaDocGia";
+            this.MaDocGia.Width = 216;
+            // 
+            // HoTen
+            // 
+            this.HoTen.DataPropertyName = "HoTen";
+            this.HoTen.HeaderText = "Họ tên";
+            this.HoTen.MinimumWidth = 9;
+            this.HoTen.Name = "HoTen";
+            this.HoTen.Width = 217;
+            // 
+            // HinhAnh
+            // 
+            this.HinhAnh.DataPropertyName = "HinhAnh";
+            this.HinhAnh.HeaderText = "Hình ảnh";
+            this.HinhAnh.MinimumWidth = 9;
+            this.HinhAnh.Name = "HinhAnh";
+            this.HinhAnh.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.HinhAnh.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.HinhAnh.Width = 216;
+            // 
+            // Email
+            // 
+            this.Email.DataPropertyName = "Email";
+            this.Email.HeaderText = "Email";
+            this.Email.MinimumWidth = 9;
+            this.Email.Name = "Email";
+            this.Email.Width = 250;
+            // 
+            // SoDienThoai
+            // 
+            this.SoDienThoai.DataPropertyName = "SoDienThoai";
+            this.SoDienThoai.HeaderText = "Số điện thoại";
+            this.SoDienThoai.MinimumWidth = 9;
+            this.SoDienThoai.Name = "SoDienThoai";
+            this.SoDienThoai.Width = 216;
+            // 
+            // NgheNghiep
+            // 
+            this.NgheNghiep.DataPropertyName = "NgheNghiep";
+            this.NgheNghiep.HeaderText = "Nghề nghiệp";
+            this.NgheNghiep.MinimumWidth = 9;
+            this.NgheNghiep.Name = "NgheNghiep";
+            this.NgheNghiep.Width = 216;
+            // 
+            // NgayCapThe
+            // 
+            this.NgayCapThe.DataPropertyName = "NgayCapThe";
+            dataGridViewCellStyle9.Format = "dd/MM/yyyy";
+            dataGridViewCellStyle9.NullValue = null;
+            this.NgayCapThe.DefaultCellStyle = dataGridViewCellStyle9;
+            this.NgayCapThe.HeaderText = "Ngày cấp thẻ";
+            this.NgayCapThe.MinimumWidth = 9;
+            this.NgayCapThe.Name = "NgayCapThe";
+            this.NgayCapThe.Width = 200;
+            // 
+            // NgayHanThe
+            // 
+            this.NgayHanThe.DataPropertyName = "NgayHanThe";
+            dataGridViewCellStyle10.Format = "dd/MM/yyyy";
+            dataGridViewCellStyle10.NullValue = null;
+            this.NgayHanThe.DefaultCellStyle = dataGridViewCellStyle10;
+            this.NgayHanThe.HeaderText = "Ngày hạn thẻ";
+            this.NgayHanThe.MinimumWidth = 9;
+            this.NgayHanThe.Name = "NgayHanThe";
+            this.NgayHanThe.Width = 200;
+            // 
             // UC_QLDocGia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 30F);
@@ -630,9 +727,15 @@
         private Guna.UI2.WinForms.Guna2Button btnTaoMoi;
         private System.Windows.Forms.DataGridView dgvDocGia;
         private Guna.UI2.WinForms.Guna2Button btnXoaAnh;
+        private Guna.UI2.WinForms.Guna2TextBox txtEmail;
+        private System.Windows.Forms.Label label8;
+        private Guna.UI2.WinForms.Guna2TextBox txtSDT;
+        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaDocGia;
         private System.Windows.Forms.DataGridViewTextBoxColumn HoTen;
         private System.Windows.Forms.DataGridViewImageColumn HinhAnh;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Email;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SoDienThoai;
         private System.Windows.Forms.DataGridViewTextBoxColumn NgheNghiep;
         private System.Windows.Forms.DataGridViewTextBoxColumn NgayCapThe;
         private System.Windows.Forms.DataGridViewTextBoxColumn NgayHanThe;

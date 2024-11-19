@@ -235,7 +235,7 @@ namespace QL_ThuVien.Main_UC.QLMuonTra
                 int kq = cmd.ExecuteNonQuery();
                 if (kq > 0)
                 {
-                    MessageBox.Show("Thêm phiếu phạt thành công!", "Thông báo",
+                    MessageBox.Show("Thêm phiếu phạt thành công!, click Phạt sách để lưu thông tin sách bị phạt", "Thông báo",
                          MessageBoxButtons.OK, MessageBoxIcon.Information);
                     addNewFlag = false;
                     LoadPhieuPhat();

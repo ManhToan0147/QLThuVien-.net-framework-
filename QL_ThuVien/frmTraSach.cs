@@ -74,10 +74,13 @@ namespace QL_ThuVien
                 foreach (DataGridViewRow row in dgvSachMuon.SelectedRows)
                 {
                     string maSach = row.Cells[0].Value.ToString();
+                    string moTa = string.Empty;
+                    string tinhTrangTra = row.Cells[3].Value.ToString();
                     using (con = new SqlConnection(strCon))
                     {
                         con.Open();
-                        string sql = "Update CT_PhieuMuon set DaTraSach = 1, TinhTrangTra = 'OK' " +
+
+                        string sql = $"Update CT_PhieuMuon set DaTraSach = 1, TinhTrangTra = N'{tinhTrangTra}' " +
                             $"where MaPhieuMuon = '{MaPhieuMuon}' and MaSach = '{maSach}' ";
                         cmd = new SqlCommand(sql, con);
                         try
@@ -154,6 +157,11 @@ namespace QL_ThuVien
                         cmd.Parameters.AddWithValue("@TinhTrangTra", tinhTrangTra);
                         cmd.Parameters.AddWithValue("@MaPhieuMuon", MaPhieuMuon);
                         cmd.Parameters.AddWithValue("@MaSach", maSach);
+                        cmd.ExecuteNonQuery();
+
+                        string updateMoTa = $"Update CuonSach Set MoTa = N'{tinhTrangTra}' " +
+                            $"where MaSach = '{maSach}'";
+                        cmd = new SqlCommand(updateMoTa, con);
                         cmd.ExecuteNonQuery();
                     }
                 }

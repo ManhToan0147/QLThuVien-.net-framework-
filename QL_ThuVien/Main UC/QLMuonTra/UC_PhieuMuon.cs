@@ -30,11 +30,7 @@ namespace QL_ThuVien.Main_UC.QLMuonTra
 
         private void btnNhapSach_Click(object sender, EventArgs e)
         {
-            var f = new frmNhapSach();
-            f.MaPhieuMuon = txtMaPhieuMuon.Text;
-            f.MaDocGia = txtMaDG.Text;
-            f.KieuMuon = cboKieuMuon.Text.Substring(5);
-            f.ShowDialog();
+            
         }
 
         private void UC_PhieuMuon_Load(object sender, EventArgs e)
@@ -279,7 +275,7 @@ namespace QL_ThuVien.Main_UC.QLMuonTra
                 int kq = cmd.ExecuteNonQuery();
                 if (kq > 0)
                 {
-                    MessageBox.Show("Thêm phiếu mượn thành công!", "Thông báo");
+                    MessageBox.Show("Thêm phiếu mượn thành công, click Mượn sách để lưu thông tin sách mượn!", "Thông báo");
                 }
                 else
                 {
@@ -389,6 +385,15 @@ namespace QL_ThuVien.Main_UC.QLMuonTra
         {
             LoadSachMuon(selectedMaPM);
             LoadPhieuMuon();
+        }
+
+        private void btnMuonSach_Click(object sender, EventArgs e)
+        {
+            var f = new frmNhapSach();
+            f.MaPhieuMuon = txtMaPhieuMuon.Text;
+            f.MaDocGia = txtMaDG.Text;
+            f.KieuMuon = cboKieuMuon.Text.Substring(5);
+            f.ShowDialog();
         }
 
         private void dgvPhieuMuon_SelectionChanged(object sender, EventArgs e)

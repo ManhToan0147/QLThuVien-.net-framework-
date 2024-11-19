@@ -42,7 +42,7 @@ namespace QL_ThuVien.Main_UC.QLSach
         {
             using (con = new SqlConnection(strCon))
             {
-                string sql = "Select MaSach, TinhTrang from CuonSach";
+                string sql = "Select MaSach, TinhTrang, MoTa from CuonSach";
                 adapter = new SqlDataAdapter(sql, con);
                 dt = new DataTable();
                 adapter.Fill(dt);
@@ -77,7 +77,7 @@ namespace QL_ThuVien.Main_UC.QLSach
                     using (con = new SqlConnection(strCon))
                     {
                         con.Open();
-                        string sql = $"Select MaSach, TinhTrang from CuonSach where MaDauSach = '{selectedMaDauSach}'";
+                        string sql = $"Select MaSach, TinhTrang, MoTa from CuonSach where MaDauSach = '{selectedMaDauSach}'";
                         using (adapter = new SqlDataAdapter(sql, con))
                         {
                             adapter.SelectCommand.Parameters.AddWithValue("@MaDauSach", selectedMaDauSach);
@@ -205,7 +205,7 @@ namespace QL_ThuVien.Main_UC.QLSach
                     insertMaDauSach = selectedMaDauSach + "_01";
                 }
 
-                string sql2 = $"Insert into CuonSach values ('{insertMaDauSach}', '{selectedMaDauSach}' , N'Còn')";
+                string sql2 = $"Insert into CuonSach values ('{insertMaDauSach}', '{selectedMaDauSach}' , N'Còn', N'OK')";
                 cmd = new SqlCommand(sql2, con);
                 cmd.ExecuteNonQuery();
                 //MessageBox.Show($"Đã thêm thành công bản ghi", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -267,12 +267,14 @@ namespace QL_ThuVien.Main_UC.QLSach
 
                     string maSach = row.Cells["MaSach"].Value.ToString();
                     string tinhTrang = row.Cells["TinhTrang"].Value.ToString();
-                    string sql = "Update CuonSach set TinhTrang = @TinhTrang where MaSach = @MaSach";
+                    string moTa = row.Cells["MoTa"].Value.ToString();
+                    string sql = "Update CuonSach set TinhTrang = @TinhTrang, MoTa = @MoTa where MaSach = @MaSach";
 
                     using (SqlCommand cmd = new SqlCommand(sql, con))
                     {
                         cmd.Parameters.AddWithValue("@MaSach", maSach);
                         cmd.Parameters.AddWithValue("@TinhTrang", tinhTrang);
+                        cmd.Parameters.AddWithValue("@MoTa", moTa);
 
                         int rowsAffected = cmd.ExecuteNonQuery();
                         if (rowsAffected > 0)

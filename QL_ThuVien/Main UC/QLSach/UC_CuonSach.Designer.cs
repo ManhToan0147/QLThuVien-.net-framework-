@@ -381,7 +381,7 @@
             // MoTa
             // 
             this.MoTa.DataPropertyName = "MoTa";
-            this.MoTa.HeaderText = "Mô tả";
+            this.MoTa.HeaderText = "Mô tả tình trạng";
             this.MoTa.MinimumWidth = 9;
             this.MoTa.Name = "MoTa";
             // 
