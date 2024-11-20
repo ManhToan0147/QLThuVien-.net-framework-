@@ -50,7 +50,7 @@ namespace QL_ThuVien
             cmd.Connection = con;
 
             // Truy vấn kiểm tra tài khoản và lấy thông tin quyền
-            cmd.CommandText = "SELECT Quyen FROM TaiKhoanDN WHERE Email = @email AND MatKhau = @matkhau";
+            cmd.CommandText = "SELECT * FROM TaiKhoanDN WHERE Email = @email AND MatKhau = @matkhau";
             cmd.Parameters.AddWithValue("@email", txtEmail.Text);
             cmd.Parameters.AddWithValue("@matkhau", txtMatKhau.Text);
 
@@ -61,23 +61,25 @@ namespace QL_ThuVien
             {
                 // Lấy giá trị quyền từ kết quả truy vấn
                 string quyen = ds.Tables[0].Rows[0]["Quyen"].ToString();
-
+                string tendn = ds.Tables[0].Rows[0]["TenDangNhap"].ToString();
                 // Ẩn form đăng nhập
                 this.Hide();
 
                 if (quyen == "admin")
                 {
-                    MessageBox.Show("Chào mừng admin đã đăng nhập thành công", "Thông báo",
+                    MessageBox.Show($"Chào mừng {tendn} đã đăng nhập thành công với quyền {quyen}", "Thông báo",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     // Hiển thị giao diện admin
-                    frmLayout trangtru = new frmLayout();
+                    frmLayout trangtru = new frmLayout(quyen);
                     trangtru.Show();
                 }
                 else if (quyen == "thuthu")
                 {
                     // Hiển thị giao diện thủ thư
-                    frmThuThu thuThuForm = new frmThuThu(); // Thay "frmThuThu" bằng tên form của bạn
+                    MessageBox.Show($"Chào mừng {tendn} đã đăng nhập thành công với quyền thủ thư", "Thông báo",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    frmLayout thuThuForm = new frmLayout(quyen); // Thay "frmThuThu" bằng tên form của bạn
                     thuThuForm.Show();
                 }
             }

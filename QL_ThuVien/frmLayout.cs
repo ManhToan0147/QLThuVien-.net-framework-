@@ -16,6 +16,7 @@ namespace QL_ThuVien
 {
     public partial class frmLayout : Form
     {
+        public string userRole { get; set; }
         private void addUserControl(UserControl userControl)
         {
             userControl.Dock = DockStyle.Fill;
@@ -23,9 +24,10 @@ namespace QL_ThuVien
             panelContainer.Controls.Add(userControl);
             userControl.BringToFront();
         }
-        public frmLayout()
+        public frmLayout(string quyen)
         {
             InitializeComponent();
+            userRole = quyen;
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -38,6 +40,18 @@ namespace QL_ThuVien
             btnHome.Checked = true;
             var uc = new UC_TrangChu();
             addUserControl(uc);
+            if (userRole == "thuthu")
+            {
+                // Ẩn các chức năng không được phép sử dụng
+                btnCaiDat.Visible = false; // Ví dụ: Ẩn nút quản lý tài khoản
+                btnBaoCao.Visible = false;         // Ẩn nút báo cáo
+            }
+            else if (userRole == "admin")
+            {
+                // Admin có thể nhìn thấy tất cả
+                btnCaiDat.Visible = true;
+                btnBaoCao.Visible = true;
+            }
         }
 
         private void btnSignIn_Out_Click(object sender, EventArgs e)
@@ -49,6 +63,7 @@ namespace QL_ThuVien
                 this.Close();
                 var f = new frmSignIn();
                 f.ShowDialog();
+
             }
         }
 
@@ -84,8 +99,13 @@ namespace QL_ThuVien
 
         private void btnQLMuonTra_Click(object sender, EventArgs e)
         {
-            var uc = new UC_QLMuonTra_Ribbon();
+            var uc = new UC_QLMuonTra_Ribbon(userRole);
             addUserControl(uc);
+        }
+
+        private void btnHDSD_Click(object sender, EventArgs e)
+        {
+            Help.ShowHelp(this, "HuongDanSuDung.chm");
         }
     }
 }

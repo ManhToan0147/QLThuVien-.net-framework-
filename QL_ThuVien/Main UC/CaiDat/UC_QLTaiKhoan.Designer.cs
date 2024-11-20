@@ -50,12 +50,12 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnTaoMoi = new Guna.UI2.WinForms.Guna2Button();
             this.lblTaiKhoan = new System.Windows.Forms.Label();
+            this.IDTaiKhoan = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenDangNhap = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MatKhau = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MaThuThu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Quyen = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IDTaiKhoan = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelContainer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTaiKhoan)).BeginInit();
             this.grbTTTT.SuspendLayout();
@@ -162,12 +162,12 @@
             this.dgvTaiKhoan.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvTaiKhoan.ColumnHeadersHeight = 50;
             this.dgvTaiKhoan.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.IDTaiKhoan,
             this.TenDangNhap,
             this.Email,
             this.MatKhau,
             this.MaThuThu,
-            this.Quyen,
-            this.IDTaiKhoan});
+            this.Quyen});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -231,9 +231,9 @@
             "Chưa có quyền",
             "admin",
             "thuthu"});
-            this.cboQuyen.Location = new System.Drawing.Point(1209, 147);
+            this.cboQuyen.Location = new System.Drawing.Point(1182, 147);
             this.cboQuyen.Name = "cboQuyen";
-            this.cboQuyen.Size = new System.Drawing.Size(432, 54);
+            this.cboQuyen.Size = new System.Drawing.Size(485, 54);
             this.cboQuyen.TabIndex = 14;
             // 
             // txtMatKhau
@@ -248,7 +248,7 @@
             this.txtMatKhau.Font = new System.Drawing.Font("Segoe UI", 9.857143F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMatKhau.ForeColor = System.Drawing.Color.Black;
             this.txtMatKhau.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtMatKhau.Location = new System.Drawing.Point(342, 239);
+            this.txtMatKhau.Location = new System.Drawing.Point(315, 239);
             this.txtMatKhau.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.txtMatKhau.Name = "txtMatKhau";
             this.txtMatKhau.PasswordChar = '\0';
@@ -261,7 +261,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 9.857143F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(140, 251);
+            this.label5.Location = new System.Drawing.Point(113, 251);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(121, 32);
             this.label5.TabIndex = 13;
@@ -271,7 +271,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 9.857143F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(1025, 159);
+            this.label4.Location = new System.Drawing.Point(1039, 159);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(88, 32);
             this.label4.TabIndex = 11;
@@ -287,9 +287,9 @@
             this.cboThuThu.Font = new System.Drawing.Font("Segoe UI", 9.857143F);
             this.cboThuThu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.cboThuThu.ItemHeight = 48;
-            this.cboThuThu.Location = new System.Drawing.Point(1209, 56);
+            this.cboThuThu.Location = new System.Drawing.Point(1182, 56);
             this.cboThuThu.Name = "cboThuThu";
-            this.cboThuThu.Size = new System.Drawing.Size(432, 54);
+            this.cboThuThu.Size = new System.Drawing.Size(485, 54);
             this.cboThuThu.TabIndex = 3;
             this.cboThuThu.SelectedIndexChanged += new System.EventHandler(this.cboThuThu_SelectedIndexChanged);
             // 
@@ -297,7 +297,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 9.857143F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(1025, 68);
+            this.label3.Location = new System.Drawing.Point(1039, 68);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(103, 32);
             this.label3.TabIndex = 9;
@@ -315,7 +315,7 @@
             this.txtEmail.Font = new System.Drawing.Font("Segoe UI", 9.857143F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEmail.ForeColor = System.Drawing.Color.Black;
             this.txtEmail.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtEmail.Location = new System.Drawing.Point(342, 147);
+            this.txtEmail.Location = new System.Drawing.Point(315, 147);
             this.txtEmail.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.PasswordChar = '\0';
@@ -328,7 +328,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 9.857143F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(140, 159);
+            this.label2.Location = new System.Drawing.Point(113, 159);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(76, 32);
             this.label2.TabIndex = 7;
@@ -346,7 +346,7 @@
             this.txtTenDN.Font = new System.Drawing.Font("Segoe UI", 9.857143F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTenDN.ForeColor = System.Drawing.Color.Black;
             this.txtTenDN.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtTenDN.Location = new System.Drawing.Point(342, 56);
+            this.txtTenDN.Location = new System.Drawing.Point(315, 56);
             this.txtTenDN.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.txtTenDN.Name = "txtTenDN";
             this.txtTenDN.PasswordChar = '\0';
@@ -359,7 +359,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 9.857143F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(140, 68);
+            this.label1.Location = new System.Drawing.Point(113, 68);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(183, 32);
             this.label1.TabIndex = 8;
@@ -399,6 +399,13 @@
             this.lblTaiKhoan.TabIndex = 14;
             this.lblTaiKhoan.Text = "QUẢN LÝ TÀI KHOẢN";
             // 
+            // IDTaiKhoan
+            // 
+            this.IDTaiKhoan.DataPropertyName = "ID";
+            this.IDTaiKhoan.HeaderText = "ID";
+            this.IDTaiKhoan.MinimumWidth = 9;
+            this.IDTaiKhoan.Name = "IDTaiKhoan";
+            // 
             // TenDangNhap
             // 
             this.TenDangNhap.DataPropertyName = "TenDangNhap";
@@ -434,13 +441,6 @@
             this.Quyen.MinimumWidth = 9;
             this.Quyen.Name = "Quyen";
             this.Quyen.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // IDTaiKhoan
-            // 
-            this.IDTaiKhoan.DataPropertyName = "ID";
-            this.IDTaiKhoan.HeaderText = "ID";
-            this.IDTaiKhoan.MinimumWidth = 9;
-            this.IDTaiKhoan.Name = "IDTaiKhoan";
             // 
             // UC_QLTaiKhoan
             // 
@@ -487,11 +487,11 @@
         private Guna.UI2.WinForms.Guna2TextBox txtMatKhau;
         private System.Windows.Forms.Label label5;
         private Guna.UI2.WinForms.Guna2ComboBox cboQuyen;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IDTaiKhoan;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenDangNhap;
         private System.Windows.Forms.DataGridViewTextBoxColumn Email;
         private System.Windows.Forms.DataGridViewTextBoxColumn MatKhau;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaThuThu;
         private System.Windows.Forms.DataGridViewTextBoxColumn Quyen;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IDTaiKhoan;
     }
 }

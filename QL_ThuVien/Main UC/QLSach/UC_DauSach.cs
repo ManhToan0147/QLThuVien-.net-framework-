@@ -341,5 +341,44 @@ namespace QL_ThuVien.Main_UC.QLSach
             NapCT();
             dgvDSDauSach.FirstDisplayedScrollingRowIndex = currentIndex;
         }
+
+        private void txtNamXB_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true; // Ngăn không cho nhập ký tự không hợp lệ
+                errorProvider1.SetError((Control)sender, "Chỉ được nhập số!");
+            }
+            else
+            {
+                errorProvider1.SetError((Control)sender, ""); // Xóa thông báo lỗi nếu nhập đúng
+            }
+        }
+
+        private void txtGiaBia_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true; // Ngăn không cho nhập ký tự không hợp lệ
+                errorProvider1.SetError((Control)sender, "Chỉ được nhập số!");
+            }
+            else
+            {
+                errorProvider1.SetError((Control)sender, ""); // Xóa thông báo lỗi nếu nhập đúng
+            }
+        }
+
+        private void txtSoTrang_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true; // Ngăn không cho nhập ký tự không hợp lệ
+                errorProvider1.SetError((Control)sender, "Chỉ được nhập số!");
+            }
+            else
+            {
+                errorProvider1.SetError((Control)sender, ""); // Xóa thông báo lỗi nếu nhập đúng
+            }
+        }
     }
 }

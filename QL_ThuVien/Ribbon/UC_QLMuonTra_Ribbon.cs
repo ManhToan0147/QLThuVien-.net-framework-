@@ -15,6 +15,7 @@ namespace QL_ThuVien.Ribbon
 {
     public partial class UC_QLMuonTra_Ribbon : UserControl
     {
+        private string userRole;
         private void addUserControl(UserControl userControl)
         {
             userControl.Dock = DockStyle.Fill;
@@ -23,17 +24,40 @@ namespace QL_ThuVien.Ribbon
             userControl.BringToFront();
         }
 
-        public UC_QLMuonTra_Ribbon()
+        public UC_QLMuonTra_Ribbon(string role)
         {
             InitializeComponent();
+            userRole = role;
+            SetUpButtonsBasedOnRole();
+        }
+        private void SetUpButtonsBasedOnRole()
+        {
+            if (userRole == "thuthu")
+            {
+                // Ẩn nút "Quản lý Thủ Thư"
+                btnThuThu.Visible = false;
+
+                // Điều chỉnh lại vị trí các nút còn lại
+                btnPhieuMuon.Location = new Point(53, 0); // Di chuyển nút đầu tiên
+                btnPhieuTra.Location = new Point(300, 0);
+                btnPhieuPhat.Location = new Point(547, 0);
+                // Mặc định hiển thị tab "Phiếu Mượn" và chọn nút "Phiếu Mượn"
+                btnPhieuMuon.Checked = true;
+                var uc = new UC_PhieuMuon(); // Thay bằng UserControl của tab "Phiếu Mượn"
+                addUserControl(uc);
+            }
+            else
+            {
+                // Mặc định hiển thị tab "Thủ Thư" và chọn nút "Thủ Thư" nếu là admin
+                btnThuThu.Checked = true;
+                var uc = new UC_QLThuThu();
+                addUserControl(uc);
+            }
         }
 
         private void UC_QLMuonTra_Ribbon_Load(object sender, EventArgs e)
         {
-            btnThuThu.Checked = true;
-            var uc = new UC_QLThuThu();
-            addUserControl(uc);
-
+            SetUpButtonsBasedOnRole();
         }
 
         private void btnThuThu_Click(object sender, EventArgs e)

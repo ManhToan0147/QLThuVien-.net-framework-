@@ -350,5 +350,42 @@ namespace QL_ThuVien.Main_UC.QLDocGia
         {
             picAvatar.Image = null;
         }
+
+        private void txtSDT_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true; // Ngăn không cho nhập ký tự không hợp lệ
+                errorProvider1.SetError((Control)sender, "Chỉ được nhập số!");
+            }
+            else
+            {
+                errorProvider1.SetError((Control)sender, ""); // Xóa thông báo lỗi nếu nhập đúng
+            }
+        }
+
+        private void txtSDT_Leave(object sender, EventArgs e)
+        {
+            if (txtSDT.Text.Length < 10 || txtSDT.Text.Length > 11)
+            {
+                errorProvider1.SetError(txtSDT, "Số điện thoại phải có 10-11 chữ số!");
+            }
+            else
+            {
+                errorProvider1.SetError(txtSDT, ""); // Xóa lỗi nếu hợp lệ
+            }
+        }
+
+        private void txtEmail_Leave(object sender, EventArgs e)
+        {
+            if (!txtEmail.Text.Contains("@") || !txtEmail.Text.Contains("."))
+            {
+                errorProvider1.SetError(txtEmail, "Email không hợp lệ! Phải chứa '@' và '.'");
+            }
+            else
+            {
+                errorProvider1.SetError(txtEmail, ""); // Xóa lỗi nếu hợp lệ
+            }
+        }
     }
 }

@@ -62,7 +62,7 @@ namespace QL_ThuVien.Main_UC.CaiDat
                 dgvTaiKhoan.DataSource = dt;
             }
         }
-        int selectedID;
+        string selectedID;
         private void NapCT()
         {
             if (dgvTaiKhoan.CurrentCell != null && dgvTaiKhoan.CurrentCell.RowIndex >= 0)
@@ -73,8 +73,7 @@ namespace QL_ThuVien.Main_UC.CaiDat
                 txtMatKhau.Text = dgvTaiKhoan.Rows[i].Cells["MatKhau"].Value.ToString();
                 cboThuThu.SelectedValue = dgvTaiKhoan.Rows[i].Cells["MaThuThu"].Value.ToString();
                 cboQuyen.Text = dgvTaiKhoan.Rows[i].Cells["Quyen"].Value.ToString();
-                string rs = dgvTaiKhoan.Rows[i].Cells["IDTaiKhoan"].Value.ToString();
-                selectedID = int.Parse(rs);
+                selectedID = dgvTaiKhoan.Rows[i].Cells["IDTaiKhoan"].Value.ToString();
             }
         }
 
@@ -83,9 +82,30 @@ namespace QL_ThuVien.Main_UC.CaiDat
             NapCT();
         }
 
+        string insertedID;
         
         private void btnTaoMoi_Click(object sender, EventArgs e)
         {
+            using (con = new SqlConnection(strCon))
+            {
+                con.Open();
+                string sql = "Select max(ID) from TaiKhoanDN";
+                cmd = new SqlCommand(sql, con);
+                object rs = cmd.ExecuteScalar();
+                if (rs != DBNull.Value && rs != null)
+                {
+                    string id = rs.ToString();
+                    int number = int.Parse(id.Substring(2)); //Lấy số sau phần "TT"
+                    ++number;
+                    insertedID = "ID" + number.ToString("D3"); // Dam bao co 2 chu so (01 thay vi 1)
+                }
+                else
+                {
+                    //TH không có bản ghi nào thì bắt đầu từ 01
+                    insertedID = "ID001";
+                }
+            }
+
             txtTenDN.Text = "";
             txtEmail.Text = "";
             txtMatKhau.Text = "";
@@ -106,12 +126,13 @@ namespace QL_ThuVien.Main_UC.CaiDat
                         con.Open();
 
                         // Câu lệnh SQL
-                        string sqlInsert = "INSERT INTO TaiKhoanDN (TenDangNhap, Email, MatKhau, MaThuThu, Quyen) " +
-                                           "VALUES (@TenDangNhap, @Email, @MatKhau, @MaThuThu, @Quyen)";
+                        string sqlInsert = "INSERT INTO TaiKhoanDN (ID, TenDangNhap, Email, MatKhau, MaThuThu, Quyen) " +
+                                           "VALUES (@ID, @TenDangNhap, @Email, @MatKhau, @MaThuThu, @Quyen)";
 
                         using (SqlCommand cmd = new SqlCommand(sqlInsert, con))
                         {
                             // Gán giá trị cho các tham số
+                            cmd.Parameters.AddWithValue("@ID", insertedID);
                             cmd.Parameters.AddWithValue("@TenDangNhap", txtTenDN.Text);
                             cmd.Parameters.AddWithValue("@Email", txtEmail.Text);
                             cmd.Parameters.AddWithValue("@MatKhau", txtMatKhau.Text);

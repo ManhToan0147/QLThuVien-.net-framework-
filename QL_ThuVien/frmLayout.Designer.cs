@@ -285,6 +285,7 @@
             this.btnHDSD.Text = "Hướng dẫn";
             this.btnHDSD.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnHDSD.TextOffset = new System.Drawing.Point(80, 0);
+            this.btnHDSD.Click += new System.EventHandler(this.btnHDSD_Click);
             // 
             // label1
             // 
