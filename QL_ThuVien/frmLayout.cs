@@ -17,6 +17,7 @@ namespace QL_ThuVien
     public partial class frmLayout : Form
     {
         public string userRole { get; set; }
+        private string maThuThu {  get; set; }
         private void addUserControl(UserControl userControl)
         {
             userControl.Dock = DockStyle.Fill;
@@ -24,10 +25,11 @@ namespace QL_ThuVien
             panelContainer.Controls.Add(userControl);
             userControl.BringToFront();
         }
-        public frmLayout(string quyen)
+        public frmLayout(string quyen, string maThuThu)
         {
             InitializeComponent();
             userRole = quyen;
+            this.maThuThu = maThuThu;
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -99,7 +101,7 @@ namespace QL_ThuVien
 
         private void btnQLMuonTra_Click(object sender, EventArgs e)
         {
-            var uc = new UC_QLMuonTra_Ribbon(userRole);
+            var uc = new UC_QLMuonTra_Ribbon(userRole, maThuThu);
             addUserControl(uc);
         }
 

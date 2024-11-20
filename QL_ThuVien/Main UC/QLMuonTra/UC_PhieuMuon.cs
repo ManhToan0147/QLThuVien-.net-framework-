@@ -23,9 +23,13 @@ namespace QL_ThuVien.Main_UC.QLMuonTra
         DataView dvPM;
         bool addNewFlag = false;
 
-        public UC_PhieuMuon()
+        private string userRole;
+        private string maThuThu;
+        public UC_PhieuMuon(string role, string maThuThu)
         {
             InitializeComponent();
+            userRole = role;
+            this.maThuThu = maThuThu;
         }
 
         private void btnNhapSach_Click(object sender, EventArgs e)
@@ -167,6 +171,7 @@ namespace QL_ThuVien.Main_UC.QLMuonTra
 
                 txtTienCoc.Text = dgvPhieuMuon.Rows[i].Cells[5].Value.ToString();
                 cboThuThu.SelectedValue = dgvPhieuMuon.Rows[i].Cells[6].Value.ToString();
+                cboThuThu.Enabled = true;
             }
         }
 
@@ -193,7 +198,16 @@ namespace QL_ThuVien.Main_UC.QLMuonTra
             cboKieuMuon.SelectedIndex = -1;
             dtNgayMuon.Value = DateTime.Now;
             dtHanTra.Value = DateTime.Now;
-            cboThuThu.SelectedIndex = -1;
+            if (userRole == "thuthu")
+            {
+                cboThuThu.SelectedValue = maThuThu; // Gán mã thủ thư vào combo box
+                cboThuThu.Enabled = false; // Không cho phép sửa
+            }
+            else
+            {
+                cboThuThu.SelectedIndex = -1;
+            }
+
             txtSoLuongMuon.Text = "";
             txtTienCoc.Text = "";
             
@@ -275,7 +289,8 @@ namespace QL_ThuVien.Main_UC.QLMuonTra
                 int kq = cmd.ExecuteNonQuery();
                 if (kq > 0)
                 {
-                    MessageBox.Show("Thêm phiếu mượn thành công, click Mượn sách để lưu thông tin sách mượn!", "Thông báo");
+                    MessageBox.Show("Thêm phiếu mượn thành công, click Mượn sách để lưu thông tin sách mượn!", "Thông báo", 
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {

@@ -23,9 +23,14 @@ namespace QL_ThuVien.Main_UC.QLMuonTra
         DataView dvPM;
         DataView dvPP;
         bool addNewFlag = false;
-        public UC_PhieuPhat()
+
+        private string userRole;
+        private string maThuThu;
+        public UC_PhieuPhat(string userRole, string maThuThu)
         {
             InitializeComponent();
+            this.userRole = userRole;
+            this.maThuThu = maThuThu;
         }
 
         private void UC_PhieuPhat_Load(object sender, EventArgs e)
@@ -84,6 +89,7 @@ namespace QL_ThuVien.Main_UC.QLMuonTra
                 txtTongTienPhat.Text = dgvPhieuPhat.Rows[i].Cells[4].Value.ToString();
                 txtTongTienPhat.Enabled = !string.IsNullOrEmpty(txtTongTienPhat.Text);
                 cboThuThu.SelectedValue = dgvPhieuPhat.Rows[i].Cells[5].Value.ToString();
+                cboThuThu.Enabled = true;
             }
         }
 
@@ -192,7 +198,15 @@ namespace QL_ThuVien.Main_UC.QLMuonTra
             txtMaDocGia.Text = "";
 
             dtNgayNopPhat.Value = DateTime.Now;
-            cboThuThu.SelectedIndex = -1;
+            if (userRole == "thuthu")
+            {
+                cboThuThu.SelectedValue = maThuThu; // Gán mã thủ thư vào combo box
+                cboThuThu.Enabled = false; // Không cho phép sửa
+            }
+            else
+            {
+                cboThuThu.SelectedIndex = -1;
+            }
             txtTongTienPhat.Text = "";
             txtTongTienPhat.Enabled = false;
 
@@ -235,7 +249,7 @@ namespace QL_ThuVien.Main_UC.QLMuonTra
                 int kq = cmd.ExecuteNonQuery();
                 if (kq > 0)
                 {
-                    MessageBox.Show("Thêm phiếu phạt thành công!, click Phạt sách để lưu thông tin sách bị phạt", "Thông báo",
+                    MessageBox.Show("Thêm phiếu phạt thành công, click Phạt sách để lưu thông tin sách bị phạt", "Thông báo",
                          MessageBoxButtons.OK, MessageBoxIcon.Information);
                     addNewFlag = false;
                     LoadPhieuPhat();

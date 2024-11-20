@@ -62,6 +62,7 @@ namespace QL_ThuVien
                 // Lấy giá trị quyền từ kết quả truy vấn
                 string quyen = ds.Tables[0].Rows[0]["Quyen"].ToString();
                 string tendn = ds.Tables[0].Rows[0]["TenDangNhap"].ToString();
+                string mathuthu = ds.Tables[0].Rows[0]["MaThuThu"].ToString();
                 // Ẩn form đăng nhập
                 this.Hide();
 
@@ -71,7 +72,7 @@ namespace QL_ThuVien
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     // Hiển thị giao diện admin
-                    frmLayout trangtru = new frmLayout(quyen);
+                    frmLayout trangtru = new frmLayout(quyen, mathuthu);
                     trangtru.Show();
                 }
                 else if (quyen == "thuthu")
@@ -79,7 +80,7 @@ namespace QL_ThuVien
                     // Hiển thị giao diện thủ thư
                     MessageBox.Show($"Chào mừng {tendn} đã đăng nhập thành công với quyền thủ thư", "Thông báo",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    frmLayout thuThuForm = new frmLayout(quyen); // Thay "frmThuThu" bằng tên form của bạn
+                    frmLayout thuThuForm = new frmLayout(quyen, mathuthu); // Thay "frmThuThu" bằng tên form của bạn
                     thuThuForm.Show();
                 }
             }

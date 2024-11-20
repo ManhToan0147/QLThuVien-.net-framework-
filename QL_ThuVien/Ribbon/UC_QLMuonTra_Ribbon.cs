@@ -16,6 +16,7 @@ namespace QL_ThuVien.Ribbon
     public partial class UC_QLMuonTra_Ribbon : UserControl
     {
         private string userRole;
+        private string maThuThu;
         private void addUserControl(UserControl userControl)
         {
             userControl.Dock = DockStyle.Fill;
@@ -24,11 +25,12 @@ namespace QL_ThuVien.Ribbon
             userControl.BringToFront();
         }
 
-        public UC_QLMuonTra_Ribbon(string role)
+        public UC_QLMuonTra_Ribbon(string role, string maThuThu)
         {
             InitializeComponent();
             userRole = role;
             SetUpButtonsBasedOnRole();
+            this.maThuThu = maThuThu;
         }
         private void SetUpButtonsBasedOnRole()
         {
@@ -43,7 +45,7 @@ namespace QL_ThuVien.Ribbon
                 btnPhieuPhat.Location = new Point(547, 0);
                 // Mặc định hiển thị tab "Phiếu Mượn" và chọn nút "Phiếu Mượn"
                 btnPhieuMuon.Checked = true;
-                var uc = new UC_PhieuMuon(); // Thay bằng UserControl của tab "Phiếu Mượn"
+                var uc = new UC_PhieuMuon(userRole, maThuThu); // Thay bằng UserControl của tab "Phiếu Mượn"
                 addUserControl(uc);
             }
             else
@@ -68,7 +70,7 @@ namespace QL_ThuVien.Ribbon
 
         private void btnPhieuMuon_Click(object sender, EventArgs e)
         {
-            var uc = new UC_PhieuMuon();
+            var uc = new UC_PhieuMuon(userRole, maThuThu);
             addUserControl(uc);
         }
 
@@ -80,7 +82,7 @@ namespace QL_ThuVien.Ribbon
 
         private void btnPhieuPhat_Click(object sender, EventArgs e)
         {
-            var uc = new UC_PhieuPhat();
+            var uc = new UC_PhieuPhat(userRole, maThuThu);
             addUserControl(uc);
         }
     }
