@@ -326,6 +326,7 @@
             this.btnBaoCao.Text = "Báo cáo";
             this.btnBaoCao.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnBaoCao.TextOffset = new System.Drawing.Point(80, 0);
+            this.btnBaoCao.Click += new System.EventHandler(this.btnBaoCao_Click);
             // 
             // btnQLMuonTra
             // 

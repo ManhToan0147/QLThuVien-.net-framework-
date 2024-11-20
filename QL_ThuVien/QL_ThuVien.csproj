@@ -92,34 +92,34 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DSInPhieuTra.xsd</DependentUpon>
     </Compile>
-    <Compile Include="frmChuDe.cs">
+    <Compile Include="Form danh muc\frmChuDe.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmChuDe.Designer.cs">
+    <Compile Include="Form danh muc\frmChuDe.Designer.cs">
       <DependentUpon>frmChuDe.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmInPhieuMuon.cs">
+    <Compile Include="Form muon tra\frmInPhieuMuon.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmInPhieuMuon.Designer.cs">
+    <Compile Include="Form muon tra\frmInPhieuMuon.Designer.cs">
       <DependentUpon>frmInPhieuMuon.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmInPhieuPhat.cs">
+    <Compile Include="Form muon tra\frmInPhieuPhat.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmInPhieuPhat.Designer.cs">
+    <Compile Include="Form muon tra\frmInPhieuPhat.Designer.cs">
       <DependentUpon>frmInPhieuPhat.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmInPhieuTra.cs">
+    <Compile Include="Form muon tra\frmInPhieuTra.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmInPhieuTra.Designer.cs">
+    <Compile Include="Form muon tra\frmInPhieuTra.Designer.cs">
       <DependentUpon>frmInPhieuTra.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmKhoSach.cs">
+    <Compile Include="Form danh muc\frmKhoSach.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmKhoSach.Designer.cs">
+    <Compile Include="Form danh muc\frmKhoSach.Designer.cs">
       <DependentUpon>frmKhoSach.cs</DependentUpon>
     </Compile>
     <Compile Include="frmLayout.cs">
@@ -128,41 +128,41 @@
     <Compile Include="frmLayout.Designer.cs">
       <DependentUpon>frmLayout.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmLoaiSach.cs">
+    <Compile Include="Form danh muc\frmLoaiSach.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmLoaiSach.Designer.cs">
+    <Compile Include="Form danh muc\frmLoaiSach.Designer.cs">
       <DependentUpon>frmLoaiSach.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmNhapSach.cs">
+    <Compile Include="Form muon tra\frmNhapSach.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmNhapSach.Designer.cs">
+    <Compile Include="Form muon tra\frmNhapSach.Designer.cs">
       <DependentUpon>frmNhapSach.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmNXB.cs">
+    <Compile Include="Form danh muc\frmNXB.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmNXB.Designer.cs">
+    <Compile Include="Form danh muc\frmNXB.Designer.cs">
       <DependentUpon>frmNXB.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmPhieuTra.cs">
+    <Compile Include="Form muon tra\frmPhieuTra.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmPhieuTra.Designer.cs">
+    <Compile Include="Form muon tra\frmPhieuTra.Designer.cs">
       <DependentUpon>frmPhieuTra.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmThuThu.cs">
+    <Compile Include="Form muon tra\frmTraSach.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmThuThu.Designer.cs">
-      <DependentUpon>frmThuThu.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmTraSach.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmTraSach.Designer.cs">
+    <Compile Include="Form muon tra\frmTraSach.Designer.cs">
       <DependentUpon>frmTraSach.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main UC\BaoCao\UC_BaoCao.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Main UC\BaoCao\UC_BaoCao.Designer.cs">
+      <DependentUpon>UC_BaoCao.cs</DependentUpon>
     </Compile>
     <Compile Include="Main UC\CaiDat\UC_QLTaiKhoan.cs">
       <SubType>UserControl</SubType>
@@ -282,41 +282,41 @@
     <EmbeddedResource Include="ChiTietSach.resx">
       <DependentUpon>ChiTietSach.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmChuDe.resx">
+    <EmbeddedResource Include="Form danh muc\frmChuDe.resx">
       <DependentUpon>frmChuDe.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmInPhieuMuon.resx">
+    <EmbeddedResource Include="Form muon tra\frmInPhieuMuon.resx">
       <DependentUpon>frmInPhieuMuon.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmInPhieuPhat.resx">
+    <EmbeddedResource Include="Form muon tra\frmInPhieuPhat.resx">
       <DependentUpon>frmInPhieuPhat.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmInPhieuTra.resx">
+    <EmbeddedResource Include="Form muon tra\frmInPhieuTra.resx">
       <DependentUpon>frmInPhieuTra.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmKhoSach.resx">
+    <EmbeddedResource Include="Form danh muc\frmKhoSach.resx">
       <DependentUpon>frmKhoSach.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmLayout.resx">
       <DependentUpon>frmLayout.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmLoaiSach.resx">
+    <EmbeddedResource Include="Form danh muc\frmLoaiSach.resx">
       <DependentUpon>frmLoaiSach.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmNhapSach.resx">
+    <EmbeddedResource Include="Form muon tra\frmNhapSach.resx">
       <DependentUpon>frmNhapSach.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmNXB.resx">
+    <EmbeddedResource Include="Form danh muc\frmNXB.resx">
       <DependentUpon>frmNXB.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmPhieuTra.resx">
+    <EmbeddedResource Include="Form muon tra\frmPhieuTra.resx">
       <DependentUpon>frmPhieuTra.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmThuThu.resx">
-      <DependentUpon>frmThuThu.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmTraSach.resx">
+    <EmbeddedResource Include="Form muon tra\frmTraSach.resx">
       <DependentUpon>frmTraSach.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main UC\BaoCao\UC_BaoCao.resx">
+      <DependentUpon>UC_BaoCao.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main UC\CaiDat\UC_QLTaiKhoan.resx">
       <DependentUpon>UC_QLTaiKhoan.cs</DependentUpon>
@@ -503,6 +503,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\avatar_default.png" />
+    <None Include="Resources\user.png" />
+    <None Include="Resources\book-open-cover %281%291.png" />
+    <None Include="Resources\book-open-cover1.png" />
+    <None Include="Resources\portrait.png" />
+    <None Include="Resources\invite-alt.png" />
+    <None Include="Resources\square-exclamation.png" />
     <None Include="Resources\down.png" />
     <None Include="Resources\down %281%29.png" />
     <None Include="Resources\eye %281%29.png" />

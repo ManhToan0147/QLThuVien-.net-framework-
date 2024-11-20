@@ -1,4 +1,5 @@
-﻿using QL_ThuVien.Main_UC.CaiDat;
+﻿using QL_ThuVien.Main_UC.BaoCao;
+using QL_ThuVien.Main_UC.CaiDat;
 using QL_ThuVien.Main_UC.QLDocGia;
 using QL_ThuVien.Main_UC.TrangChu;
 using QL_ThuVien.Ribbon;
@@ -108,6 +109,12 @@ namespace QL_ThuVien
         private void btnHDSD_Click(object sender, EventArgs e)
         {
             Help.ShowHelp(this, "HuongDanSuDung.chm");
+        }
+
+        private void btnBaoCao_Click(object sender, EventArgs e)
+        {
+            var uc = new UC_BaoCao();
+            addUserControl(uc);
         }
     }
 }

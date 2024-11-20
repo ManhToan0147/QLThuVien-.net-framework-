@@ -21,7 +21,7 @@ namespace QL_ThuVien
             }
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmSignIn());
+            Application.Run(new frmLayout("admin", ""));
         }
         [DllImport("user32.dll")]
         private static extern void SetProcessDPIAware();
