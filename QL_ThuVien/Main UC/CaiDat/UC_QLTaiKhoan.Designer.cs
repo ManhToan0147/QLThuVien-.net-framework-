@@ -37,6 +37,12 @@
             this.btnThem = new Guna.UI2.WinForms.Guna2Button();
             this.panelContainer = new System.Windows.Forms.Panel();
             this.dgvTaiKhoan = new System.Windows.Forms.DataGridView();
+            this.IDTaiKhoan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenDangNhap = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MatKhau = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaThuThu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Quyen = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grbTTTT = new System.Windows.Forms.GroupBox();
             this.cboQuyen = new Guna.UI2.WinForms.Guna2ComboBox();
             this.txtMatKhau = new Guna.UI2.WinForms.Guna2TextBox();
@@ -50,12 +56,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnTaoMoi = new Guna.UI2.WinForms.Guna2Button();
             this.lblTaiKhoan = new System.Windows.Forms.Label();
-            this.IDTaiKhoan = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenDangNhap = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MatKhau = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaThuThu = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Quyen = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelContainer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTaiKhoan)).BeginInit();
             this.grbTTTT.SuspendLayout();
@@ -196,6 +196,49 @@
             this.dgvTaiKhoan.Size = new System.Drawing.Size(1780, 577);
             this.dgvTaiKhoan.TabIndex = 2;
             this.dgvTaiKhoan.SelectionChanged += new System.EventHandler(this.dgvTaiKhoan_SelectionChanged);
+            // 
+            // IDTaiKhoan
+            // 
+            this.IDTaiKhoan.DataPropertyName = "ID";
+            this.IDTaiKhoan.HeaderText = "ID";
+            this.IDTaiKhoan.MinimumWidth = 9;
+            this.IDTaiKhoan.Name = "IDTaiKhoan";
+            // 
+            // TenDangNhap
+            // 
+            this.TenDangNhap.DataPropertyName = "TenDangNhap";
+            this.TenDangNhap.HeaderText = "Tên đăng nhập";
+            this.TenDangNhap.MinimumWidth = 9;
+            this.TenDangNhap.Name = "TenDangNhap";
+            // 
+            // Email
+            // 
+            this.Email.DataPropertyName = "Email";
+            this.Email.HeaderText = "Email";
+            this.Email.MinimumWidth = 9;
+            this.Email.Name = "Email";
+            // 
+            // MatKhau
+            // 
+            this.MatKhau.DataPropertyName = "MatKhau";
+            this.MatKhau.HeaderText = "Mật khẩu";
+            this.MatKhau.MinimumWidth = 9;
+            this.MatKhau.Name = "MatKhau";
+            // 
+            // MaThuThu
+            // 
+            this.MaThuThu.DataPropertyName = "MaThuThu";
+            this.MaThuThu.HeaderText = "Mã thủ thư";
+            this.MaThuThu.MinimumWidth = 9;
+            this.MaThuThu.Name = "MaThuThu";
+            // 
+            // Quyen
+            // 
+            this.Quyen.DataPropertyName = "Quyen";
+            this.Quyen.HeaderText = "Quyền";
+            this.Quyen.MinimumWidth = 9;
+            this.Quyen.Name = "Quyen";
+            this.Quyen.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             // 
             // grbTTTT
             // 
@@ -399,53 +442,11 @@
             this.lblTaiKhoan.TabIndex = 14;
             this.lblTaiKhoan.Text = "QUẢN LÝ TÀI KHOẢN";
             // 
-            // IDTaiKhoan
-            // 
-            this.IDTaiKhoan.DataPropertyName = "ID";
-            this.IDTaiKhoan.HeaderText = "ID";
-            this.IDTaiKhoan.MinimumWidth = 9;
-            this.IDTaiKhoan.Name = "IDTaiKhoan";
-            // 
-            // TenDangNhap
-            // 
-            this.TenDangNhap.DataPropertyName = "TenDangNhap";
-            this.TenDangNhap.HeaderText = "Tên đăng nhập";
-            this.TenDangNhap.MinimumWidth = 9;
-            this.TenDangNhap.Name = "TenDangNhap";
-            // 
-            // Email
-            // 
-            this.Email.DataPropertyName = "Email";
-            this.Email.HeaderText = "Email";
-            this.Email.MinimumWidth = 9;
-            this.Email.Name = "Email";
-            // 
-            // MatKhau
-            // 
-            this.MatKhau.DataPropertyName = "MatKhau";
-            this.MatKhau.HeaderText = "Mật khẩu";
-            this.MatKhau.MinimumWidth = 9;
-            this.MatKhau.Name = "MatKhau";
-            // 
-            // MaThuThu
-            // 
-            this.MaThuThu.DataPropertyName = "MaThuThu";
-            this.MaThuThu.HeaderText = "Mã thủ thư";
-            this.MaThuThu.MinimumWidth = 9;
-            this.MaThuThu.Name = "MaThuThu";
-            // 
-            // Quyen
-            // 
-            this.Quyen.DataPropertyName = "Quyen";
-            this.Quyen.HeaderText = "Quyền";
-            this.Quyen.MinimumWidth = 9;
-            this.Quyen.Name = "Quyen";
-            this.Quyen.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
             // UC_QLTaiKhoan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 30F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.AliceBlue;
             this.Controls.Add(this.btnXoa);
             this.Controls.Add(this.btnSua);
             this.Controls.Add(this.btnThem);

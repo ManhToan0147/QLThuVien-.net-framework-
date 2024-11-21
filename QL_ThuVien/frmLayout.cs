@@ -47,7 +47,6 @@ namespace QL_ThuVien
             {
                 // Ẩn các chức năng không được phép sử dụng
                 btnCaiDat.Visible = false; // Ví dụ: Ẩn nút quản lý tài khoản
-                btnBaoCao.Visible = false;         // Ẩn nút báo cáo
             }
             else if (userRole == "admin")
             {
@@ -72,13 +71,13 @@ namespace QL_ThuVien
 
         private void btnQLSach_Click(object sender, EventArgs e)
         {
-            var uc = new UC_QLSach_Ribbon();
+            var uc = new UC_QLSach_Ribbon(userRole);
             addUserControl(uc);
         }
 
         private void btnQLTacGia_Click(object sender, EventArgs e)
         {
-            var uc = new UC_QLTacGia_Ribbon();
+            var uc = new UC_QLTacGia_Ribbon(userRole);
             addUserControl(uc);
         }
 

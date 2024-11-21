@@ -21,10 +21,11 @@ namespace QL_ThuVien.Ribbon
             panelContainer.Controls.Add(userControl);
             userControl.BringToFront();
         }
-
-        public UC_QLTacGia_Ribbon()
+        string role;
+        public UC_QLTacGia_Ribbon(string role)
         {
             InitializeComponent();
+            this.role = role;
         }
 
         private void UC_QLTacGia_Ribbon_Load(object sender, EventArgs e)
@@ -42,7 +43,7 @@ namespace QL_ThuVien.Ribbon
 
         private void btnTacGiaSach_Click(object sender, EventArgs e)
         {
-            var uc = new UC_TacGiaSach();
+            var uc = new UC_TacGiaSach(role);
             addUserControl(uc);
         }
     }

@@ -337,6 +337,7 @@
             // frmKhoSach
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.BackColor = System.Drawing.Color.AliceBlue;
             this.ClientSize = new System.Drawing.Size(1385, 885);
             this.Controls.Add(this.panelContainer);
             this.Controls.Add(this.lblNXB);

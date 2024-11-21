@@ -64,7 +64,7 @@ namespace QL_ThuVien
                 string tendn = ds.Tables[0].Rows[0]["TenDangNhap"].ToString();
                 string mathuthu = ds.Tables[0].Rows[0]["MaThuThu"].ToString();
                 // Ẩn form đăng nhập
-                this.Hide();
+                this.Close();
 
                 if (quyen == "admin")
                 {

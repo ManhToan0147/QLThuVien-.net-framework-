@@ -22,9 +22,12 @@ namespace QL_ThuVien.Main_UC.QLTacGia
         DataView dvTG;
         DataView dvDSTG;
         bool isEdit = false;
-        public UC_TacGiaSach()
+
+        string role;
+        public UC_TacGiaSach(string role)
         {
             InitializeComponent();
+            this.role = role;
         }
 
         private void cboTruong_SelectedIndexChanged(object sender, EventArgs e)
@@ -61,6 +64,11 @@ namespace QL_ThuVien.Main_UC.QLTacGia
 
         private void UC_TacGiaSach_Load(object sender, EventArgs e)
         {
+            if (role != "admin" && role != "thuthu")
+            {
+                cboMode.SelectedIndex = 0;
+                cboMode.Enabled = false;
+            }
             cboTruong.SelectedIndex = 0;
             cboMode.SelectedIndex = 0;
             LoadDauSach();

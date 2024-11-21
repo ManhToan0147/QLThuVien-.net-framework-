@@ -443,7 +443,6 @@ namespace QL_ThuVien.Main_UC.QLMuonTra
             NapCT();
             txtSoLuongMuon.Enabled = true;
             txtTienCoc.Enabled = true;
-            dtHanTra.Enabled = true;
 
             LoadSachMuon(selectedMaPM);
             LoadPhieuMuon_DocGia(selectedMaDG);

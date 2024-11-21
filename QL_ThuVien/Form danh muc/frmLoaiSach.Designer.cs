@@ -338,6 +338,7 @@
             // 
             this.AcceptButton = this.btnThem;
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.BackColor = System.Drawing.Color.AliceBlue;
             this.ClientSize = new System.Drawing.Size(1385, 885);
             this.Controls.Add(this.btnXoa);
             this.Controls.Add(this.btnSua);

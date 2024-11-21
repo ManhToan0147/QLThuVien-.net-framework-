@@ -89,9 +89,9 @@
             this.HoTen = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DaTraSach = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.cboTruong1 = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.txtSearch1 = new Guna.UI2.WinForms.Guna2TextBox();
             this.btnInPhieuMuon = new Guna.UI2.WinForms.Guna2Button();
             this.btnRefresh = new Guna.UI2.WinForms.Guna2Button();
-            this.txtSearch1 = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtSearch2 = new Guna.UI2.WinForms.Guna2TextBox();
             this.grbPhieuMuon.SuspendLayout();
             this.panelDSPhieuMuon.SuspendLayout();
@@ -247,6 +247,7 @@
             // dtHanTra
             // 
             this.dtHanTra.CustomFormat = "dd/MM/yyyy";
+            this.dtHanTra.Enabled = false;
             this.dtHanTra.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtHanTra.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtHanTra.Location = new System.Drawing.Point(558, 128);
@@ -789,7 +790,7 @@
             // DaTraSach
             // 
             this.DaTraSach.DataPropertyName = "DaTraSach";
-            this.DaTraSach.HeaderText = "Đã điều kiện";
+            this.DaTraSach.HeaderText = "Đủ điều kiện";
             this.DaTraSach.MinimumWidth = 9;
             this.DaTraSach.Name = "DaTraSach";
             // 
@@ -811,6 +812,33 @@
             this.cboTruong1.Size = new System.Drawing.Size(162, 52);
             this.cboTruong1.TabIndex = 20;
             this.cboTruong1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // txtSearch1
+            // 
+            this.txtSearch1.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtSearch1.DefaultText = "";
+            this.txtSearch1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtSearch1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtSearch1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtSearch1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtSearch1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtSearch1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearch1.ForeColor = System.Drawing.Color.Black;
+            this.txtSearch1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtSearch1.IconLeft = global::QL_ThuVien.Properties.Resources.search;
+            this.txtSearch1.IconLeftOffset = new System.Drawing.Point(20, 0);
+            this.txtSearch1.IconLeftSize = new System.Drawing.Size(25, 25);
+            this.txtSearch1.Location = new System.Drawing.Point(196, 54);
+            this.txtSearch1.Margin = new System.Windows.Forms.Padding(6);
+            this.txtSearch1.Name = "txtSearch1";
+            this.txtSearch1.PasswordChar = '\0';
+            this.txtSearch1.PlaceholderForeColor = System.Drawing.Color.DimGray;
+            this.txtSearch1.PlaceholderText = "";
+            this.txtSearch1.SelectedText = "";
+            this.txtSearch1.Size = new System.Drawing.Size(660, 52);
+            this.txtSearch1.TabIndex = 19;
+            this.txtSearch1.TextOffset = new System.Drawing.Point(10, 0);
+            this.txtSearch1.TextChanged += new System.EventHandler(this.txtSearch1_TextChanged);
             // 
             // btnInPhieuMuon
             // 
@@ -859,33 +887,6 @@
             this.btnRefresh.Text = "Refresh";
             this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
-            // txtSearch1
-            // 
-            this.txtSearch1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtSearch1.DefaultText = "";
-            this.txtSearch1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtSearch1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtSearch1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtSearch1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtSearch1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtSearch1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearch1.ForeColor = System.Drawing.Color.Black;
-            this.txtSearch1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtSearch1.IconLeft = global::QL_ThuVien.Properties.Resources.search;
-            this.txtSearch1.IconLeftOffset = new System.Drawing.Point(20, 0);
-            this.txtSearch1.IconLeftSize = new System.Drawing.Size(25, 25);
-            this.txtSearch1.Location = new System.Drawing.Point(196, 54);
-            this.txtSearch1.Margin = new System.Windows.Forms.Padding(6);
-            this.txtSearch1.Name = "txtSearch1";
-            this.txtSearch1.PasswordChar = '\0';
-            this.txtSearch1.PlaceholderForeColor = System.Drawing.Color.DimGray;
-            this.txtSearch1.PlaceholderText = "";
-            this.txtSearch1.SelectedText = "";
-            this.txtSearch1.Size = new System.Drawing.Size(660, 52);
-            this.txtSearch1.TabIndex = 19;
-            this.txtSearch1.TextOffset = new System.Drawing.Point(10, 0);
-            this.txtSearch1.TextChanged += new System.EventHandler(this.txtSearch1_TextChanged);
-            // 
             // txtSearch2
             // 
             this.txtSearch2.Cursor = System.Windows.Forms.Cursors.IBeam;
@@ -917,6 +918,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 30F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.AliceBlue;
             this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.btnInPhieuMuon);
             this.Controls.Add(this.grbCuonSach);

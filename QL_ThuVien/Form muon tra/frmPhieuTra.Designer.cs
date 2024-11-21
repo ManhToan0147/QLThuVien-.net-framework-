@@ -31,6 +31,8 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -40,9 +42,11 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvSachPhat = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaViPham2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MoTa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NopPhat = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grbSachPhat = new System.Windows.Forms.GroupBox();
             this.lblPhatSach = new System.Windows.Forms.Label();
             this.btnLuu = new Guna.UI2.WinForms.Guna2Button();
@@ -68,10 +72,6 @@
             this.MaViPham = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenViPham = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.HinhThucPhat = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaViPham2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MoTa = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NopPhat = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSachPhat)).BeginInit();
             this.grbSachPhat.SuspendLayout();
             this.grbPhieuPhat.SuspendLayout();
@@ -127,6 +127,39 @@
             this.dgvSachPhat.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvSachPhat.Size = new System.Drawing.Size(1277, 264);
             this.dgvSachPhat.TabIndex = 0;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "MaSach";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Mã sách";
+            this.dataGridViewTextBoxColumn1.MinimumWidth = 9;
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            // 
+            // MaViPham2
+            // 
+            this.MaViPham2.DataPropertyName = "MaViPham";
+            dataGridViewCellStyle3.Format = "#,###";
+            dataGridViewCellStyle3.NullValue = null;
+            this.MaViPham2.DefaultCellStyle = dataGridViewCellStyle3;
+            this.MaViPham2.HeaderText = "Mã vi phạm";
+            this.MaViPham2.MinimumWidth = 9;
+            this.MaViPham2.Name = "MaViPham2";
+            // 
+            // MoTa
+            // 
+            this.MoTa.DataPropertyName = "MoTa";
+            this.MoTa.HeaderText = "Mô tả";
+            this.MoTa.MinimumWidth = 9;
+            this.MoTa.Name = "MoTa";
+            // 
+            // NopPhat
+            // 
+            this.NopPhat.DataPropertyName = "NopPhat";
+            dataGridViewCellStyle4.Format = "#,###";
+            this.NopPhat.DefaultCellStyle = dataGridViewCellStyle4;
+            this.NopPhat.HeaderText = "Nộp phạt";
+            this.NopPhat.MinimumWidth = 9;
+            this.NopPhat.Name = "NopPhat";
             // 
             // grbSachPhat
             // 
@@ -520,43 +553,11 @@
             this.HinhThucPhat.Name = "HinhThucPhat";
             this.HinhThucPhat.Width = 500;
             // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "MaSach";
-            this.dataGridViewTextBoxColumn1.HeaderText = "Mã sách";
-            this.dataGridViewTextBoxColumn1.MinimumWidth = 9;
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            // 
-            // MaViPham2
-            // 
-            this.MaViPham2.DataPropertyName = "MaViPham";
-            dataGridViewCellStyle3.Format = "#,###";
-            dataGridViewCellStyle3.NullValue = null;
-            this.MaViPham2.DefaultCellStyle = dataGridViewCellStyle3;
-            this.MaViPham2.HeaderText = "Mã vi phạm";
-            this.MaViPham2.MinimumWidth = 9;
-            this.MaViPham2.Name = "MaViPham2";
-            // 
-            // MoTa
-            // 
-            this.MoTa.DataPropertyName = "MoTa";
-            this.MoTa.HeaderText = "Mô tả";
-            this.MoTa.MinimumWidth = 9;
-            this.MoTa.Name = "MoTa";
-            // 
-            // NopPhat
-            // 
-            this.NopPhat.DataPropertyName = "NopPhat";
-            dataGridViewCellStyle4.Format = "#,###";
-            this.NopPhat.DefaultCellStyle = dataGridViewCellStyle4;
-            this.NopPhat.HeaderText = "Nộp phạt";
-            this.NopPhat.MinimumWidth = 9;
-            this.NopPhat.Name = "NopPhat";
-            // 
-            // frmPhatSach
+            // frmPhieuTra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 30F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.AliceBlue;
             this.ClientSize = new System.Drawing.Size(1585, 1136);
             this.Controls.Add(this.grbViPham);
             this.Controls.Add(this.grbSachTra);
@@ -568,7 +569,7 @@
             this.Controls.Add(this.grbPhieuPhat);
             this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.Name = "frmPhatSach";
+            this.Name = "frmPhieuTra";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmPhatSach";
             this.Load += new System.EventHandler(this.frmPhatSach_Load);

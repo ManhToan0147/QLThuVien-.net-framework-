@@ -44,15 +44,15 @@
             this.TenKho = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dgvCuonSach = new System.Windows.Forms.DataGridView();
+            this.MaSach = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TinhTrang = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MoTa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnXemChiTiet = new Guna.UI2.WinForms.Guna2Button();
             this.btnThem = new Guna.UI2.WinForms.Guna2Button();
             this.btnXoa = new Guna.UI2.WinForms.Guna2Button();
             this.btnSua = new Guna.UI2.WinForms.Guna2Button();
             this.txtSearch = new Guna.UI2.WinForms.Guna2TextBox();
             this.cboTruong = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.MaSach = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TinhTrang = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MoTa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDauSach)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -224,6 +224,27 @@
             this.dgvCuonSach.Size = new System.Drawing.Size(724, 753);
             this.dgvCuonSach.TabIndex = 4;
             // 
+            // MaSach
+            // 
+            this.MaSach.DataPropertyName = "MaSach";
+            this.MaSach.HeaderText = "Mã sách";
+            this.MaSach.MinimumWidth = 9;
+            this.MaSach.Name = "MaSach";
+            // 
+            // TinhTrang
+            // 
+            this.TinhTrang.DataPropertyName = "TinhTrang";
+            this.TinhTrang.HeaderText = "Trạng thái";
+            this.TinhTrang.MinimumWidth = 9;
+            this.TinhTrang.Name = "TinhTrang";
+            // 
+            // MoTa
+            // 
+            this.MoTa.DataPropertyName = "MoTa";
+            this.MoTa.HeaderText = "Mô tả";
+            this.MoTa.MinimumWidth = 9;
+            this.MoTa.Name = "MoTa";
+            // 
             // btnXemChiTiet
             // 
             this.btnXemChiTiet.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -244,7 +265,7 @@
             this.btnXemChiTiet.Name = "btnXemChiTiet";
             this.btnXemChiTiet.Size = new System.Drawing.Size(750, 79);
             this.btnXemChiTiet.TabIndex = 10;
-            this.btnXemChiTiet.Text = "Xem chi tiết";
+            this.btnXemChiTiet.Text = "Xem chi tiết đầu sách";
             this.btnXemChiTiet.Click += new System.EventHandler(this.btnXemChiTiet_Click);
             // 
             // btnThem
@@ -363,31 +384,11 @@
             this.cboTruong.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.cboTruong.SelectedIndexChanged += new System.EventHandler(this.cboTruong_SelectedIndexChanged);
             // 
-            // MaSach
-            // 
-            this.MaSach.DataPropertyName = "MaSach";
-            this.MaSach.HeaderText = "Mã sách";
-            this.MaSach.MinimumWidth = 9;
-            this.MaSach.Name = "MaSach";
-            // 
-            // TinhTrang
-            // 
-            this.TinhTrang.DataPropertyName = "TinhTrang";
-            this.TinhTrang.HeaderText = "Trạng thái";
-            this.TinhTrang.MinimumWidth = 9;
-            this.TinhTrang.Name = "TinhTrang";
-            // 
-            // MoTa
-            // 
-            this.MoTa.DataPropertyName = "MoTa";
-            this.MoTa.HeaderText = "Mô tả";
-            this.MoTa.MinimumWidth = 9;
-            this.MoTa.Name = "MoTa";
-            // 
             // UC_CuonSach
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 30F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.AliceBlue;
             this.Controls.Add(this.cboTruong);
             this.Controls.Add(this.btnSua);
             this.Controls.Add(this.btnXoa);

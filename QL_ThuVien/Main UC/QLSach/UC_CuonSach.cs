@@ -21,13 +21,22 @@ namespace QL_ThuVien.Main_UC.QLSach
         DataTable dt;
         DataView dv;
         bool addNewFlag = false;
-        public UC_CuonSach()
+
+        string role;
+        public UC_CuonSach(string role)
         {
             InitializeComponent();
+            this.role = role;
         }
 
         private void UC_CuonSach_Load(object sender, EventArgs e)
         {
+            if (role != "admin" && role != "thuthu")
+            {
+                btnThem.Visible = false;
+                btnXoa.Visible = false;
+                btnSua.Visible = false;
+            }
             //dgvDauSach.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 9, FontStyle.Bold);
             //dgvCuonSach.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 9, FontStyle.Bold);
 

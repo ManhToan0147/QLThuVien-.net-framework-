@@ -62,6 +62,7 @@
     <Reference Include="System.Design" />
     <Reference Include="System.Management" />
     <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -121,6 +122,12 @@
     </Compile>
     <Compile Include="Form danh muc\frmKhoSach.Designer.cs">
       <DependentUpon>frmKhoSach.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmHienThiBanDau.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmHienThiBanDau.Designer.cs">
+      <DependentUpon>frmHienThiBanDau.cs</DependentUpon>
     </Compile>
     <Compile Include="frmLayout.cs">
       <SubType>Form</SubType>
@@ -255,6 +262,122 @@
     <Compile Include="frmSignIn.Designer.cs">
       <DependentUpon>frmSignIn.cs</DependentUpon>
     </Compile>
+    <Compile Include="ReportsSystem\DataSets\DataSetDG.cs" />
+    <Compile Include="ReportsSystem\DataSets\DataSetDG1.Designer.cs" />
+    <Compile Include="ReportsSystem\DataSets\DataSetDG2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetDG.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ReportsSystem\DataSets\DataSetDGViPham.cs" />
+    <Compile Include="ReportsSystem\DataSets\DataSetDGViPham2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetDGViPham.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ReportsSystem\DataSets\DataSetLuotMuonDS2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetLuotMuonDS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ReportsSystem\DataSets\DataSetPhieuMuon.cs" />
+    <Compile Include="ReportsSystem\DataSets\DataSetPhieuMuon2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetPhieuMuon.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ReportsSystem\DataSets\DataSetPhPhatTheoDG2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetPhPhatTheoDG.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ReportsSystem\DataSets\DataSetPMQuaHan.cs" />
+    <Compile Include="ReportsSystem\DataSets\DataSetPMQuaHan2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetPMQuaHan.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ReportsSystem\DataSets\DataSetPMTheoDG2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetPMTheoDG.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ReportsSystem\DataSets\DataSetSachMat.cs" />
+    <Compile Include="ReportsSystem\DataSets\DataSetSachMat2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetSachMat.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ReportsSystem\DataSets\DataSetSachTraHu2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetSachTraHu.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ReportsSystem\DataSets\DataSetTongHopTheoLoaiVP2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetTongHopTheoLoaiVP.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ReportsSystem\Forms\frmBCDGHetHan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportsSystem\Forms\frmBCDGHetHan.Designer.cs">
+      <DependentUpon>frmBCDGHetHan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportsSystem\Forms\frmBCDGMuonSach.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportsSystem\Forms\frmBCDGMuonSach.Designer.cs">
+      <DependentUpon>frmBCDGMuonSach.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportsSystem\Forms\frmBCDGViPham.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportsSystem\Forms\frmBCDGViPham.Designer.cs">
+      <DependentUpon>frmBCDGViPham.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportsSystem\Forms\frmBCDocGiaMoi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportsSystem\Forms\frmBCDocGiaMoi.Designer.cs">
+      <DependentUpon>frmBCDocGiaMoi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportsSystem\Forms\frmBCLuotMuonDS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportsSystem\Forms\frmBCLuotMuonDS.Designer.cs">
+      <DependentUpon>frmBCLuotMuonDS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportsSystem\Forms\frmBCPhPhatTheoDG.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportsSystem\Forms\frmBCPhPhatTheoDG.Designer.cs">
+      <DependentUpon>frmBCPhPhatTheoDG.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportsSystem\Forms\frmBCPMQuaHan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportsSystem\Forms\frmBCPMQuaHan.Designer.cs">
+      <DependentUpon>frmBCPMQuaHan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportsSystem\Forms\frmBCSachMat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportsSystem\Forms\frmBCSachMat.Designer.cs">
+      <DependentUpon>frmBCSachMat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportsSystem\Forms\frmBCSachTraHu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportsSystem\Forms\frmBCSachTraHu.Designer.cs">
+      <DependentUpon>frmBCSachTraHu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportsSystem\Forms\frmBCTongHopTheoLoaiVP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportsSystem\Forms\frmBCTongHopTheoLoaiVP.Designer.cs">
+      <DependentUpon>frmBCTongHopTheoLoaiVP.cs</DependentUpon>
+    </Compile>
     <Compile Include="Ribbon\UC_CaiDat_Ribbon.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -297,6 +420,9 @@
     <EmbeddedResource Include="Form danh muc\frmKhoSach.resx">
       <DependentUpon>frmKhoSach.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmHienThiBanDau.resx">
+      <DependentUpon>frmHienThiBanDau.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmLayout.resx">
       <DependentUpon>frmLayout.cs</DependentUpon>
     </EmbeddedResource>
@@ -327,6 +453,46 @@
     <EmbeddedResource Include="Main UC\QLDocGia\UC_QLDocGia.resx">
       <DependentUpon>UC_QLDocGia.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ReportsSystem\Forms\frmBCDGHetHan.resx">
+      <DependentUpon>frmBCDGHetHan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportsSystem\Forms\frmBCDGMuonSach.resx">
+      <DependentUpon>frmBCDGMuonSach.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportsSystem\Forms\frmBCDGViPham.resx">
+      <DependentUpon>frmBCDGViPham.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportsSystem\Forms\frmBCDocGiaMoi.resx">
+      <DependentUpon>frmBCDocGiaMoi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportsSystem\Forms\frmBCLuotMuonDS.resx">
+      <DependentUpon>frmBCLuotMuonDS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportsSystem\Forms\frmBCPhPhatTheoDG.resx">
+      <DependentUpon>frmBCPhPhatTheoDG.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportsSystem\Forms\frmBCPMQuaHan.resx">
+      <DependentUpon>frmBCPMQuaHan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportsSystem\Forms\frmBCSachMat.resx">
+      <DependentUpon>frmBCSachMat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportsSystem\Forms\frmBCSachTraHu.resx">
+      <DependentUpon>frmBCSachTraHu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportsSystem\Forms\frmBCTongHopTheoLoaiVP.resx">
+      <DependentUpon>frmBCTongHopTheoLoaiVP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportsSystem\Reports\rptDGHetHan.rdlc" />
+    <EmbeddedResource Include="ReportsSystem\Reports\rptDGViPham.rdlc" />
+    <EmbeddedResource Include="ReportsSystem\Reports\rptDSDocGiaMoi.rdlc" />
+    <EmbeddedResource Include="ReportsSystem\Reports\rptDSPhMuonDG.rdlc" />
+    <EmbeddedResource Include="ReportsSystem\Reports\rptLuotMuonDS.rdlc" />
+    <EmbeddedResource Include="ReportsSystem\Reports\rptPhPhatTheoDG.rdlc" />
+    <EmbeddedResource Include="ReportsSystem\Reports\rptPMQuaHan.rdlc" />
+    <EmbeddedResource Include="ReportsSystem\Reports\rptSachBiMat.rdlc" />
+    <EmbeddedResource Include="ReportsSystem\Reports\rptSachTraHu.rdlc" />
+    <EmbeddedResource Include="ReportsSystem\Reports\rptTongHopTheoLoaiVP.rdlc" />
     <EmbeddedResource Include="rptInPhieuPhat.rdlc" />
     <EmbeddedResource Include="Main UC\QLMuonTra\UC_PhieuMuon.resx">
       <DependentUpon>UC_PhieuMuon.cs</DependentUpon>
@@ -433,6 +599,116 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="ReportsSystem\DataSets\DataSetDG.xsc">
+      <DependentUpon>DataSetDG.xsd</DependentUpon>
+    </None>
+    <None Include="ReportsSystem\DataSets\DataSetDG.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetDG2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ReportsSystem\DataSets\DataSetDG.xss">
+      <DependentUpon>DataSetDG.xsd</DependentUpon>
+    </None>
+    <None Include="ReportsSystem\DataSets\DataSetDGViPham.xsc">
+      <DependentUpon>DataSetDGViPham.xsd</DependentUpon>
+    </None>
+    <None Include="ReportsSystem\DataSets\DataSetDGViPham.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetDGViPham2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ReportsSystem\DataSets\DataSetDGViPham.xss">
+      <DependentUpon>DataSetDGViPham.xsd</DependentUpon>
+    </None>
+    <None Include="ReportsSystem\DataSets\DataSetLuotMuonDS.xsc">
+      <DependentUpon>DataSetLuotMuonDS.xsd</DependentUpon>
+    </None>
+    <None Include="ReportsSystem\DataSets\DataSetLuotMuonDS.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetLuotMuonDS2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ReportsSystem\DataSets\DataSetLuotMuonDS.xss">
+      <DependentUpon>DataSetLuotMuonDS.xsd</DependentUpon>
+    </None>
+    <None Include="ReportsSystem\DataSets\DataSetPhieuMuon.xsc">
+      <DependentUpon>DataSetPhieuMuon.xsd</DependentUpon>
+    </None>
+    <None Include="ReportsSystem\DataSets\DataSetPhieuMuon.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetPhieuMuon2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ReportsSystem\DataSets\DataSetPhieuMuon.xss">
+      <DependentUpon>DataSetPhieuMuon.xsd</DependentUpon>
+    </None>
+    <None Include="ReportsSystem\DataSets\DataSetPhPhatTheoDG.xsc">
+      <DependentUpon>DataSetPhPhatTheoDG.xsd</DependentUpon>
+    </None>
+    <None Include="ReportsSystem\DataSets\DataSetPhPhatTheoDG.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetPhPhatTheoDG2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ReportsSystem\DataSets\DataSetPhPhatTheoDG.xss">
+      <DependentUpon>DataSetPhPhatTheoDG.xsd</DependentUpon>
+    </None>
+    <None Include="ReportsSystem\DataSets\DataSetPMQuaHan.xsc">
+      <DependentUpon>DataSetPMQuaHan.xsd</DependentUpon>
+    </None>
+    <None Include="ReportsSystem\DataSets\DataSetPMQuaHan.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetPMQuaHan2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ReportsSystem\DataSets\DataSetPMQuaHan.xss">
+      <DependentUpon>DataSetPMQuaHan.xsd</DependentUpon>
+    </None>
+    <None Include="ReportsSystem\DataSets\DataSetPMTheoDG.xsc">
+      <DependentUpon>DataSetPMTheoDG.xsd</DependentUpon>
+    </None>
+    <None Include="ReportsSystem\DataSets\DataSetPMTheoDG.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetPMTheoDG2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ReportsSystem\DataSets\DataSetPMTheoDG.xss">
+      <DependentUpon>DataSetPMTheoDG.xsd</DependentUpon>
+    </None>
+    <None Include="ReportsSystem\DataSets\DataSetSachMat.xsc">
+      <DependentUpon>DataSetSachMat.xsd</DependentUpon>
+    </None>
+    <None Include="ReportsSystem\DataSets\DataSetSachMat.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetSachMat2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ReportsSystem\DataSets\DataSetSachMat.xss">
+      <DependentUpon>DataSetSachMat.xsd</DependentUpon>
+    </None>
+    <None Include="ReportsSystem\DataSets\DataSetSachTraHu.xsc">
+      <DependentUpon>DataSetSachTraHu.xsd</DependentUpon>
+    </None>
+    <None Include="ReportsSystem\DataSets\DataSetSachTraHu.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetSachTraHu2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ReportsSystem\DataSets\DataSetSachTraHu.xss">
+      <DependentUpon>DataSetSachTraHu.xsd</DependentUpon>
+    </None>
+    <None Include="ReportsSystem\DataSets\DataSetTongHopTheoLoaiVP.xsc">
+      <DependentUpon>DataSetTongHopTheoLoaiVP.xsd</DependentUpon>
+    </None>
+    <None Include="ReportsSystem\DataSets\DataSetTongHopTheoLoaiVP.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetTongHopTheoLoaiVP2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ReportsSystem\DataSets\DataSetTongHopTheoLoaiVP.xss">
+      <DependentUpon>DataSetTongHopTheoLoaiVP.xsd</DependentUpon>
+    </None>
     <None Include="Resources\Logo-DH-Kinh-Te-Quoc-Dan-NEU.png" />
   </ItemGroup>
   <ItemGroup>
@@ -516,6 +792,7 @@
     <None Include="Resources\caret-up.png" />
     <None Include="Resources\caret-down.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

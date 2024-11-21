@@ -31,11 +31,11 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.grbPhieuMuon = new System.Windows.Forms.GroupBox();
             this.txtKieuMuon = new Guna.UI2.WinForms.Guna2TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -49,6 +49,10 @@
             this.cboTrangThai = new Guna.UI2.WinForms.Guna2ComboBox();
             this.panelCuonSach = new System.Windows.Forms.Panel();
             this.dgvCuonSach = new System.Windows.Forms.DataGridView();
+            this.MaSach = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenDauSach = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GiaBia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TinhTrang = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtSearch = new Guna.UI2.WinForms.Guna2TextBox();
             this.btnXoa = new Guna.UI2.WinForms.Guna2Button();
             this.btnLuu = new Guna.UI2.WinForms.Guna2Button();
@@ -60,10 +64,6 @@
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TienCoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TinhTrangMuon = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaSach = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenDauSach = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GiaBia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TinhTrang = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grbPhieuMuon.SuspendLayout();
             this.grbTinhTrangSach.SuspendLayout();
             this.panelCuonSach.SuspendLayout();
@@ -300,6 +300,40 @@
             this.dgvCuonSach.Size = new System.Drawing.Size(1283, 310);
             this.dgvCuonSach.TabIndex = 0;
             // 
+            // MaSach
+            // 
+            this.MaSach.DataPropertyName = "MaSach";
+            this.MaSach.HeaderText = "Mã sách";
+            this.MaSach.MinimumWidth = 9;
+            this.MaSach.Name = "MaSach";
+            this.MaSach.Width = 200;
+            // 
+            // TenDauSach
+            // 
+            this.TenDauSach.DataPropertyName = "TenDauSach";
+            this.TenDauSach.HeaderText = "Tên đầu sách";
+            this.TenDauSach.MinimumWidth = 9;
+            this.TenDauSach.Name = "TenDauSach";
+            this.TenDauSach.Width = 610;
+            // 
+            // GiaBia
+            // 
+            this.GiaBia.DataPropertyName = "GiaBia";
+            dataGridViewCellStyle3.Format = "#,###";
+            this.GiaBia.DefaultCellStyle = dataGridViewCellStyle3;
+            this.GiaBia.HeaderText = "Giá bìa";
+            this.GiaBia.MinimumWidth = 9;
+            this.GiaBia.Name = "GiaBia";
+            this.GiaBia.Width = 200;
+            // 
+            // TinhTrang
+            // 
+            this.TinhTrang.DataPropertyName = "TinhTrang";
+            this.TinhTrang.HeaderText = "Trạng thái";
+            this.TinhTrang.MinimumWidth = 9;
+            this.TinhTrang.Name = "TinhTrang";
+            this.TinhTrang.Width = 200;
+            // 
             // txtSearch
             // 
             this.txtSearch.AutoRoundedCorners = true;
@@ -500,43 +534,10 @@
             this.TinhTrangMuon.Name = "TinhTrangMuon";
             this.TinhTrangMuon.Width = 225;
             // 
-            // MaSach
-            // 
-            this.MaSach.DataPropertyName = "MaSach";
-            this.MaSach.HeaderText = "Mã sách";
-            this.MaSach.MinimumWidth = 9;
-            this.MaSach.Name = "MaSach";
-            this.MaSach.Width = 200;
-            // 
-            // TenDauSach
-            // 
-            this.TenDauSach.DataPropertyName = "TenDauSach";
-            this.TenDauSach.HeaderText = "Tên đầu sách";
-            this.TenDauSach.MinimumWidth = 9;
-            this.TenDauSach.Name = "TenDauSach";
-            this.TenDauSach.Width = 610;
-            // 
-            // GiaBia
-            // 
-            this.GiaBia.DataPropertyName = "GiaBia";
-            dataGridViewCellStyle3.Format = "#,###";
-            this.GiaBia.DefaultCellStyle = dataGridViewCellStyle3;
-            this.GiaBia.HeaderText = "Giá bìa";
-            this.GiaBia.MinimumWidth = 9;
-            this.GiaBia.Name = "GiaBia";
-            this.GiaBia.Width = 200;
-            // 
-            // TinhTrang
-            // 
-            this.TinhTrang.DataPropertyName = "TinhTrang";
-            this.TinhTrang.HeaderText = "Trạng thái";
-            this.TinhTrang.MinimumWidth = 9;
-            this.TinhTrang.Name = "TinhTrang";
-            this.TinhTrang.Width = 200;
-            // 
             // frmNhapSach
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.BackColor = System.Drawing.Color.AliceBlue;
             this.ClientSize = new System.Drawing.Size(1585, 1136);
             this.Controls.Add(this.grbCuonSach);
             this.Controls.Add(this.lblNhapSach);

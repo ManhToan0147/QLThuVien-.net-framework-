@@ -21,9 +21,11 @@ namespace QL_ThuVien.Main_UC.QLSach
         DataTable dt;
         DataView dv;
         bool addNewFlag = false;
-        public UC_DauSach()
+        string role;
+        public UC_DauSach(string role)
         {
             InitializeComponent();
+            this.role = role;
         }
 
         private void LoadComboBox(ComboBox cbo, string tableName, string Ma, string TenMa)
@@ -58,6 +60,14 @@ namespace QL_ThuVien.Main_UC.QLSach
 
         private void UC_DauSach_Load(object sender, EventArgs e)
         {
+            if (role != "admin" && role != "thuthu")
+            {
+                btnTaoMoi.Visible = false;
+                btnThem.Visible = false;
+                btnXoa.Visible = false;
+                btnSua.Visible = false;
+            }
+
             dgvDSDauSach.ColumnHeadersDefaultCellStyle.Font = new Font(dgvDSDauSach.Font, FontStyle.Bold);
             ShowDauSach();
             LoadComboBox(cboMaLoaiSach, "LoaiSach", "MaLoaiSach", "TenLoaiSach");

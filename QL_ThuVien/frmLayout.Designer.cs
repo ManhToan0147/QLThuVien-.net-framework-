@@ -539,6 +539,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.AliceBlue;
             this.ClientSize = new System.Drawing.Size(2472, 1485);
             this.Controls.Add(this.panelContainer);
             this.Controls.Add(this.panelSidebar);

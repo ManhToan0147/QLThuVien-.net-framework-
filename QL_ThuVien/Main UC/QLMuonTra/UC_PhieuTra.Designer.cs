@@ -83,13 +83,13 @@
             this.NgayMuon1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.HanTra1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grbDocgia = new System.Windows.Forms.GroupBox();
+            this.txtSearch1 = new Guna.UI2.WinForms.Guna2TextBox();
             this.btnTaoMoi = new Guna.UI2.WinForms.Guna2Button();
             this.btnSua = new Guna.UI2.WinForms.Guna2Button();
             this.btnXoa = new Guna.UI2.WinForms.Guna2Button();
             this.btnThem = new Guna.UI2.WinForms.Guna2Button();
             this.btnRefresh = new Guna.UI2.WinForms.Guna2Button();
             this.txtSearch2 = new Guna.UI2.WinForms.Guna2TextBox();
-            this.txtSearch1 = new Guna.UI2.WinForms.Guna2TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPMDaTra)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSachTra)).BeginInit();
             this.grbCuonSach.SuspendLayout();
@@ -685,6 +685,33 @@
             this.grbDocgia.TabStop = false;
             this.grbDocgia.Text = "Phiếu mượn cần trả";
             // 
+            // txtSearch1
+            // 
+            this.txtSearch1.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtSearch1.DefaultText = "";
+            this.txtSearch1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtSearch1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtSearch1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtSearch1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtSearch1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtSearch1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearch1.ForeColor = System.Drawing.Color.Black;
+            this.txtSearch1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtSearch1.IconLeft = global::QL_ThuVien.Properties.Resources.search;
+            this.txtSearch1.IconLeftOffset = new System.Drawing.Point(20, 0);
+            this.txtSearch1.IconLeftSize = new System.Drawing.Size(25, 25);
+            this.txtSearch1.Location = new System.Drawing.Point(190, 48);
+            this.txtSearch1.Margin = new System.Windows.Forms.Padding(6);
+            this.txtSearch1.Name = "txtSearch1";
+            this.txtSearch1.PasswordChar = '\0';
+            this.txtSearch1.PlaceholderForeColor = System.Drawing.Color.DimGray;
+            this.txtSearch1.PlaceholderText = "";
+            this.txtSearch1.SelectedText = "";
+            this.txtSearch1.Size = new System.Drawing.Size(660, 52);
+            this.txtSearch1.TabIndex = 19;
+            this.txtSearch1.TextOffset = new System.Drawing.Point(10, 0);
+            this.txtSearch1.TextChanged += new System.EventHandler(this.txtSearch1_TextChanged);
+            // 
             // btnTaoMoi
             // 
             this.btnTaoMoi.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -828,37 +855,11 @@
             this.txtSearch2.TextOffset = new System.Drawing.Point(10, 0);
             this.txtSearch2.TextChanged += new System.EventHandler(this.txtSearch2_TextChanged);
             // 
-            // txtSearch1
-            // 
-            this.txtSearch1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtSearch1.DefaultText = "";
-            this.txtSearch1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtSearch1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtSearch1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtSearch1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtSearch1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtSearch1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearch1.ForeColor = System.Drawing.Color.Black;
-            this.txtSearch1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtSearch1.IconLeft = global::QL_ThuVien.Properties.Resources.search;
-            this.txtSearch1.IconLeftOffset = new System.Drawing.Point(20, 0);
-            this.txtSearch1.IconLeftSize = new System.Drawing.Size(25, 25);
-            this.txtSearch1.Location = new System.Drawing.Point(190, 48);
-            this.txtSearch1.Margin = new System.Windows.Forms.Padding(6);
-            this.txtSearch1.Name = "txtSearch1";
-            this.txtSearch1.PasswordChar = '\0';
-            this.txtSearch1.PlaceholderForeColor = System.Drawing.Color.DimGray;
-            this.txtSearch1.PlaceholderText = "";
-            this.txtSearch1.SelectedText = "";
-            this.txtSearch1.Size = new System.Drawing.Size(660, 52);
-            this.txtSearch1.TabIndex = 19;
-            this.txtSearch1.TextOffset = new System.Drawing.Point(10, 0);
-            this.txtSearch1.TextChanged += new System.EventHandler(this.txtSearch1_TextChanged);
-            // 
             // UC_PhieuTra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 30F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.AliceBlue;
             this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.btnTaoMoi);
             this.Controls.Add(this.btnSua);
